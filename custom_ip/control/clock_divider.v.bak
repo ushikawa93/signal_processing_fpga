@@ -1,0 +1,23 @@
+
+module Clock_divider
+(
+input clock_in,
+input [31:0] divisor,
+output reg clock_out
+);
+
+reg [31:0] divisor_reg;
+	always @ (posedge clock_in)	divisor_reg <= divisor ;
+
+reg[31:0] counter=32'd0;
+
+always @(posedge clock_in)
+begin
+ counter <= counter + 32'd1;
+ 
+ if(counter>=(divisor_reg-1))
+	counter <= 32'd0;
+
+  clock_out <= (counter<divisor_reg/2)? 1'b1:1'b0;
+end
+endmodule

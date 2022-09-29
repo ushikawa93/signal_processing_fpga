@@ -1,0 +1,9 @@
+
+/*
+  result_functions.h
+
+  Define funciones para leer los resultados del procesamiento
+  Hay funciones para leer los resultados de los FIFOS de 64 bits y de 32 bits y las salidas instantanteas
+  Todas requieren que la entrada de finalizacion este en 1
+
+*/

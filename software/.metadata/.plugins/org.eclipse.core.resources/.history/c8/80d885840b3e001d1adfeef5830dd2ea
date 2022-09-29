@@ -1,0 +1,52 @@
+/*
+ * "Hello World" example.
+ *
+ * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
+ * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example
+ * designs. It runs with or without the MicroC/OS-II RTOS and requires a STDOUT
+ * device in your system's hardware.
+ * The memory footprint of this hosted application is ~69 kbytes by default
+ * using the standard reference design.
+ *
+ * For a reduced footprint version of this template, and an explanation of how
+ * to reduce the memory footprint for a given application, see the
+ * "small_hello_world" template.
+ *
+ */
+
+#include <stdio.h>
+#include "funciones_pll.h"
+#include "parameters_control.h"
+#include "system.h"
+
+void imprimir_fifo_32_bit(int N_datos,int* fifo_addr);
+
+// Punteros a posiciones de memoria que me interesan
+int* pll_ptr = PLL_RECONFIGURAR_BASE;
+int* clk_divider_ptr = DIVISOR_CLOCK_BASE;
+int* parameters_ptr = PARAMETERS_BASE;
+int* enable_ptr = ENABLE_BASE;
+
+int* fifo0_32_bit_ptr = (int*) FIFO0_32_BIT_BASE;
+
+int main()
+{
+	configurar_pll(64,pll_ptr);
+	setClockDivider(1,clk_divider_ptr);
+
+	*enable_ptr = 1;
+
+	imprimir_fifo_32_bit(64,fifo0_32_bit_ptr);
+
+	return 0;
+}
+
+void imprimir_fifo_32_bit(int N_datos,int* fifo_addr)
+{
+  printf("Datos en fifo de 32 bit \n");
+  for(int i=0;i<N_datos;i++)
+  {
+	  int muestra = *fifo_addr;
+	  printf("%d, ",muestra);
+  }
+}

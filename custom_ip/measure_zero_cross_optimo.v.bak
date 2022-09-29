@@ -1,0 +1,36 @@
+
+module measure_zero_cross_optimo(
+
+	input clk,
+	input enable,
+	input reset_n,
+	input [15:0] ptos_x_ciclo,
+
+	input [13:0] data,
+	output zero_cross
+);
+
+
+reg [13:0] max_data; initial max_data = 0;
+reg [13:0] min_data;	initial min_data = 16383;	// Pongo el maximo valor posible como inicial!
+
+wire [13:0] middle_data; 
+	assign middle_data = min_data + ((max_data - min_data) >> 1);
+	
+// Algoritmos para calcular max_data y min data
+always @ (posedge clk or negedge reset_n)
+	if(!reset_n)
+	begin
+		max_data <= 0;
+		min_data <= 16383;
+	end
+	else if(enable)
+	begin
+		max_data <= (data > max_data) ? data: max_data;
+		min_data <= (data < min_data) ? data: min_data;	
+	end
+	
+	
+	
+	
+endmodule

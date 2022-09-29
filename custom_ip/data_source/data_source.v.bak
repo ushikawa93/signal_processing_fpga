@@ -1,0 +1,22 @@
+
+module data_source(
+input clock,
+input reset_n,
+input CE,
+output data);
+
+
+reg  [15:0] sine [0:31]; initial	$readmemh("LU_tables/x32_16b_off.mem",sine);
+integer  index; initial index = 0;
+
+
+assign data = (CE == 1)? sine [index] : 0;
+
+always @ (posedge clock)
+begin
+
+if(CE) index <= (index<31)? index+1 : 0;
+
+if(!reset) index <= 0;
+
+end

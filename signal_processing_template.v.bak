@@ -1,0 +1,15 @@
+
+module signal_processing_template(
+
+
+);
+
+
+
+procesador nios (
+		
+);
+
+	 
+endmodule
+	 

@@ -1,0 +1,33 @@
+
+module measure_zero_cross(
+input clk,
+input enable,
+input reset_n,
+
+input [13:0] data,
+output zero_cross
+);
+
+reg [13:0] max_data;
+reg [13:0] min_data;
+
+wire [13:0] middle_data; 
+	assign middle_data = min_data + ((max_data - min_data) >> 1);
+	
+assign zero_cross = (data == middle_data) && enable;
+
+// Algoritmos para calcular max_data y min data
+always @ (posedge clk or negedge reset_n)
+	if(!reset_n)
+	begin
+		max_data <= 0;
+		min_data <= 0;
+	end
+	else if(enable)
+	begin
+		max_data <= (data > max_data) ? data: max_data;
+		min_data <= (data < min_data) ? data: min_data;	
+	end
+	
+
+endmodule

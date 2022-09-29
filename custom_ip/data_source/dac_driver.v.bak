@@ -1,0 +1,34 @@
+
+module dac_driver(
+
+	// Entradas de control
+	input 			 CLK_65,
+	input				 reset_n,
+	input				 enable,
+	
+	// Parametros de configuracion
+	input [15:0]	 ptos_x_ciclo,
+	input 			 seleccion_dac,		// 0 -> seno / 1 -> constante
+
+	// Entradas y salidas del DAC
+	output			 DAC_CLK_A,
+	output   [13:0] DAC_DA,
+	output			 DAC_WRT_A,
+	
+	output 			 DAC_CLK_B,
+	output   [13:0] DAC_DB,
+	output			 DAC_WRT_B,
+	
+	output			 DAC_MODE,
+	output			 OSC_SMA_ADC4,
+	output			 POWER_ON,
+	output			 SMA_DAC4,
+
+	
+	// Salida para sincronizar modulos posteriores	
+	output			 data_valid_dac_export
+
+
+);
+
+
