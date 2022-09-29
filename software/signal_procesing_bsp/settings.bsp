@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>29/09/2022 12:47:32</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1664466452320</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>29/09/2022 15:34:44</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1664476484523</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\MatiOliva\Documents\00-ProyectosQuartus\signal_processing_template\software\signal_procesing_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\procesador.sopcinfo</SopcDesignFile>

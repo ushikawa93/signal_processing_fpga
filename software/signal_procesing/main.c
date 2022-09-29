@@ -44,14 +44,14 @@ int main()
 	configurar_pll(40,pll_ptr);
 	setClockDivider(1,clk_divider_ptr);
 
-	setParam0(10,parameters_ptr);
+	setParam0(0,parameters_ptr);
 	setParam1(4,parameters_ptr);
 
 	Reset(enable_ptr,reset_ptr);
 	setEnable(enable_ptr);
 
 	printf("Resultados FIFO 0 32 bits: \n");
-	imprimir_buffer(32*8,leer_fifo_32_bit(fifo0_32_bit_ptr));
+	imprimir_buffer(1024,leer_fifo_32_bit(fifo0_32_bit_ptr));
 	printf("\nResultado Instantaneo: %d \n",leer_resultado(result0_32__bit));
 /*
 	printf("Resultados FIFO 1 32 bits: \n");
@@ -69,7 +69,7 @@ int main()
 
 void imprimir_buffer(int N_datos,int* puntero_a_buffer){
 	for(int i=0;i<N_datos;i++){
-		printf("%d, ",(*(puntero_a_buffer+i))/(4*32));
+		printf("%d, ",(*(puntero_a_buffer+i)));
 	}
 }
 

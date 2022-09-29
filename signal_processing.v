@@ -66,6 +66,7 @@ end
 
 wire ready,fifo_lleno;
 
+/*
 filtro_promedio_movil process(
 
 	// Entradas de control
@@ -89,8 +90,20 @@ filtro_promedio_movil process(
 	.ready(ready),
 	.fifo_lleno(fifo_lleno)
 
-);
+);*/
 
+
+
+remove_mean_value_pipelined process(
+	.clock(clk),
+	.reset_n(reset_n),
+
+	.data_in(data_in),
+	.data_in_valid(data_in_valid),
+
+	.data_out(data_out),
+	.data_out_valid(data_out_valid)
+);
 
 //////////////////////////////////////////////////
 // ================ Salidas auxiliares ===============

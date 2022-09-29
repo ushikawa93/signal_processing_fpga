@@ -3,7 +3,7 @@ module IIR_filter(
 
 	// Entradas de control
 	input clock,
-	input reset,
+	input reset_n,
 	input enable,
 		
 	// Interfaz avalon streaming de entrada
@@ -45,10 +45,10 @@ reg signed [63:0] y_n;
 // Contador auxiliar para saber cuando se termina la operacion
 reg [15:0] counter;
 
-always @ (posedge clock or negedge reset)
+always @ (posedge clock or negedge reset_n)
 begin
 
-	if(!reset)
+	if(!reset_n)
 	begin	
 		x_n_1 <= 0;
 		y_n <= 0;		
@@ -71,7 +71,7 @@ assign data_out = y_n;
 assign data_out_valid = (data_valid && (counter > START_SENDING) );
 
 // Salidas auxiliares
-assign ready = reset; // El unico momento en que no puede calcular es cuando reset = 0
+assign ready = reset_n; // El unico momento en que no puede calcular es cuando reset_n = 0
 assign fifo_lleno = (counter == FIFO_DEPTH + START_SENDING);
 
 endmodule

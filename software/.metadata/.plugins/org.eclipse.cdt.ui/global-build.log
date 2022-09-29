@@ -1,7 +1,25 @@
-12:47:36 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+16:36:04 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
 make all 
 [BSP build complete]
-12:47:37 **** Incremental Build of configuration Nios II for project signal_procesing ****
+16:36:05 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+16:36:15 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+16:36:16 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+16:38:02 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+16:38:03 **** Incremental Build of configuration Nios II for project signal_procesing ****
 make all 
 Info: Building ../signal_procesing_bsp/
 C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
@@ -16,19 +34,19 @@ Info:                        58 KBytes free for stack + heap.
 Info: Creating signal_procesing.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
 [signal_procesing build complete]
-12:47:39 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+17:07:23 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
 make all 
 [BSP build complete]
-12:47:40 **** Incremental Build of configuration Nios II for project signal_procesing ****
+17:07:24 **** Incremental Build of configuration Nios II for project signal_procesing ****
 make all 
 Info: Building ../signal_procesing_bsp/
 C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
 [BSP build complete]
 [signal_procesing build complete]
-12:48:07 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+17:07:49 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
 make all 
 [BSP build complete]
-12:48:08 **** Incremental Build of configuration Nios II for project signal_procesing ****
+17:07:49 **** Incremental Build of configuration Nios II for project signal_procesing ****
 make all 
 Info: Building ../signal_procesing_bsp/
 C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
@@ -43,196 +61,10 @@ Info:                        58 KBytes free for stack + heap.
 Info: Creating signal_procesing.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
 [signal_procesing build complete]
-12:48:25 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+17:08:28 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
 make all 
 [BSP build complete]
-12:48:26 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-Info: Linking signal_procesing.elf
-nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
-nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
-Info: (signal_procesing.elf) 81 KBytes program size (code + initialized data).
-Info:                        58 KBytes free for stack + heap.
-Info: Creating signal_procesing.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
-[signal_procesing build complete]
-12:48:56 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-12:48:56 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-[signal_procesing build complete]
-12:49:12 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-12:49:13 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-Info: Linking signal_procesing.elf
-nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
-nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
-Info: (signal_procesing.elf) 81 KBytes program size (code + initialized data).
-Info:                        58 KBytes free for stack + heap.
-Info: Creating signal_procesing.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
-[signal_procesing build complete]
-12:50:53 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-12:50:54 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-[signal_procesing build complete]
-13:01:49 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-13:01:50 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-[signal_procesing build complete]
-13:05:44 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-13:05:45 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-Info: Linking signal_procesing.elf
-nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
-nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
-Info: (signal_procesing.elf) 81 KBytes program size (code + initialized data).
-Info:                        58 KBytes free for stack + heap.
-Info: Creating signal_procesing.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
-[signal_procesing build complete]
-13:06:15 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-13:06:15 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-Info: Linking signal_procesing.elf
-nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
-nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
-Info: (signal_procesing.elf) 81 KBytes program size (code + initialized data).
-Info:                        58 KBytes free for stack + heap.
-Info: Creating signal_procesing.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
-[signal_procesing build complete]
-13:07:10 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-13:07:11 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-[signal_procesing build complete]
-13:56:27 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-13:56:28 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-[signal_procesing build complete]
-13:58:01 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-13:58:02 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-Info: Linking signal_procesing.elf
-nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
-nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
-Info: (signal_procesing.elf) 81 KBytes program size (code + initialized data).
-Info:                        58 KBytes free for stack + heap.
-Info: Creating signal_procesing.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
-[signal_procesing build complete]
-13:58:36 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-13:58:36 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-main.c: In function 'main':
-main.c:54:59: error: invalid operands to binary / (have 'int *' and 'int')
-  imprimir_buffer(32*8,(leer_fifo_32_bit(fifo0_32_bit_ptr))/4);
-                                                           ^
-make: *** [obj/default/main.o] Error 1
-13:59:07 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-13:59:08 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-Info: Linking signal_procesing.elf
-nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
-nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
-Info: (signal_procesing.elf) 81 KBytes program size (code + initialized data).
-Info:                        58 KBytes free for stack + heap.
-Info: Creating signal_procesing.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
-[signal_procesing build complete]
-13:59:32 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-13:59:33 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-Info: Compiling main.c to obj/default/main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-Info: Linking signal_procesing.elf
-nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
-nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
-Info: (signal_procesing.elf) 81 KBytes program size (code + initialized data).
-Info:                        58 KBytes free for stack + heap.
-Info: Creating signal_procesing.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
-[signal_procesing build complete]
-14:00:08 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-14:00:08 **** Incremental Build of configuration Nios II for project signal_procesing ****
+17:08:29 **** Incremental Build of configuration Nios II for project signal_procesing ****
 make all 
 Info: Building ../signal_procesing_bsp/
 C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/

@@ -5,6 +5,7 @@ module data_in(
 	input clk_dac,
 	input clk_adc,
 	input clk_adc_2308,
+	
 	input reset_n,
 	input enable,
 	

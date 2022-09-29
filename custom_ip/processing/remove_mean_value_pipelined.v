@@ -1,7 +1,7 @@
 
 module remove_mean_value_pipelined(
 	input clock,
-	input reset,
+	input reset_n,
 
 	input signed [31:0] data_in,
 	input data_in_valid,
@@ -28,11 +28,11 @@ reg signed [31:0] acumulador; initial acumulador=0;
 reg data_valid_aux1,data_valid_aux2,data_valid_aux3,data_valid_aux4; 
 initial data_valid_aux1=0;
 
-always @ (posedge clock or negedge reset)
+always @ (posedge clock or negedge reset_n)
 begin
 	
 	
-	if(!reset)
+	if(!reset_n)
 	begin
 		acumulador <= 0;
 		index <= 0;index_retrasado<=0;
@@ -54,7 +54,7 @@ begin
 		
 	end
 
-	else if(data_in_valid && reset)
+	else if(data_in_valid && reset_n)
 	begin
 	
 		index <= (index== (M-1))? 0: index+1;
