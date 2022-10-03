@@ -1,0 +1,19 @@
+# Archivo de temporización básico
+
+create_clock -name "clock_50" -period 20.000ns [get_ports {CLOCK_50}]
+create_clock -name CLK_CUSTOM -period 15.000ns [get_registers {Clock_divider:clk_div|clock_generado}]
+
+
+derive_pll_clocks
+derive_clock_uncertainty
+
+update_timing_netlist
+
+set_false_path -from [get_clocks {clock_50}] -to [get_clocks {nios|pll_lockin|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk}]
+set_false_path -from [get_clocks {nios|pll_lockin|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk}] -to [get_clocks {clock_50}]
+
+set_false_path -from [get_clocks {CLK_CUSTOM}] -to [get_clocks {clock_50}]
+set_false_path -from [get_clocks {clock_50}] -to [get_clocks {CLK_CUSTOM}]
+
+set_false_path -from [get_clocks {CLK_CUSTOM}] -to [get_clocks {nios|pll_lockin|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk}]
+set_false_path -from [get_clocks {nios|pll_lockin|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk}] -to [get_clocks {CLK_CUSTOM}] 

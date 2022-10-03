@@ -53,14 +53,15 @@ int main()
 	printf("Resultados FIFO 0 32 bits: \n");
 	imprimir_buffer(1024,leer_fifo_32_bit(fifo0_32_bit_ptr));
 	printf("\nResultado Instantaneo: %d \n",leer_resultado(result0_32__bit));
-/*
+
+	/*
 	printf("Resultados FIFO 1 32 bits: \n");
 	imprimir_buffer(512,leer_fifo_32_bit(fifo1_32_bit_ptr));
 	printf("\nResultado Instantaneo: %d \n",leer_resultado(result1_32__bit));
-
+*/
 	printf("Resultados FIFO 0 64 bits: \n");
 	imprimir_buffer(100,leer_fifo_32_bit(fifo0_64_bit_down_ptr));
-*/
+
 
 
 
