@@ -107,39 +107,39 @@ HPS_DDR3_BA[0]               : A27       : output : SSTL-15 Class I   :         
 GND                          : AA1       : gnd    :                   :         :           :                
 GND                          : AA2       : gnd    :                   :         :           :                
 GND                          : AA3       : gnd    :                   :         :           :                
-HPS_DDR3_DQ[28]              : AA4       : bidir  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA4       :        :                   :         : 3A        :                
 VCCIO3A                      : AA5       : power  :                   : 2.5V    : 3A        :                
 nCSO, DATA4                  : AA6       :        :                   :         : 3A        :                
 DCLK                         : AA8       :        :                   :         : 3A        :                
 GND                          : AA9       : gnd    :                   :         :           :                
 VCCPD3A                      : AA10      : power  :                   : 2.5V    : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA11      :        :                   :         : 3A        :                
+ADC_DB[12]                   : AA11      : input  : 2.5 V             :         : 3A        : N              
 VCCIO3B                      : AA12      : power  :                   : 2.5V    : 3B        :                
-HPS_DDR3_DQ[15]              : AA13      : bidir  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[21]              : AA13      : bidir  : 2.5 V             :         : 4A        : N              
 VCCPD3B4A                    : AA14      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA15      :        :                   :         : 4A        :                
 VCCIO4A                      : AA16      : power  :                   : 2.5V    : 4A        :                
 GND                          : AA17      : gnd    :                   :         :           :                
-HPS_DDR3_DQ[26]              : AA18      : bidir  : 2.5 V             :         : 4A        : N              
-DAC_CLK_A                    : AA19      : output : 2.5 V             :         : 4A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA20      :        :                   :         : 5A        :                
+HPS_DDR3_DM[2]               : AA18      : output : 2.5 V             :         : 4A        : N              
+ADC_DB[2]                    : AA19      : input  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_ADDR[14]            : AA20      : output : 2.5 V             :         : 5A        : N              
 VCCA_FPLL                    : AA21      : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA23      :        :                   :         : 5A        :                
+HPS_DDR3_DQ[19]              : AA23      : bidir  : 2.5 V             :         : 5A        : N              
 LED[1]                       : AA24      : output : 2.5 V             :         : 5A        : Y              
 VREFB5BN0                    : AA25      : power  :                   :         : 5B        :                
-HPS_DDR3_DQ[18]              : AA26      : bidir  : 2.5 V             :         : 5B        : N              
+ADC_DB[3]                    : AA26      : input  : 2.5 V             :         : 5B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA27      :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA28      :        :                   :         : 6B        :                
 GND                          : AB1       : gnd    :                   :         :           :                
 GND                          : AB2       : gnd    :                   :         :           :                
 GND                          : AB3       : gnd    :                   :         :           :                
-HPS_DDR3_DQ[8]               : AB4       : bidir  : 2.5 V             :         : 3A        : N              
+ADC_DB[6]                    : AB4       : input  : 2.5 V             :         : 3A        : N              
 altera_reserved_tck          : AB5       : input  : 2.5 V             :         : 3A        : N              
 AS_DATA3, DATA3              : AB6       :        :                   :         : 3A        :                
-OSC_SMA_ADC4                 : AB23      : output : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB23      :        :                   :         : 5A        :                
 GND                          : AB24      : gnd    :                   :         :           :                
-ADC_OEB_B                    : AB25      : output : 2.5 V             :         : 5B        : N              
-POWER_ON                     : AB26      : output : 2.5 V             :         : 5B        : N              
+HPS_DDR3_DQ[26]              : AB25      : bidir  : 2.5 V             :         : 5B        : N              
+HPS_DDR3_DQ[9]               : AB26      : bidir  : 2.5 V             :         : 5B        : N              
 GND                          : AB27      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB28      :        :                   :         : 6B        :                
 GND                          : AC1       : gnd    :                   :         :           :                
@@ -151,9 +151,9 @@ AS_DATA1, DATA1              : AC6       :        :                   :         
 altera_reserved_tms          : AC7       : input  : 2.5 V             :         : 3A        : N              
 VCC_AUX                      : AC8       : power  :                   : 2.5V    :           :                
 VCC_AUX                      : AC21      : power  :                   : 2.5V    :           :                
-HPS_DDR3_DQ[10]              : AC22      : bidir  : 2.5 V             :         : 4A        : N              
-HPS_DDR3_DQS_P[2]            : AC23      : bidir  : 2.5 V             :         : 4A        : N              
-HPS_DDR3_DQ[20]              : AC24      : bidir  : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC22      :        :                   :         : 4A        :                
+HPS_DDR3_DQS_P[1]            : AC23      : bidir  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[10]              : AC24      : bidir  : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : AC25      : power  :                   : 2.5V    : 5A        :                
 VREFB5AN0                    : AC26      : power  :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC27      :        :                   :         : 6B        :                
@@ -167,135 +167,135 @@ GND                          : AD6       : gnd    :                   :         
 AS_DATA0, ASDO, DATA0        : AD7       :        :                   :         : 3A        :                
 GND                          : AD8       : gnd    :                   :         :           :                
 VCCPD3B4A                    : AD9       : power  :                   : 2.5V    : 3B, 4A    :                
-HPS_DDR3_DQ[23]              : AD10      : bidir  : 2.5 V             :         : 3B        : N              
-ADC_DB[0]                    : AD11      : input  : 2.5 V             :         : 3B        : N              
-DAC_DA[4]                    : AD12      : output : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD10      :        :                   :         : 3B        :                
+HPS_DDR3_DM[1]               : AD11      : output : 2.5 V             :         : 3B        : N              
+DAC_DA[3]                    : AD12      : output : 2.5 V             :         : 3B        : N              
 VCCPD3B4A                    : AD13      : power  :                   : 2.5V    : 3B, 4A    :                
 GND                          : AD14      : gnd    :                   :         :           :                
 VCC_AUX                      : AD15      : power  :                   : 2.5V    :           :                
 VCCPD3B4A                    : AD16      : power  :                   : 2.5V    : 3B, 4A    :                
-DAC_DA[3]                    : AD17      : output : 2.5 V             :         : 4A        : N              
+ADC_OEB_A                    : AD17      : output : 2.5 V             :         : 4A        : N              
 VCCPD3B4A                    : AD18      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD19      :        :                   :         : 4A        :                
-HPS_DDR3_DQ[9]               : AD20      : bidir  : 2.5 V             :         : 4A        : N              
+ADC_DA[4]                    : AD20      : input  : 2.5 V             :         : 4A        : N              
 VCCPD3B4A                    : AD21      : power  :                   : 2.5V    : 3B, 4A    :                
 GND                          : AD22      : gnd    :                   :         :           :                
-HPS_DDR3_DM[1]               : AD23      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD23      :        :                   :         : 4A        :                
 VCCPGM                       : AD24      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 GND                          : AD25      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD26      :        :                   :         : 5A        :                
+HPS_DDR3_DM[3]               : AD26      : output : 2.5 V             :         : 5A        : N              
 VCCIO6B_HPS                  : AD27      : power  :                   : 1.5V    : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD28      :        :                   :         : 6B        :                
 GND                          : AE1       : gnd    :                   :         :           :                
 GND                          : AE2       : gnd    :                   :         :           :                
 GND                          : AE3       : gnd    :                   :         :           :                
-ADC_CLK_A                    : AE4       : output : 2.5 V             :         : 3B        : N              
+HPS_DDR3_DQ[17]              : AE4       : bidir  : 2.5 V             :         : 3B        : N              
 VREFB3AN0                    : AE5       : power  :                   :         : 3A        :                
-HPS_DDR3_ADDR[14]            : AE6       : output : 2.5 V             :         : 3A        : N              
-HPS_DDR3_DQ[24]              : AE7       : bidir  : 2.5 V             :         : 3B        : N              
-DAC_DB[2]                    : AE8       : output : 2.5 V             :         : 3B        : N              
-ADC_DA[1]                    : AE9       : input  : 2.5 V             :         : 3B        : N              
+ADC_DA[13]                   : AE6       : input  : 2.5 V             :         : 3A        : N              
+DAC_WRT_A                    : AE7       : output : 2.5 V             :         : 3B        : N              
+HPS_DDR3_ADDR[13]            : AE8       : output : 2.5 V             :         : 3B        : N              
+HPS_DDR3_DQS_P[3]            : AE9       : bidir  : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AE10      : power  :                   : 2.5V    : 3B        :                
-HPS_DDR3_DQS_N[3]            : AE11      : bidir  : 2.5 V             :         : 3B        : N              
-DAC_DB[4]                    : AE12      : output : 2.5 V             :         : 3B        : N              
+DAC_DA[9]                    : AE11      : output : 2.5 V             :         : 3B        : N              
+DAC_DA[13]                   : AE12      : output : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AE13      : power  :                   : 2.5V    : 3B        :                
 DNU                          : AE14      :        :                   :         :           :                
-DAC_DB[1]                    : AE15      : output : 2.5 V             :         : 4A        : N              
+DAC_DA[2]                    : AE15      : output : 2.5 V             :         : 4A        : N              
 GND                          : AE16      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE17      :        :                   :         : 4A        :                
+ADC_DA[12]                   : AE17      : input  : 2.5 V             :         : 4A        : N              
 GND                          : AE18      : gnd    :                   :         :           :                
-DAC_MODE                     : AE19      : output : 2.5 V             :         : 4A        : N              
-DAC_DB[12]                   : AE20      : output : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[12]              : AE19      : bidir  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[25]              : AE20      : bidir  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AE21      : power  :                   : 2.5V    : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE22      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 4A        :                
-HPS_DDR3_DQ[21]              : AE24      : bidir  : 2.5 V             :         : 4A        : N              
-ADC_DA[3]                    : AE25      : input  : 2.5 V             :         : 5A        : N              
-HPS_DDR3_DQ[29]              : AE26      : bidir  : 2.5 V             :         : 5A        : N              
+HPS_DDR3_DQS_N[3]            : AE22      : bidir  : 2.5 V             :         : 4A        : N              
+ADC_DA[11]                   : AE23      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 4A        :                
+HPS_DDR3_DQ[27]              : AE25      : bidir  : 2.5 V             :         : 5A        : N              
+HPS_DDR3_DQ[28]              : AE26      : bidir  : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE27      :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE28      :        :                   :         : 6B        :                
 GND                          : AF1       : gnd    :                   :         :           :                
 GND                          : AF2       : gnd    :                   :         :           :                
 GND                          : AF3       : gnd    :                   :         :           :                
-ADC_DB[8]                    : AF4       : input  : 2.5 V             :         : 3B        : N              
-ADC_DB[4]                    : AF5       : input  : 2.5 V             :         : 3B        : N              
-DAC_DA[6]                    : AF6       : output : 2.5 V             :         : 3B        : N              
-DAC_DB[10]                   : AF7       : output : 2.5 V             :         : 3B        : N              
-ADC_DB[10]                   : AF8       : input  : 2.5 V             :         : 3B        : N              
-ADC_DA[0]                    : AF9       : input  : 2.5 V             :         : 3B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF10      :        :                   :         : 3B        :                
-DAC_DB[6]                    : AF11      : output : 2.5 V             :         : 3B        : N              
+ADC_DB[11]                   : AF4       : input  : 2.5 V             :         : 3B        : N              
+ADC_DA[5]                    : AF5       : input  : 2.5 V             :         : 3B        : N              
+ADC_DB[1]                    : AF6       : input  : 2.5 V             :         : 3B        : N              
+ADC_DA[3]                    : AF7       : input  : 2.5 V             :         : 3B        : N              
+HPS_DDR3_DQ[31]              : AF8       : bidir  : 2.5 V             :         : 3B        : N              
+ADC_DB[4]                    : AF9       : input  : 2.5 V             :         : 3B        : N              
+ADC_DA[10]                   : AF10      : input  : 2.5 V             :         : 3B        : N              
+DAC_DB[9]                    : AF11      : output : 2.5 V             :         : 3B        : N              
 VREFB3BN0                    : AF12      : power  :                   :         : 3B        :                
-DAC_DA[7]                    : AF13      : output : 2.5 V             :         : 4A        : N              
+DAC_DA[8]                    : AF13      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AF14      : power  :                   : 2.5V    : 4A        :                
-DAC_DB[8]                    : AF15      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF15      :        :                   :         : 4A        :                
 VREFB4AN0                    : AF16      : power  :                   :         : 4A        :                
-SMA_DAC4                     : AF17      : output : 2.5 V             :         : 4A        : N              
-ADC_CLK_B                    : AF18      : output : 2.5 V             :         : 4A        : N              
+ADC_DB[0]                    : AF17      : input  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[15]              : AF18      : bidir  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AF19      : power  :                   : 2.5V    : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 4A        :                
-HPS_DDR3_DQS_N[2]            : AF21      : bidir  : 2.5 V             :         : 4A        : N              
-HPS_DDR3_DQ[12]              : AF22      : bidir  : 2.5 V             :         : 4A        : N              
+ADC_DB[9]                    : AF20      : input  : 2.5 V             :         : 4A        : N              
+ADC_CLK_A                    : AF21      : output : 2.5 V             :         : 4A        : N              
+SMA_DAC4                     : AF22      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF23      :        :                   :         : 4A        :                
 GND                          : AF24      : gnd    :                   :         :           :                
-HPS_DDR3_DQS_P[1]            : AF25      : bidir  : 2.5 V             :         : 4A        : N              
-HPS_DDR3_DQS_N[1]            : AF26      : bidir  : 2.5 V             :         : 5A        : N              
-ADC_DA[11]                   : AF27      : input  : 2.5 V             :         : 4A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF28      :        :                   :         : 4A        :                
+OSC_SMA_ADC4                 : AF25      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF26      :        :                   :         : 5A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF27      :        :                   :         : 4A        :                
+HPS_DDR3_DQ[22]              : AF28      : bidir  : 2.5 V             :         : 4A        : N              
 GND                          : AG1       : gnd    :                   :         :           :                
 GND                          : AG2       : gnd    :                   :         :           :                
 GND                          : AG3       : gnd    :                   :         :           :                
 VCCIO3B                      : AG4       : power  :                   : 2.5V    : 3B        :                
-DAC_DA[10]                   : AG5       : output : 2.5 V             :         : 3B        : N              
-DAC_DA[9]                    : AG6       : output : 2.5 V             :         : 3B        : N              
+DAC_DB[3]                    : AG5       : output : 2.5 V             :         : 3B        : N              
+DAC_DA[12]                   : AG6       : output : 2.5 V             :         : 3B        : N              
 GND                          : AG7       : gnd    :                   :         :           :                
-DAC_DB[0]                    : AG8       : output : 2.5 V             :         : 4A        : N              
-ADC_DA[2]                    : AG9       : input  : 2.5 V             :         : 4A        : N              
-DAC_DB[11]                   : AG10      : output : 2.5 V             :         : 4A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG11      :        :                   :         : 4A        :                
+DAC_DB[8]                    : AG8       : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG9       :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG10      :        :                   :         : 4A        :                
+ADC_DA[2]                    : AG11      : input  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AG12      : power  :                   : 2.5V    : 4A        :                
-DAC_DA[8]                    : AG13      : output : 2.5 V             :         : 4A        : N              
-ADC_DB[13]                   : AG14      : input  : 2.5 V             :         : 4A        : N              
-HPS_DDR3_DQ[30]              : AG15      : bidir  : 2.5 V             :         : 4A        : N              
-DAC_DA[11]                   : AG16      : output : 2.5 V             :         : 4A        : N              
+DAC_DB[11]                   : AG13      : output : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[23]              : AG14      : bidir  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG15      :        :                   :         : 4A        :                
+DAC_MODE                     : AG16      : output : 2.5 V             :         : 4A        : N              
 GND                          : AG17      : gnd    :                   :         :           :                
-HPS_DDR3_DQ[13]              : AG18      : bidir  : 2.5 V             :         : 4A        : N              
-HPS_DDR3_DQ[16]              : AG19      : bidir  : 2.5 V             :         : 4A        : N              
-ADC_DA[13]                   : AG20      : input  : 2.5 V             :         : 4A        : N              
-ADC_DA[6]                    : AG21      : input  : 2.5 V             :         : 4A        : N              
+ADC_DB[10]                   : AG18      : input  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[8]               : AG19      : bidir  : 2.5 V             :         : 4A        : N              
+ADC_DA[9]                    : AG20      : input  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[13]              : AG21      : bidir  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AG22      : power  :                   : 2.5V    : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG23      :        :                   :         : 4A        :                
-HPS_DDR3_DQ[22]              : AG24      : bidir  : 2.5 V             :         : 4A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG25      :        :                   :         : 4A        :                
-ADC_OEB_A                    : AG26      : output : 2.5 V             :         : 4A        : N              
+DAC_DB[6]                    : AG23      : output : 2.5 V             :         : 4A        : N              
+ADC_CLK_B                    : AG24      : output : 2.5 V             :         : 4A        : N              
+DAC_WRT_B                    : AG25      : output : 2.5 V             :         : 4A        : N              
+ADC_DB[13]                   : AG26      : input  : 2.5 V             :         : 4A        : N              
 GND                          : AG27      : gnd    :                   :         :           :                
-ADC_DA[8]                    : AG28      : input  : 2.5 V             :         : 4A        : N              
-ADC_DB[3]                    : AH2       : input  : 2.5 V             :         : 3B        : N              
-DAC_DA[2]                    : AH3       : output : 2.5 V             :         : 3B        : N              
-ADC_DB[12]                   : AH4       : input  : 2.5 V             :         : 3B        : N              
-DAC_DB[5]                    : AH5       : output : 2.5 V             :         : 3B        : N              
-DAC_DB[9]                    : AH6       : output : 2.5 V             :         : 3B        : N              
-DAC_DB[7]                    : AH7       : output : 2.5 V             :         : 4A        : N              
-ADC_DB[1]                    : AH8       : input  : 2.5 V             :         : 4A        : N              
-DAC_DB[3]                    : AH9       : output : 2.5 V             :         : 4A        : N              
+ADC_DA[0]                    : AG28      : input  : 2.5 V             :         : 4A        : N              
+DAC_DA[5]                    : AH2       : output : 2.5 V             :         : 3B        : N              
+DAC_DB[10]                   : AH3       : output : 2.5 V             :         : 3B        : N              
+DAC_DB[13]                   : AH4       : output : 2.5 V             :         : 3B        : N              
+DAC_DA[4]                    : AH5       : output : 2.5 V             :         : 3B        : N              
+DAC_DA[0]                    : AH6       : output : 2.5 V             :         : 3B        : N              
+DAC_DA[1]                    : AH7       : output : 2.5 V             :         : 4A        : N              
+DAC_DB[1]                    : AH8       : output : 2.5 V             :         : 4A        : N              
+DAC_DB[12]                   : AH9       : output : 2.5 V             :         : 4A        : N              
 GND                          : AH10      : gnd    :                   :         :           :                
-HPS_DDR3_DQ[14]              : AH11      : bidir  : 2.5 V             :         : 4A        : N              
-DAC_DB[13]                   : AH12      : output : 2.5 V             :         : 4A        : N              
-ADC_OTR_A                    : AH13      : input  : 2.5 V             :         : 4A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH14      :        :                   :         : 4A        :                
+DAC_DA[11]                   : AH11      : output : 2.5 V             :         : 4A        : N              
+DAC_DB[2]                    : AH12      : output : 2.5 V             :         : 4A        : N              
+ADC_DB[7]                    : AH13      : input  : 2.5 V             :         : 4A        : N              
+DAC_CLK_B                    : AH14      : output : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AH15      : power  :                   : 2.5V    : 4A        :                
 KEY[1]                       : AH16      : input  : 2.5 V             :         : 4A        : Y              
 KEY[0]                       : AH17      : input  : 2.5 V             :         : 4A        : Y              
-ADC_DA[9]                    : AH18      : input  : 2.5 V             :         : 4A        : N              
-ADC_DA[10]                   : AH19      : input  : 2.5 V             :         : 4A        : N              
+ADC_OTR_B                    : AH18      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH19      :        :                   :         : 4A        :                
 GND                          : AH20      : gnd    :                   :         :           :                
-ADC_DA[4]                    : AH21      : input  : 2.5 V             :         : 4A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4A        :                
-HPS_DDR3_DM[2]               : AH23      : output : 2.5 V             :         : 4A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH24      :        :                   :         : 4A        :                
+ADC_DA[1]                    : AH21      : input  : 2.5 V             :         : 4A        : N              
+DAC_DA[6]                    : AH22      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4A        :                
+ADC_OTR_A                    : AH24      : input  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AH25      : power  :                   : 2.5V    : 4A        :                
-HPS_DDR3_DQ[27]              : AH26      : bidir  : 2.5 V             :         : 4A        : N              
-DAC_WRT_B                    : AH27      : output : 2.5 V             :         : 4A        : N              
+DAC_CLK_A                    : AH26      : output : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[14]              : AH27      : bidir  : 2.5 V             :         : 4A        : N              
 RREF                         : B1        :        :                   :         :           :                
 DNU                          : B2        :        :                   :         :           :                
 GND                          : B3        : gnd    :                   :         :           :                
@@ -335,7 +335,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C10       :        :                   :         : 7D        :                
 GND                          : C11       : gnd    :                   :         :           :                
-HPS_DDR3_DM[3]               : C12       : output : 2.5 V             :         : 8A        : N              
+ADC_DB[5]                    : C12       : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C13       :        :                   :         : 7C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C14       :        :                   :         : 7B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 7B        :                
@@ -359,11 +359,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : D5        :        :                   :         : 7D        :                
 VCCIO7D_HPS                  : D6        : power  :                   : 2.5V    : 7D        :                
 VCCBAT                       : D7        : power  :                   : 1.2V    :           :                
-ADC_DB[9]                    : D8        : input  : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[30]              : D8        : bidir  : 2.5 V             :         : 8A        : N              
 VREFB8AN0                    : D9        : power  :                   :         : 8A        :                
 GND                          : D10       : gnd    :                   :         :           :                
-ADC_DB[5]                    : D11       : input  : 2.5 V             :         : 8A        : N              
-ADC_DB[7]                    : D12       : input  : 2.5 V             :         : 8A        : N              
+POWER_ON                     : D11       : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 8A        :                
 GND                          : D13       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 7C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 7B        :                
@@ -387,10 +387,10 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : E5        :        :                   :         : 7D        :                
 nCE                          : E6        :        :                   :         : 9A        :                
 VCCIO8A                      : E7        : power  :                   : 2.5V    : 8A        :                
-ADC_DB[6]                    : E8        : input  : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[11]              : E8        : bidir  : 2.5 V             :         : 8A        : N              
 GND                          : E9        : gnd    :                   :         :           :                
 VCCPD8A                      : E10       : power  :                   : 2.5V    : 8A        :                
-ADC_DA[5]                    : E11       : input  : 2.5 V             :         : 8A        : N              
+ADC_DA[6]                    : E11       : input  : 2.5 V             :         : 8A        : N              
 DNU                          : E12       :        :                   :         :           :                
 VCCPD7D_HPS                  : E13       : power  :                   : 2.5V    : 7D        :                
 VCCPD7C_HPS                  : E14       : power  :                   : 2.5V    : 7C        :                
@@ -635,12 +635,12 @@ DNU                          : T2        :        :                   :         
 GND                          : T3        : gnd    :                   :         :           :                
 VCC                          : T4        : power  :                   : 1.1V    :           :                
 VCC                          : T5        : power  :                   : 1.1V    :           :                
-HPS_DDR3_DQS_P[3]            : T8        : bidir  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T8        :        :                   :         : 3A        :                
 VCC                          : T9        : power  :                   : 1.1V    :           :                
 GND                          : T10       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :         : 3B        :                
-ADC_DB[11]                   : T12       : input  : 2.5 V             :         : 3B        : N              
-HPS_DDR3_ADDR[13]            : T13       : output : 2.5 V             :         : 3B        : N              
+HPS_DDR3_DQ[18]              : T11       : bidir  : 2.5 V             :         : 3B        : N              
+DAC_DA[10]                   : T12       : output : 2.5 V             :         : 3B        : N              
+DAC_DB[5]                    : T13       : output : 2.5 V             :         : 3B        : N              
 GND                          : T14       : gnd    :                   :         :           :                
 VCC                          : T15       : power  :                   : 1.1V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T16       :        :                   :         : 6B        :                
@@ -664,8 +664,8 @@ adc_cs_n                     : U9        : output : 2.5 V             :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U11       :        :                   :         : 3B        :                
 GND                          : U12       : gnd    :                   :         :           :                
-DAC_DA[1]                    : U13       : output : 2.5 V             :         : 4A        : N              
-HPS_DDR3_DQ[11]              : U14       : bidir  : 2.5 V             :         : 4A        : N              
+DAC_DB[7]                    : U13       : output : 2.5 V             :         : 4A        : N              
+DAC_DA[7]                    : U14       : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U15       :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U16       :        :                   :         : 6B        :                
 GND                          : U17       : gnd    :                   :         :           :                
@@ -687,8 +687,8 @@ GND                          : V8        : gnd    :                   :         
 GND                          : V9        : gnd    :                   :         :           :                
 adc_sclk                     : V10       : output : 2.5 V             :         : 3A        : Y              
 clk                          : V11       : input  : 2.5 V             :         : 3B        : Y              
-DAC_DA[0]                    : V12       : output : 2.5 V             :         : 3B        : N              
-HPS_DDR3_DQ[19]              : V13       : bidir  : 2.5 V             :         : 4A        : N              
+DAC_DB[4]                    : V12       : output : 2.5 V             :         : 3B        : N              
+ADC_DA[8]                    : V13       : input  : 2.5 V             :         : 4A        : N              
 GND                          : V14       : gnd    :                   :         :           :                
 LED[3]                       : V15       : output : 2.5 V             :         : 5A        : Y              
 LED[2]                       : V16       : output : 2.5 V             :         : 5A        : Y              
@@ -707,13 +707,13 @@ GND                          : W2        : gnd    :                   :         
 GND                          : W3        : gnd    :                   :         :           :                
 GND                          : W4        : gnd    :                   :         :           :                
 VCCA_FPLL                    : W5        : power  :                   : 2.5V    :           :                
-DAC_CLK_B                    : W8        : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W8        :        :                   :         : 3A        :                
 VCCIO3A                      : W9        : power  :                   : 2.5V    : 3A        :                
 altera_reserved_tdi          : W10       : input  : 2.5 V             :         : 3A        : N              
-ADC_DB[2]                    : W11       : input  : 2.5 V             :         : 3B        : N              
-DAC_DA[5]                    : W12       : output : 2.5 V             :         : 3B        : N              
+HPS_DDR3_DQS_P[2]            : W11       : bidir  : 2.5 V             :         : 3B        : N              
+DAC_DB[0]                    : W12       : output : 2.5 V             :         : 3B        : N              
 VCCIO4A                      : W13       : power  :                   : 2.5V    : 4A        :                
-DAC_DA[12]                   : W14       : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W14       :        :                   :         : 4A        :                
 LED[0]                       : W15       : output : 2.5 V             :         : 5A        : Y              
 GND                          : W16       : gnd    :                   :         :           :                
 VCCIO5A                      : W17       : power  :                   : 2.5V    : 5A        :                
@@ -729,20 +729,20 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : W28       :        :                   :      
 DNU                          : Y1        :        :                   :         :           :                
 DNU                          : Y2        :        :                   :         :           :                
 GND                          : Y3        : gnd    :                   :         :           :                
-ADC_DA[7]                    : Y4        : input  : 2.5 V             :         : 3A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y5        :        :                   :         : 3A        :                
-DAC_WRT_A                    : Y8        : output : 2.5 V             :         : 3A        : N              
+ADC_DB[8]                    : Y4        : input  : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[16]              : Y5        : bidir  : 2.5 V             :         : 3A        : N              
+ADC_DA[7]                    : Y8        : input  : 2.5 V             :         : 3A        : N              
 altera_reserved_tdo          : Y9        : output : 2.5 V             :         : 3A        : N              
 VCCPGM                       : Y10       : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y11       :        :                   :         : 3A        :                
+ADC_OEB_B                    : Y11       : output : 2.5 V             :         : 3A        : N              
 GND                          : Y12       : gnd    :                   :         :           :                
-HPS_DDR3_DQ[31]              : Y13       : bidir  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[24]              : Y13       : bidir  : 2.5 V             :         : 4A        : N              
 GND                          : Y14       : gnd    :                   :         :           :                
-DAC_DA[13]                   : Y15       : output : 2.5 V             :         : 4A        : N              
-ADC_DA[12]                   : Y16       : input  : 2.5 V             :         : 5A        : N              
-ADC_OTR_B                    : Y17       : input  : 2.5 V             :         : 5A        : N              
-HPS_DDR3_DQ[25]              : Y18       : bidir  : 2.5 V             :         : 5A        : N              
-HPS_DDR3_DQ[17]              : Y19       : bidir  : 2.5 V             :         : 5A        : N              
+HPS_DDR3_DQS_N[2]            : Y15       : bidir  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[29]              : Y16       : bidir  : 2.5 V             :         : 5A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 5A        :                
+HPS_DDR3_DQS_N[1]            : Y18       : bidir  : 2.5 V             :         : 5A        : N              
+HPS_DDR3_DQ[20]              : Y19       : bidir  : 2.5 V             :         : 5A        : N              
 GND                          : Y20       : gnd    :                   :         :           :                
 VCCPD5A                      : Y21       : power  :                   : 2.5V    : 5A        :                
 SW[0]                        : Y24       : input  : 2.5 V             :         : 5B        : Y              

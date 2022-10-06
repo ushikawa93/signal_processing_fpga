@@ -23,6 +23,7 @@
 			fifo1_64_bit_up_in_valid            : in    std_logic                     := 'X';             -- valid
 			fifo1_64_bit_up_in_data             : in    std_logic_vector(31 downto 0) := (others => 'X'); -- data
 			fifo1_64_bit_up_in_ready            : out   std_logic;                                        -- ready
+			finalizacion_export                 : in    std_logic                     := 'X';             -- export
 			memory_mem_a                        : out   std_logic_vector(12 downto 0);                    -- mem_a
 			memory_mem_ba                       : out   std_logic_vector(2 downto 0);                     -- mem_ba
 			memory_mem_ck                       : out   std_logic;                                        -- mem_ck
@@ -92,6 +93,7 @@
 			fifo1_64_bit_up_in_valid            => CONNECTED_TO_fifo1_64_bit_up_in_valid,            --        fifo1_64_bit_up_in.valid
 			fifo1_64_bit_up_in_data             => CONNECTED_TO_fifo1_64_bit_up_in_data,             --                          .data
 			fifo1_64_bit_up_in_ready            => CONNECTED_TO_fifo1_64_bit_up_in_ready,            --                          .ready
+			finalizacion_export                 => CONNECTED_TO_finalizacion_export,                 --              finalizacion.export
 			memory_mem_a                        => CONNECTED_TO_memory_mem_a,                        --                    memory.mem_a
 			memory_mem_ba                       => CONNECTED_TO_memory_mem_ba,                       --                          .mem_ba
 			memory_mem_ck                       => CONNECTED_TO_memory_mem_ck,                       --                          .mem_ck

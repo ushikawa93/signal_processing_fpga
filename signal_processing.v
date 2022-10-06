@@ -8,8 +8,14 @@ module signal_processing(
 	input [63:0] data_in,
 	input 		 data_in_valid,
 	
-	output [63:0] data_out,
-	output		  data_out_valid,
+	output [63:0] data_out1,
+	output		  data_out1_valid,
+	
+	output [63:0] data_out2,
+	output		  data_out2_valid,
+	
+	output ready_to_calculate,
+	output processing_finished,
 	
 	input [31:0] parameter_in_0,
 	input [31:0] parameter_in_1,
@@ -64,10 +70,34 @@ end
 // ================ Procesamiento ===============
 //////////////////////////////////////////////////
 
-wire ready,fifo_lleno;
 
-/*
-filtro_promedio_movil process(
+reference_mixer mezclador(
+
+	// Entradas de control
+	.clock(clk),
+	.reset_n(reset_n),
+	.enable(enable_gral),
+	
+	// Parametros de configuracion
+	.ptos_x_ciclo(parameter_0_reg),
+	
+	// Entrada avalon streaming
+	.data(data_in),	
+	.data_valid(data_in_valid),	
+		
+	// Salidas avalon streaming 
+	.data_out_seno(data_sen_mixer),
+	.data_out_coseno(data_cos_mixer),
+	.data_valid_multiplicacion(data_out_mixer_valid)	
+
+);
+
+
+wire data_out_mixer_valid;
+wire signed [63:0] data_sen_mixer;
+wire signed [63:0] data_cos_mixer;
+
+ filtro_promedio_movil filtro_fase(
 
 	// Entradas de control
 	.clock(clk),
@@ -79,38 +109,58 @@ filtro_promedio_movil process(
 	.frames_integracion(parameter_1_reg),
 	
 	// Entrada avalon streaming 
-	.data_valid(data_in_valid),
-	.data(data_in),	
+	.data_valid(data_out_mixer_valid),
+	.data(data_sen_mixer),	
 		
 	// Salida avalon streaming
-	.data_out(data_out),
-	.data_out_valid(data_out_valid),
+	.data_out(data_out1),
+	.data_out_valid(data_out1_valid),
+	
+	// Salida auxiliar
+	.fifo_lleno(finished_fase),
+	.ready_to_calculate(ready_cuadratura)
 
-	// Salidas auxiliares
-	.ready(ready),
-	.fifo_lleno(fifo_lleno)
+);
 
-);*/
+filtro_promedio_movil filtro_cuadratura(
 
-
-
-remove_mean_value_pipelined process(
+	// Entradas de control
 	.clock(clk),
 	.reset_n(reset_n),
+	.enable(enable_gral),
+	
+	// Parametros de configuracion
+	.ptos_x_ciclo(parameter_0_reg),
+	.frames_integracion(parameter_1_reg),
+	
+	// Entrada avalon streaming 
+	.data_valid(data_out_mixer_valid),
+	.data(data_cos_mixer),	
+		
+	// Salida avalon streaming
+	.data_out(data_out2),
+	.data_out_valid(data_out2_valid),
+	
+	// Salida auxiliar
+	.fifo_lleno(finished_cuadratura),
+	.ready_to_calculate(ready_fase)
 
-	.data_in(data_in),
-	.data_in_valid(data_in_valid),
-
-	.data_out(data_out),
-	.data_out_valid(data_out_valid)
 );
+
+
 
 //////////////////////////////////////////////////
 // ================ Salidas auxiliares ===============
 //////////////////////////////////////////////////
 
-assign parameter_out_0 = ready;
-assign parameter_out_1 = fifo_lleno;
+wire ready_fase,ready_cuadratura;
+wire finished_fase,finished_cuadratura;
+
+assign ready_to_calculate = (ready_fase && ready_cuadratura);
+assign processing_finished = (finished_fase && finished_cuadratura);
+
+assign parameter_out_0 = 0;
+assign parameter_out_1 = 0;
 assign parameter_out_2 = 0;
 assign parameter_out_3 = 0;
 assign parameter_out_4 = 0;

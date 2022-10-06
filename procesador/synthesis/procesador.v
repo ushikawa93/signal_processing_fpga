@@ -27,6 +27,7 @@ module procesador (
 		input  wire        fifo1_64_bit_up_in_valid,            //        fifo1_64_bit_up_in.valid
 		input  wire [31:0] fifo1_64_bit_up_in_data,             //                          .data
 		output wire        fifo1_64_bit_up_in_ready,            //                          .ready
+		input  wire        finalizacion_export,                 //              finalizacion.export
 		output wire [12:0] memory_mem_a,                        //                    memory.mem_a
 		output wire [2:0]  memory_mem_ba,                       //                          .mem_ba
 		output wire        memory_mem_ck,                       //                          .mem_ck
@@ -75,7 +76,7 @@ module procesador (
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                                // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                             // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                             // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
-	wire  [18:0] nios2_gen2_0_data_master_address;                                 // nios2_gen2_0:d_address -> mm_interconnect_0:nios2_gen2_0_data_master_address
+	wire  [19:0] nios2_gen2_0_data_master_address;                                 // nios2_gen2_0:d_address -> mm_interconnect_0:nios2_gen2_0_data_master_address
 	wire   [3:0] nios2_gen2_0_data_master_byteenable;                              // nios2_gen2_0:d_byteenable -> mm_interconnect_0:nios2_gen2_0_data_master_byteenable
 	wire         nios2_gen2_0_data_master_read;                                    // nios2_gen2_0:d_read -> mm_interconnect_0:nios2_gen2_0_data_master_read
 	wire         nios2_gen2_0_data_master_write;                                   // nios2_gen2_0:d_write -> mm_interconnect_0:nios2_gen2_0_data_master_write
@@ -118,7 +119,7 @@ module procesador (
 	wire         hps_0_h2f_lw_axi_master_rvalid;                                   // mm_interconnect_0:hps_0_h2f_lw_axi_master_rvalid -> hps_0:h2f_lw_RVALID
 	wire  [31:0] nios2_gen2_0_instruction_master_readdata;                         // mm_interconnect_0:nios2_gen2_0_instruction_master_readdata -> nios2_gen2_0:i_readdata
 	wire         nios2_gen2_0_instruction_master_waitrequest;                      // mm_interconnect_0:nios2_gen2_0_instruction_master_waitrequest -> nios2_gen2_0:i_waitrequest
-	wire  [18:0] nios2_gen2_0_instruction_master_address;                          // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
+	wire  [19:0] nios2_gen2_0_instruction_master_address;                          // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
 	wire         nios2_gen2_0_instruction_master_read;                             // nios2_gen2_0:i_read -> mm_interconnect_0:nios2_gen2_0_instruction_master_read
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect;       // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_chipselect -> jtag_uart_0:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata;         // jtag_uart_0:av_readdata -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_readdata
@@ -205,9 +206,11 @@ module procesador (
 	wire   [1:0] mm_interconnect_0_divisor_clock_s1_address;                       // mm_interconnect_0:divisor_clock_s1_address -> divisor_clock:address
 	wire         mm_interconnect_0_divisor_clock_s1_write;                         // mm_interconnect_0:divisor_clock_s1_write -> divisor_clock:write_n
 	wire  [31:0] mm_interconnect_0_divisor_clock_s1_writedata;                     // mm_interconnect_0:divisor_clock_s1_writedata -> divisor_clock:writedata
+	wire  [31:0] mm_interconnect_0_finalizacion_s1_readdata;                       // finalizacion:readdata -> mm_interconnect_0:finalizacion_s1_readdata
+	wire   [1:0] mm_interconnect_0_finalizacion_s1_address;                        // mm_interconnect_0:finalizacion_s1_address -> finalizacion:address
 	wire         irq_mapper_receiver0_irq;                                         // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                             // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                                   // rst_controller:reset_out -> [divisor_clock:reset_n, enable:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:jtag_uart_0_reset_reset_bridge_in_reset_reset, parameters:reset, pll_reconfigurar:mgmt_reset, program_memory:reset, result0_32_bit:reset_n, result0_64_bit_down:reset_n, result0_64_bit_up:reset_n, result1_32_bit:reset_n, result1_64_bit_down:reset_n, result1_64_bit_up:reset_n, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                                   // rst_controller:reset_out -> [divisor_clock:reset_n, enable:reset_n, finalizacion:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:jtag_uart_0_reset_reset_bridge_in_reset_reset, parameters:reset, pll_reconfigurar:mgmt_reset, program_memory:reset, result0_32_bit:reset_n, result0_64_bit_down:reset_n, result0_64_bit_up:reset_n, result1_32_bit:reset_n, result1_64_bit_down:reset_n, result1_64_bit_up:reset_n, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                               // rst_controller:reset_req -> [program_memory:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                               // rst_controller_001:reset_out -> [fifo0_32_bit:reset_n, fifo0_64_bit_down:reset_n, fifo0_64_bit_up:reset_n, fifo1_32_bit:reset_n, fifo1_64_bit_down:reset_n, fifo1_64_bit_up:reset_n, mm_interconnect_0:fifo0_64_bit_up_reset_in_reset_bridge_in_reset_reset]
 	wire         rst_controller_002_reset_out_reset;                               // rst_controller_002:reset_out -> [irq_mapper:reset, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n]
@@ -309,6 +312,14 @@ module procesador (
 		.avalonmm_read_slave_read        (mm_interconnect_0_fifo1_64_bit_up_out_read),        //         .read
 		.avalonmm_read_slave_address     (mm_interconnect_0_fifo1_64_bit_up_out_address),     //         .address
 		.avalonmm_read_slave_waitrequest (mm_interconnect_0_fifo1_64_bit_up_out_waitrequest)  //         .waitrequest
+	);
+
+	procesador_finalizacion finalizacion (
+		.clk      (clk_clk),                                    //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address  (mm_interconnect_0_finalizacion_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_finalizacion_s1_readdata), //                    .readdata
+		.in_port  (finalizacion_export)                         // external_connection.export
 	);
 
 	procesador_hps_0 #(
@@ -676,6 +687,8 @@ module procesador (
 		.fifo1_64_bit_up_out_read                                            (mm_interconnect_0_fifo1_64_bit_up_out_read),                       //                                                              .read
 		.fifo1_64_bit_up_out_readdata                                        (mm_interconnect_0_fifo1_64_bit_up_out_readdata),                   //                                                              .readdata
 		.fifo1_64_bit_up_out_waitrequest                                     (mm_interconnect_0_fifo1_64_bit_up_out_waitrequest),                //                                                              .waitrequest
+		.finalizacion_s1_address                                             (mm_interconnect_0_finalizacion_s1_address),                        //                                               finalizacion_s1.address
+		.finalizacion_s1_readdata                                            (mm_interconnect_0_finalizacion_s1_readdata),                       //                                                              .readdata
 		.jtag_uart_0_avalon_jtag_slave_address                               (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_address),          //                                 jtag_uart_0_avalon_jtag_slave.address
 		.jtag_uart_0_avalon_jtag_slave_write                                 (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write),            //                                                              .write
 		.jtag_uart_0_avalon_jtag_slave_read                                  (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read),             //                                                              .read

@@ -23,6 +23,7 @@ module procesador (
 	fifo1_64_bit_up_in_valid,
 	fifo1_64_bit_up_in_data,
 	fifo1_64_bit_up_in_ready,
+	finalizacion_export,
 	memory_mem_a,
 	memory_mem_ba,
 	memory_mem_ck,
@@ -88,6 +89,7 @@ module procesador (
 	input		fifo1_64_bit_up_in_valid;
 	input	[31:0]	fifo1_64_bit_up_in_data;
 	output		fifo1_64_bit_up_in_ready;
+	input		finalizacion_export;
 	output	[12:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
 	output		memory_mem_ck;

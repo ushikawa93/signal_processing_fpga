@@ -19,6 +19,29 @@ int* leer_fifo_32_bit(int* fifo_addr)
 	return resultados;
 }
 
-int leer_resultado(int* pio_addr){
+long long* leer_fifo_64_bit(unsigned int* fifo_down_addr,unsigned int* fifo_up_addr)
+{
+	long long unsigned res_low,res_up;
+
+	static long long resultados [2048] ;
+	for(int i=0;i<2048;i++)
+	{
+		res_low = *(fifo_down_addr);
+		res_up = *(fifo_up_addr);
+		resultados[i] = (res_up << 32) | res_low;
+	}
+	return resultados;
+}
+
+
+int leer_resultado_32_bit(int* pio_addr){
 	return *pio_addr;
+}
+
+long long leer_resultado_64_bit(unsigned int* pio_down_addr,unsigned int* pio_up_addr){
+	long long unsigned res_low,res_up;
+	res_low = *(pio_down_addr);
+	res_up = *(pio_up_addr);
+	return (res_up << 32) | res_low;
+
 }

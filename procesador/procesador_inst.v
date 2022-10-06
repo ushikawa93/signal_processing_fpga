@@ -22,6 +22,7 @@
 		.fifo1_64_bit_up_in_valid            (<connected-to-fifo1_64_bit_up_in_valid>),            //        fifo1_64_bit_up_in.valid
 		.fifo1_64_bit_up_in_data             (<connected-to-fifo1_64_bit_up_in_data>),             //                          .data
 		.fifo1_64_bit_up_in_ready            (<connected-to-fifo1_64_bit_up_in_ready>),            //                          .ready
+		.finalizacion_export                 (<connected-to-finalizacion_export>),                 //              finalizacion.export
 		.memory_mem_a                        (<connected-to-memory_mem_a>),                        //                    memory.mem_a
 		.memory_mem_ba                       (<connected-to-memory_mem_ba>),                       //                          .mem_ba
 		.memory_mem_ck                       (<connected-to-memory_mem_ck>),                       //                          .mem_ck

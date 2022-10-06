@@ -9,6 +9,7 @@ module control (
 	output enable,
 	output clk_custom,
 	output reset_from_control,
+	input  calculo_finalizado,
 	
 	// Resultados de procesamiento de 64 bits
 	input [63:0] result_0_64_bit,
@@ -81,7 +82,8 @@ procesador nios2 (
         
 		  .enable_export                       (enable),                       //                    enable.export
         .divisor_clock_export                (divisor_clk),                 //             divisor_clock.export
-		  
+		  .finalizacion_export                 (calculo_finalizado),                  //              finalizacion.export
+	  
 		  .reset_reset_n                       (reset_n),                       //                     reset.reset_n
         .reset_fifos_reset                   (reset_from_control_reg),                   //               reset_fifos.reset
         .reset_op_export                     (reset_from_control_reg),                     //                  reset_op.export
@@ -94,7 +96,7 @@ procesador nios2 (
 		  .fifo1_64_bit_down_in_valid          (result_1_64_bit_valid),          //      fifo1_64_bit_down_in.valid
         .fifo1_64_bit_down_in_data           (result_1_64_bit[31:0]),           //                          .data
         .fifo1_64_bit_up_in_valid            (result_1_64_bit_valid),            //        fifo1_64_bit_up_in.valid
-        .fifo1_64_bit_up_in_data             (result_1_64_bit[32:0]),             //                          .data
+        .fifo1_64_bit_up_in_data             (result_1_64_bit[63:32]),             //                          .data
         
 		  .fifo0_32_bit_in_valid             	(result_0_32_bit_valid),             //         fifo1_32_bit_in_1.valid
         .fifo0_32_bit_in_data              	(result_0_32_bit),              //                          .data
@@ -109,6 +111,7 @@ procesador nios2 (
 		 
 		  .result0_32_bit_in_export            (result_0_32_bit),            //         result0_32_bit_in.export
         .result1_32_bit_in_export            (result_1_32_bit),             //         result1_32_bit_in.export
+		  
     
 		
 		  // Paramteros para configurar cosas desde el NIOS o HPS a la FPGA:

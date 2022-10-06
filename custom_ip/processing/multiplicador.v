@@ -1,29 +1,70 @@
-// Quartus Prime Verilog Template
-// Unsigned multiply with input and output registers
 
-module multiplicador
-#(parameter WIDTH=16)
-(
-	input clk,
-	input [WIDTH-1:0] dataa,
-	input [WIDTH-1:0] datab,
-	output reg [2*WIDTH-1:0] dataout
+module multiplicador(
+
+	// Entradas de control
+	input clock,
+	input reset_n,
+	input enable,
+	
+	// Entrada avalon streaming
+	input signed [31:0] data_a,
+	input signed [31:0] data_b,
+	input data_valid,	
+		
+	// Salidas avalon streaming 
+	output reg signed [63:0] data_out,
+	output reg data_valid_multiplicacion	
+
 );
 
-	// Declare input and output registers
-	reg [WIDTH-1:0] dataa_reg;
-	reg [WIDTH-1:0] datab_reg;
-	wire [2*WIDTH-1:0] mult_out;
 
-	// Store the result of the multiply
-	assign mult_out = dataa_reg * datab_reg;
+// Registro las entradas... es mas prolijo trabajar con las entradas registradas
+reg signed [31:0] data_a_reg; always @ (posedge clock) data_a_reg <= (!reset_n)? 0: data_a;
+reg signed [31:0] data_b_reg; always @ (posedge clock) data_b_reg <= (!reset_n)? 0: data_b;
+reg data_valid_reg; always @ (posedge clock) data_valid_reg <= (!reset_n)? 0: data_valid;
 
-	// Update data
-	always @ (posedge clk)
-	begin
-		dataa_reg <= dataa;
-		datab_reg <= datab;
-		dataout <= mult_out;
+
+reg signed [63:0] producto;
+reg data_valid_1,data_valid_2;
+
+//=======================================================
+// Algoritmo principal
+//=======================================================
+
+always @ (posedge clock or negedge reset_n)
+begin
+	
+	if(!reset_n)
+	begin		
+	
+		data_valid_1<=0;
+		data_valid_2<=0;
+		
 	end
+	else if(enable)
+	begin
+		if(data_valid_reg)
+		begin
+				
+
+			//registrar productos (1 etapa)
+			
+				producto <= data_a_reg * data_b_reg;
+				data_valid_1 <= 1;
+				
+			//registrar salidas (2 etapa)
+			
+				data_out <= producto;
+				data_valid_2 <= data_valid_1;
+				
+		end
+	end
+end
+
+always @ (posedge clock)
+	data_valid_multiplicacion <= (data_valid_reg && data_valid_2);
+
+
+
 
 endmodule

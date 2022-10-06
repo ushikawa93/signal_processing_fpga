@@ -19,7 +19,7 @@ module filtro_promedio_movil(
 	output reg data_out_valid,
 
 	// Salidas auxiliares
-	output ready,
+	output ready_to_calculate,
 	output reg fifo_lleno
 
 );
@@ -32,8 +32,8 @@ parameter buf_tam = 4096;					// Con 8192 ya me paso de la cantidad de bloques d
 parameter delay=3;
 parameter fifo_depth = 2048;
 
-wire [15:0] M = ptos_x_ciclo;				// Puntos por ciclo de señal
-wire [7:0] N = frames_integracion;		// Frames de integracion // Largo del lockin M*N	
+wire [15:0] M;	assign M = ptos_x_ciclo;				// Puntos por ciclo de señal
+wire [7:0] N; 	assign N = frames_integracion;		// Frames de integracion // Largo del lockin M*N	
 
 
 //=======================================================
@@ -52,7 +52,10 @@ reg data_valid_1,data_valid_2, limpiando_arrays;
 reg [15:0] i,index_promediacion, ciclos_completados;
 
 reg [15:0] ciclos_para_llenar_fifo;
-	always @ (posedge clock) ciclos_para_llenar_fifo <= 8192 / (M*N);
+	always @ (posedge clock) ciclos_para_llenar_fifo <= 2048 / (MxN);
+	
+reg [15:0] MxN;
+	always @ (posedge clock) MxN <= M*N;
 
 
 // Registro las entradas... es mas prolijo trabajar con las entradas registradas
@@ -90,8 +93,8 @@ begin
 		if(data_valid_reg && !fifo_lleno)
 		begin
 		
-			index_promediacion <=  (index_promediacion == ((M*N)-1))? 0 : index_promediacion + 1;
-			ciclos_completados <= (index_promediacion == ((M*N)-1))? ciclos_completados+1: ciclos_completados;
+			index_promediacion <=  (index_promediacion == ((MxN)-1))? 0 : index_promediacion + 1;
+			ciclos_completados <= (index_promediacion == ((MxN)-1))? ciclos_completados+1: ciclos_completados;
 			fifo_lleno <= (ciclos_completados == ciclos_para_llenar_fifo)? 1:0;
 
 			//guardar dato en arreglo (1 etapa)
@@ -129,6 +132,6 @@ always @ (posedge clock)
 	data_out_valid <= (data_valid_2 && data_valid_reg);
 
 	
-assign ready = !limpiando_arrays;
+assign ready_to_calculate = !limpiando_arrays;
 
 endmodule

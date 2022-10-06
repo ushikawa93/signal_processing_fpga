@@ -1,17 +1,17 @@
-Fitter Status : Successful - Mon Oct 03 19:49:16 2022
+Fitter Status : Successful - Thu Oct 06 18:38:19 2022
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : signal_processing_template
 Top-level Entity Name : signal_processing_template
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 5,516 / 41,910 ( 13 % )
-Total registers : 8306
+Logic utilization (in ALMs) : 7,190 / 41,910 ( 17 % )
+Total registers : 9802
 Total pins : 157 / 314 ( 50 % )
 Total virtual pins : 0
-Total block memory bits : 1,503,232 / 5,662,720 ( 27 % )
-Total RAM Blocks : 199 / 553 ( 36 % )
-Total DSP Blocks : 2 / 112 ( 2 % )
+Total block memory bits : 2,157,440 / 5,662,720 ( 38 % )
+Total RAM Blocks : 274 / 553 ( 50 % )
+Total DSP Blocks : 11 / 112 ( 10 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

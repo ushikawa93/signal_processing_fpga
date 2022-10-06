@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="e43f1fb0d34e1da98fdf"/>
+    <hash md5_digest_80b="c944e3e26e5e6ae3d890"/>
   </project>
   <file_info>
     <file device="5CSEBA6U23I7" path="signal_processing_template.sof" usercode="0xFFFFFFFF"/>
@@ -99,7 +99,7 @@
     </sld_info>
     <sld_info hpath="control:nios|procesador:nios2" name="nios2">
       <assignment_values>
-        <assignment_value text="QSYS_NAME procesador HAS_SOPCINFO 1 GENERATION_ID 1664473876"/>
+        <assignment_value text="QSYS_NAME procesador HAS_SOPCINFO 1 GENERATION_ID 1665088312"/>
       </assignment_values>
       <parameters/>
     </sld_info>

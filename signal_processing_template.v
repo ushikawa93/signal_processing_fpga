@@ -31,7 +31,7 @@ module signal_processing_template(
     output             HPS_DDR3_RESET_N,
     input              HPS_DDR3_RZQ,
     output             HPS_DDR3_WE_N,
-	 
+	
 	 		
 	//////// Highspeed ADC_DAC //////
 	 
@@ -71,6 +71,12 @@ module signal_processing_template(
 ////////////////////////////////////////////////
 
 wire enable;
+	assign enable = enable_from_control && ready_to_calculate;
+wire reset_n;
+	assign reset_n = !reset_from_control && reset_physical;
+
+	
+wire enable_from_control;
 wire clk_custom;
 wire reset_from_control;
 wire reset_physical = KEY[0];
@@ -83,23 +89,27 @@ control nios (
 	 // Logica de control
 	 .clk							(clk),
 	 .reset_n					(reset_physical),	
-	 .enable						(enable),
+	 .enable						(enable_from_control),
 	 .clk_custom				(clk_custom),
 	 .reset_from_control		(reset_from_control),
+	 .calculo_finalizado 	(calculo_finalizado),
 	 
 	 // Parametros reconfigurables
 	 .parameter_out_0			(amplitud_ruido),
 	 .parameter_out_1			(frames_integracion),
 	
 	 // Resultados de procesamiento de 32 bits
-	 .result_0_32_bit			(data_procesada),
-	 .result_0_32_bit_valid	(data_procesada_valid),
+	 .result_0_32_bit			(datos_simulados),
+	 .result_0_32_bit_valid	(datos_simulados_valid),
 	
-	 .result_1_32_bit			(data_canal_b),
-	 .result_1_32_bit_valid (data_adc_valid),
+	 .result_1_32_bit			(data_adc_2308),
+	 .result_1_32_bit_valid (data_adc_2308_valid),
 	 
-	 .result_0_64_bit			(data_adc_2308),
-	 .result_0_64_bit_valid	(data_adc_2308_valid),
+	 .result_0_64_bit			(data_procesada1),
+	 .result_0_64_bit_valid	(data_procesada1_valid),
+	 
+	 .result_1_64_bit			(data_procesada2),
+	 .result_1_64_bit_valid	(data_procesada2_valid),
 
 	 // Memoria DDR3 del HPS
 	 .HPS_DDR3_ADDR         (HPS_DDR3_ADDR),                          //          memory.mem_a
@@ -129,7 +139,7 @@ control nios (
 data_in data(
 
 	// Entradas de control
-	.reset_n(!reset_from_control),
+	.reset_n(reset_n),
 	.enable(enable),
 	
 	// Entradas de reloj
@@ -137,7 +147,31 @@ data_in data(
 	.clk_dac(clk_custom),
 	.clk_adc(clk_custom),
 	.clk_adc_2308(clk_custom),
-
+		
+	// Parametros de configuracion -> Podrian conectarse a el Nios o HPS si quisieramos...
+	.simulation_noise_bits(amplitud_ruido),
+	.ptos_x_ciclo_sim(32),
+	.metodo_ruido(0),
+	.ptos_x_ciclo_dac(32),
+	.sincronizar_adc_con_dac(1),
+	.f_muestreo_2308(1000),
+	.sel_ch_2308(0),	
+	
+	// Salida avalon streaming simulacion
+	.simulation_data_valid(datos_simulados_valid),
+	.simulation_data(datos_simulados),
+	
+	// Salida avalon streaming ADC
+	.data_canal_a(data_canal_a),
+	.data_canal_b(data_canal_b),
+	.data_adc_valid(data_adc_valid),
+	
+	// Salida avalon streaming	ADC 2308
+	.data_adc_2308_valid(data_adc_2308_valid),
+	.data_adc_2308(data_adc_2308),
+	
+	
+	
 	// Entradas y salidas del ADC/DAC HIghSPEED
 	.ADC_CLK_A(ADC_CLK_A),
 	.ADC_DA(ADC_DA),
@@ -166,30 +200,7 @@ data_in data(
 	.adc_cs_n(adc_cs_n),
 	.adc_sclk(adc_sclk),
 	.adc_din(adc_din),
-	.adc_dout(adc_dout),
-	
-	// Parametros de configuracion -> Podrian conectarse a el Nios o HPS si quisieramos...
-	.simulation_noise_bits(amplitud_ruido),
-	.ptos_x_ciclo_sim(32),
-	.metodo_ruido(0),
-	.ptos_x_ciclo_dac(32),
-	.sincronizar_adc_con_dac(1),
-	.f_muestreo_2308(1000),
-	.sel_ch_2308(0),
-	
-	
-	// Salida avalon streaming simulacion
-	.simulation_data_valid(datos_simulados_valid),
-	.simulation_data(datos_simulados),
-	
-	// Salida avalon streaming ADC
-	.data_canal_a(data_canal_a),
-	.data_canal_b(data_canal_b),
-	.data_adc_valid(data_adc_valid),
-	
-	// Salida avalon streaming	ADC 2308
-	.data_adc_2308_valid(data_adc_2308_valid),
-	.data_adc_2308(data_adc_2308)
+	.adc_dout(adc_dout)
 
 	
 );
@@ -216,26 +227,33 @@ wire data_adc_2308_valid;
 signal_processing signal_processing_inst(
 
 	.clk(clk_custom),
-	.reset_n(!reset_from_control),
+	.reset_n(reset_n),
 	.enable_gral(enable),	
 	
 	.data_in(datos_simulados),
 	.data_in_valid(datos_simulados_valid),
 	
-	.data_out(data_procesada),
-	.data_out_valid(data_procesada_valid),
+	.data_out1(data_procesada1),
+	.data_out1_valid(data_procesada1_valid),
+	
+	.data_out2(data_procesada2),
+	.data_out2_valid(data_procesada2_valid),
+	
+	.ready_to_calculate(ready_to_calculate),
+	.processing_finished(calculo_finalizado),
 	
 	.parameter_in_0(32),
 	.parameter_in_1(frames_integracion),
+	
 
 
 );
 
 ///// Salidas de procesamiento ////////
-wire [31:0] data_procesada;
-wire data_procesada_valid;
-
-
+wire [63:0] data_procesada1,data_procesada2;
+wire data_procesada1_valid,data_procesada2_valid;
+wire ready_to_calculate;
+wire calculo_finalizado;
 
 ////////////////////////////////////////////////
 // ====== Contador para ver si clk anda  =========
