@@ -39,8 +39,8 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         procesador_mm_interconnect_0_rsp_mux_001
-//   NUM_INPUTS:          16
-//   ARBITRATION_SHARES:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+//   NUM_INPUTS:          19
+//   ARBITRATION_SHARES:  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 //   ARBITRATION_SCHEME   "no-arb"
 //   PIPELINE_ARB:        0
 //   PKT_TRANS_LOCK:      61 (arbitration locking enabled)
@@ -165,6 +165,27 @@ module procesador_mm_interconnect_0_rsp_mux_001
     input                       sink15_endofpacket,
     output                      sink15_ready,
 
+    input                       sink16_valid,
+    input [120-1   : 0]  sink16_data,
+    input [21-1: 0]  sink16_channel,
+    input                       sink16_startofpacket,
+    input                       sink16_endofpacket,
+    output                      sink16_ready,
+
+    input                       sink17_valid,
+    input [120-1   : 0]  sink17_data,
+    input [21-1: 0]  sink17_channel,
+    input                       sink17_startofpacket,
+    input                       sink17_endofpacket,
+    output                      sink17_ready,
+
+    input                       sink18_valid,
+    input [120-1   : 0]  sink18_data,
+    input [21-1: 0]  sink18_channel,
+    input                       sink18_startofpacket,
+    input                       sink18_endofpacket,
+    output                      sink18_ready,
+
 
     // ----------------------
     // Source
@@ -183,7 +204,7 @@ module procesador_mm_interconnect_0_rsp_mux_001
     input reset
 );
     localparam PAYLOAD_W        = 120 + 21 + 2;
-    localparam NUM_INPUTS       = 16;
+    localparam NUM_INPUTS       = 19;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 0;
     localparam ST_DATA_W        = 120;
@@ -219,6 +240,9 @@ module procesador_mm_interconnect_0_rsp_mux_001
     wire [PAYLOAD_W - 1 : 0] sink13_payload;
     wire [PAYLOAD_W - 1 : 0] sink14_payload;
     wire [PAYLOAD_W - 1 : 0] sink15_payload;
+    wire [PAYLOAD_W - 1 : 0] sink16_payload;
+    wire [PAYLOAD_W - 1 : 0] sink17_payload;
+    wire [PAYLOAD_W - 1 : 0] sink18_payload;
 
     assign valid[0] = sink0_valid;
     assign valid[1] = sink1_valid;
@@ -236,6 +260,9 @@ module procesador_mm_interconnect_0_rsp_mux_001
     assign valid[13] = sink13_valid;
     assign valid[14] = sink14_valid;
     assign valid[15] = sink15_valid;
+    assign valid[16] = sink16_valid;
+    assign valid[17] = sink17_valid;
+    assign valid[18] = sink18_valid;
 
 
     // ------------------------------------------
@@ -261,6 +288,9 @@ module procesador_mm_interconnect_0_rsp_mux_001
       lock[13] = sink13_data[61];
       lock[14] = sink14_data[61];
       lock[15] = sink15_data[61];
+      lock[16] = sink16_data[61];
+      lock[17] = sink17_data[61];
+      lock[18] = sink18_data[61];
     end
 
     assign last_cycle = src_valid & src_ready & src_endofpacket & ~(|(lock & grant));
@@ -307,6 +337,9 @@ module procesador_mm_interconnect_0_rsp_mux_001
     // 13      |      1       |  0
     // 14      |      1       |  0
     // 15      |      1       |  0
+    // 16      |      1       |  0
+    // 17      |      1       |  0
+    // 18      |      1       |  0
      wire [SHARE_COUNTER_W - 1 : 0] share_0 = 1'd0;
      wire [SHARE_COUNTER_W - 1 : 0] share_1 = 1'd0;
      wire [SHARE_COUNTER_W - 1 : 0] share_2 = 1'd0;
@@ -323,6 +356,9 @@ module procesador_mm_interconnect_0_rsp_mux_001
      wire [SHARE_COUNTER_W - 1 : 0] share_13 = 1'd0;
      wire [SHARE_COUNTER_W - 1 : 0] share_14 = 1'd0;
      wire [SHARE_COUNTER_W - 1 : 0] share_15 = 1'd0;
+     wire [SHARE_COUNTER_W - 1 : 0] share_16 = 1'd0;
+     wire [SHARE_COUNTER_W - 1 : 0] share_17 = 1'd0;
+     wire [SHARE_COUNTER_W - 1 : 0] share_18 = 1'd0;
 
     // ------------------------------------------
     // Choose the share value corresponding to the grant.
@@ -345,7 +381,10 @@ module procesador_mm_interconnect_0_rsp_mux_001
     share_12 & { SHARE_COUNTER_W {next_grant[12]} } |
     share_13 & { SHARE_COUNTER_W {next_grant[13]} } |
     share_14 & { SHARE_COUNTER_W {next_grant[14]} } |
-    share_15 & { SHARE_COUNTER_W {next_grant[15]} };
+    share_15 & { SHARE_COUNTER_W {next_grant[15]} } |
+    share_16 & { SHARE_COUNTER_W {next_grant[16]} } |
+    share_17 & { SHARE_COUNTER_W {next_grant[17]} } |
+    share_18 & { SHARE_COUNTER_W {next_grant[18]} };
     end
 
     // ------------------------------------------
@@ -439,11 +478,20 @@ module procesador_mm_interconnect_0_rsp_mux_001
 
     wire final_packet_15 = 1'b1;
 
+    wire final_packet_16 = 1'b1;
+
+    wire final_packet_17 = 1'b1;
+
+    wire final_packet_18 = 1'b1;
+
 
     // ------------------------------------------
     // Concatenate all final_packet signals (wire or reg) into a handy vector.
     // ------------------------------------------
     wire [NUM_INPUTS - 1 : 0] final_packet = {
+    final_packet_18,
+    final_packet_17,
+    final_packet_16,
     final_packet_15,
     final_packet_14,
     final_packet_13,
@@ -559,6 +607,9 @@ module procesador_mm_interconnect_0_rsp_mux_001
     assign sink13_ready = src_ready && grant[13];
     assign sink14_ready = src_ready && grant[14];
     assign sink15_ready = src_ready && grant[15];
+    assign sink16_ready = src_ready && grant[16];
+    assign sink17_ready = src_ready && grant[17];
+    assign sink18_ready = src_ready && grant[18];
 
     assign src_valid = |(grant & valid);
 
@@ -579,7 +630,10 @@ module procesador_mm_interconnect_0_rsp_mux_001
       sink12_payload & {PAYLOAD_W {grant[12]} } |
       sink13_payload & {PAYLOAD_W {grant[13]} } |
       sink14_payload & {PAYLOAD_W {grant[14]} } |
-      sink15_payload & {PAYLOAD_W {grant[15]} };
+      sink15_payload & {PAYLOAD_W {grant[15]} } |
+      sink16_payload & {PAYLOAD_W {grant[16]} } |
+      sink17_payload & {PAYLOAD_W {grant[17]} } |
+      sink18_payload & {PAYLOAD_W {grant[18]} };
     end
 
     // ------------------------------------------
@@ -618,6 +672,12 @@ module procesador_mm_interconnect_0_rsp_mux_001
     sink14_startofpacket,sink14_endofpacket};
     assign sink15_payload = {sink15_channel,sink15_data,
     sink15_startofpacket,sink15_endofpacket};
+    assign sink16_payload = {sink16_channel,sink16_data,
+    sink16_startofpacket,sink16_endofpacket};
+    assign sink17_payload = {sink17_channel,sink17_data,
+    sink17_startofpacket,sink17_endofpacket};
+    assign sink18_payload = {sink18_channel,sink18_data,
+    sink18_startofpacket,sink18_endofpacket};
 
     assign {src_channel,src_data,src_startofpacket,src_endofpacket} = src_payload;
 endmodule

@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>06/10/2022 19:06:10</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1665093970124</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\mati9\Documents\00-ProyectosQuartus\de10-nano\signal_processing_fpga\software\signal_procesing_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>13/10/2022 18:21:46</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1665696106032</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\MatiOliva\Documents\00-ProyectosQuartus\signal_processing_template\software\signal_procesing_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\procesador.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>

@@ -488,9 +488,9 @@
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
- <parameter name="device" value="5CSEBA6U23I7" />
+ <parameter name="device" value="5CSEMA5F31C6" />
  <parameter name="deviceFamily" value="Cyclone V" />
- <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="deviceSpeedGrade" value="6" />
  <parameter name="fabricMode" value="QSYS" />
  <parameter name="generateLegacySim" value="false" />
  <parameter name="generationId" value="0" />
@@ -837,7 +837,7 @@
   <parameter name="ALTMEMPHY_COMPATIBLE_MODE" value="false" />
   <parameter name="AP_MODE" value="false" />
   <parameter name="AP_MODE_EN" value="0" />
-  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="AUTO_PD_CYCLES" value="0" />
   <parameter name="AUTO_POWERDN_EN" value="false" />
   <parameter name="AVL_DATA_WIDTH_PORT" value="32,32,32,32,32,32" />
@@ -1301,7 +1301,7 @@
   <parameter name="desired_sdmmc_clk_mhz" value="200.0" />
   <parameter name="desired_spi_m_clk_mhz" value="200.0" />
   <parameter name="desired_usb_mp_clk_mhz" value="200.0" />
-  <parameter name="device_name" value="5CSEBA6U23I7" />
+  <parameter name="device_name" value="5CSEMA5F31C6" />
   <parameter name="device_pll_info_manual">{320000000 1600000000} {320000000 1000000000} {800000000 400000000 400000000}</parameter>
   <parameter name="eosc1_clk_mhz" value="25.0" />
   <parameter name="eosc2_clk_mhz" value="25.0" />
@@ -1377,8 +1377,8 @@
    enabled="1">
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
-  <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
-  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <parameter name="bht_ramBlockType" value="Automatic" />
   <parameter name="breakOffset" value="32" />
   <parameter name="breakSlave" value="None" />
@@ -1578,7 +1578,7 @@
  <module name="pll" kind="altera_pll" version="17.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
-  <parameter name="device" value="5CSEBA6U23I7" />
+  <parameter name="device" value="5CSEMA5F31C6" />
   <parameter name="device_family" value="Cyclone V" />
   <parameter name="gui_active_clk" value="false" />
   <parameter name="gui_actual_output_clock_frequency0" value="0 MHz" />
@@ -2065,15 +2065,6 @@
    kind="avalon"
    version="17.1"
    start="nios2_gen2_0.data_master"
-   end="program_memory.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="nios2_gen2_0.data_master"
    end="result0_64_bit_up.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00081970" />
@@ -2128,9 +2119,9 @@
    kind="avalon"
    version="17.1"
    start="nios2_gen2_0.data_master"
-   end="divisor_clock.s1">
+   end="program_memory.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00081910" />
+  <parameter name="baseAddress" value="0x00040000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2145,10 +2136,19 @@
  <connection
    kind="avalon"
    version="17.1"
+   start="nios2_gen2_0.data_master"
+   end="divisor_clock.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00081910" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
    start="hps_0.h2f_lw_axi_master"
    end="pll_reconfigurar.mgmt_avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040800" />
+  <parameter name="baseAddress" value="0x00081800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2157,7 +2157,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="fifo0_64_bit_up.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000409a8" />
+  <parameter name="baseAddress" value="0x000819c8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2166,7 +2166,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="fifo0_64_bit_down.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000409a0" />
+  <parameter name="baseAddress" value="0x000819b8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2175,7 +2175,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="fifo1_64_bit_up.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040998" />
+  <parameter name="baseAddress" value="0x000819c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2184,7 +2184,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="fifo1_64_bit_down.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040990" />
+  <parameter name="baseAddress" value="0x000819b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2193,7 +2193,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="fifo0_32_bit.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040988" />
+  <parameter name="baseAddress" value="0x000819a8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2202,7 +2202,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="fifo1_32_bit.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040980" />
+  <parameter name="baseAddress" value="0x000819a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2211,7 +2211,25 @@
    start="hps_0.h2f_lw_axi_master"
    end="parameters.s0">
   <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00080800" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="program_memory.s1">
+  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="divisor_clock.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00081910" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2220,7 +2238,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="reset.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040970" />
+  <parameter name="baseAddress" value="0x00081990" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2229,7 +2247,16 @@
    start="hps_0.h2f_lw_axi_master"
    end="enable.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040960" />
+  <parameter name="baseAddress" value="0x00081980" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="finalizacion.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00081900" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2238,7 +2265,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="result0_64_bit_up.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040950" />
+  <parameter name="baseAddress" value="0x00081970" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2247,7 +2274,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="result0_64_bit_down.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040940" />
+  <parameter name="baseAddress" value="0x00081960" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2256,7 +2283,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="result1_64_bit_up.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040930" />
+  <parameter name="baseAddress" value="0x00081950" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2265,7 +2292,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="result1_64_bit_down.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040920" />
+  <parameter name="baseAddress" value="0x00081940" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2274,7 +2301,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="result0_32_bit.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040910" />
+  <parameter name="baseAddress" value="0x00081930" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2283,7 +2310,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="result1_32_bit.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040900" />
+  <parameter name="baseAddress" value="0x00081920" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2304,8 +2331,6 @@
   <parameter name="baseAddress" value="0x00040000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="17.1" start="clk_0.clk" end="nios2_gen2_0.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="jtag_uart_0.clk" />
  <connection kind="clock" version="17.1" start="clk_0.clk" end="enable.clk" />
  <connection
    kind="clock"
@@ -2339,6 +2364,8 @@
    end="result1_32_bit.clk" />
  <connection kind="clock" version="17.1" start="clk_0.clk" end="divisor_clock.clk" />
  <connection kind="clock" version="17.1" start="clk_0.clk" end="finalizacion.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="nios2_gen2_0.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="jtag_uart_0.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -2439,16 +2466,6 @@
    version="17.1"
    start="clk_0.clk_reset"
    end="pll_reconfigurar.mgmt_reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="nios2_gen2_0.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="clk_0.clk_reset"
-   end="jtag_uart_0.reset" />
  <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="pll.reset" />
  <connection
    kind="reset"
@@ -2496,6 +2513,16 @@
    version="17.1"
    start="clk_0.clk_reset"
    end="finalizacion.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="jtag_uart_0.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="nios2_gen2_0.reset" />
  <connection
    kind="reset"
    version="17.1"

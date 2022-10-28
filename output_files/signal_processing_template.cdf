@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEBA6U23) Path("C:/Users/mati9/Documents/00-ProyectosQuartus/de10-nano/signal_processing_fpga/output_files/") File("signal_processing_template.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/output_files/") File("signal_processing_template.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

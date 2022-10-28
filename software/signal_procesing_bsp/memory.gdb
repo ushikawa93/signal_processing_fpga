@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'procesador'
 # SOPC Builder design path: ../../procesador.sopcinfo
 #
-# Generated: Thu Oct 06 15:58:07 ART 2022
+# Generated: Tue Oct 11 12:47:33 ART 2022
 
 # DO NOT MODIFY THIS FILE
 #

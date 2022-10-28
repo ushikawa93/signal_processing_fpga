@@ -17,7 +17,6 @@ void unsetEnable(int* enable_ptr){
 void Reset(int*enable_ptr,int*reset_ptr){
 	*enable_ptr = 0;
 	*reset_ptr = 1;
-	for(int i=0;i<100;i++){}
 	*reset_ptr = 0;
 }
 

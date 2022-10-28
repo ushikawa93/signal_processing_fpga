@@ -1,5 +1,5 @@
 EDA Netlist Writer report for signal_processing_template
-Thu Oct 06 18:44:26 2022
+Thu Oct 13 19:11:33 2022
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Oct 06 18:44:26 2022 ;
+; EDA Netlist Writer Status ; Successful - Thu Oct 13 19:11:33 2022 ;
 ; Revision Name             ; signal_processing_template            ;
 ; Top-level Entity Name     ; signal_processing_template            ;
 ; Family                    ; Cyclone V                             ;
@@ -66,13 +66,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                      ;
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                 ;
-+---------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/mati9/Documents/00-ProyectosQuartus/de10-nano/signal_processing_fpga/simulation/modelsim/signal_processing_template.vo ;
-+---------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                    ;
++-------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                               ;
++-------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/simulation/modelsim/signal_processing_template.vo ;
++-------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,15 +81,15 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Oct 06 18:43:42 2022
+    Info: Processing started: Thu Oct 13 19:11:21 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off signal_processing_template -c signal_processing_template
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
-Info (204019): Generated file signal_processing_template.vo in folder "C:/Users/mati9/Documents/00-ProyectosQuartus/de10-nano/signal_processing_fpga/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file signal_processing_template.vo in folder "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 5074 megabytes
-    Info: Processing ended: Thu Oct 06 18:44:27 2022
-    Info: Elapsed time: 00:00:45
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Peak virtual memory: 5155 megabytes
+    Info: Processing ended: Thu Oct 13 19:11:34 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:13
 
 

@@ -52,7 +52,8 @@ unsigned int* result1_64_bit_up = (unsigned int*)RESULT1_64_BIT_UP_BASE;
 int main()
 {
 	int N = 4;
-	int div = 32*N;
+	int N_promC = 128;
+	int div = 32*N*N_promC;
 	int noise = 10;
 
 	configurar_pll(40,pll_ptr);
@@ -60,12 +61,14 @@ int main()
 
 	setParam0(noise,parameters_ptr);
 	setParam1(N,parameters_ptr);
+	setParam2(N_promC,parameters_ptr);
+
 
 	Reset(enable_ptr,reset_ptr);
 	setEnable(enable_ptr);
 	waitForFin(finish_ptr);
-
 /*
+
 	printf("\n\nResultados FIFO 0 32 bits: \n");
 	imprimir_buffer_32bit(512,leer_fifo_32_bit(fifo0_32_bit_ptr));
 
@@ -73,8 +76,8 @@ int main()
 	imprimir_buffer_64bit(512,leer_fifo_64_bit(fifo0_64_bit_down_ptr,fifo0_64_bit_up_ptr));
 
 	printf("\n\nResultados FIFO 1 64 bits: \n");
-	imprimir_buffer_64bit(512,leer_fifo_64_bit(fifo1_64_bit_down_ptr,fifo1_64_bit_up_ptr));
-*/
+	imprimir_buffer_64bit(512,leer_fifo_64_bit(fifo1_64_bit_down_ptr,fifo1_64_bit_up_ptr));*/
+
 	long long X = leer_resultado_64_bit(result0_64_bit_down,result0_64_bit_up);
 
 	long long Y = leer_resultado_64_bit(result1_64_bit_down,result1_64_bit_up);

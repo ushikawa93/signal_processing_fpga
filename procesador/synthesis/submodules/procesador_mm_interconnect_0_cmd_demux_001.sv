@@ -30,7 +30,7 @@
 //   output_name:         procesador_mm_interconnect_0_cmd_demux_001
 //   ST_DATA_W:           120
 //   ST_CHANNEL_W:        21
-//   NUM_OUTPUTS:         16
+//   NUM_OUTPUTS:         19
 //   VALID_WIDTH:         21
 // ------------------------------------------
 
@@ -167,6 +167,27 @@ module procesador_mm_interconnect_0_cmd_demux_001
     output reg                      src15_endofpacket,
     input                           src15_ready,
 
+    output reg                      src16_valid,
+    output reg [120-1    : 0] src16_data, // ST_DATA_W=120
+    output reg [21-1 : 0] src16_channel, // ST_CHANNEL_W=21
+    output reg                      src16_startofpacket,
+    output reg                      src16_endofpacket,
+    input                           src16_ready,
+
+    output reg                      src17_valid,
+    output reg [120-1    : 0] src17_data, // ST_DATA_W=120
+    output reg [21-1 : 0] src17_channel, // ST_CHANNEL_W=21
+    output reg                      src17_startofpacket,
+    output reg                      src17_endofpacket,
+    input                           src17_ready,
+
+    output reg                      src18_valid,
+    output reg [120-1    : 0] src18_data, // ST_DATA_W=120
+    output reg [21-1 : 0] src18_channel, // ST_CHANNEL_W=21
+    output reg                      src18_startofpacket,
+    output reg                      src18_endofpacket,
+    input                           src18_ready,
+
 
     // -------------------
     // Clock & Reset
@@ -178,7 +199,7 @@ module procesador_mm_interconnect_0_cmd_demux_001
 
 );
 
-    localparam NUM_OUTPUTS = 16;
+    localparam NUM_OUTPUTS = 19;
     wire [NUM_OUTPUTS - 1 : 0] ready_vector;
 
     // -------------------
@@ -297,6 +318,27 @@ module procesador_mm_interconnect_0_cmd_demux_001
 
         src15_valid         = sink_channel[15] && sink_valid[15];
 
+        src16_data          = sink_data;
+        src16_startofpacket = sink_startofpacket;
+        src16_endofpacket   = sink_endofpacket;
+        src16_channel       = sink_channel >> NUM_OUTPUTS;
+
+        src16_valid         = sink_channel[16] && sink_valid[16];
+
+        src17_data          = sink_data;
+        src17_startofpacket = sink_startofpacket;
+        src17_endofpacket   = sink_endofpacket;
+        src17_channel       = sink_channel >> NUM_OUTPUTS;
+
+        src17_valid         = sink_channel[17] && sink_valid[17];
+
+        src18_data          = sink_data;
+        src18_startofpacket = sink_startofpacket;
+        src18_endofpacket   = sink_endofpacket;
+        src18_channel       = sink_channel >> NUM_OUTPUTS;
+
+        src18_valid         = sink_channel[18] && sink_valid[18];
+
     end
 
     // -------------------
@@ -318,8 +360,11 @@ module procesador_mm_interconnect_0_cmd_demux_001
     assign ready_vector[13] = src13_ready;
     assign ready_vector[14] = src14_ready;
     assign ready_vector[15] = src15_ready;
+    assign ready_vector[16] = src16_ready;
+    assign ready_vector[17] = src17_ready;
+    assign ready_vector[18] = src18_ready;
 
-    assign sink_ready = |(sink_channel & {{5{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
+    assign sink_ready = |(sink_channel & {{2{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
 
 endmodule
 

@@ -70,6 +70,34 @@ end
 // ================ Procesamiento ===============
 //////////////////////////////////////////////////
 
+wire data_out_mixer_valid;
+wire signed [63:0] data_sen_mixer;
+wire signed [63:0] data_cos_mixer;
+
+wire signed [63:0] data_out_promC;
+wire data_out_promC_valid;
+
+prom_coherente_pipelined(
+	
+	// Entradas de control
+	.clk(clk),
+	.reset(reset_n),
+	.enable(enable_gral),
+	
+	// Parametros de configuracion
+	.ptos_x_ciclo(parameter_0_reg),
+	.frames_prom_coherente(parameter_2_reg),
+	
+	// Entrada avalon streaming
+	.data_in_valid(data_in_valid),
+	.data_in(data_in),
+	
+	// Salida avalon streaming 
+	.data_out_valid(data_out_promC_valid),
+	.data_out(data_out_promC)	
+	
+);
+
 
 reference_mixer mezclador(
 
@@ -82,8 +110,8 @@ reference_mixer mezclador(
 	.ptos_x_ciclo(parameter_0_reg),
 	
 	// Entrada avalon streaming
-	.data(data_in),	
-	.data_valid(data_in_valid),	
+	.data(data_out_promC),	
+	.data_valid(data_out_promC_valid),	
 		
 	// Salidas avalon streaming 
 	.data_out_seno(data_sen_mixer),
@@ -92,10 +120,6 @@ reference_mixer mezclador(
 
 );
 
-
-wire data_out_mixer_valid;
-wire signed [63:0] data_sen_mixer;
-wire signed [63:0] data_cos_mixer;
 
  filtro_promedio_movil filtro_fase(
 
@@ -164,6 +188,21 @@ assign parameter_out_1 = 0;
 assign parameter_out_2 = 0;
 assign parameter_out_3 = 0;
 assign parameter_out_4 = 0;
+
+
+//////////////////////////////////////////////////
+// ================ Sin procesamiento ===============
+//////////////////////////////////////////////////
+/*
+assign data_out1 = data_in;
+assign data_out1_valid = data_in_valid;
+
+assign data_out2 = data_in;
+assign data_out2_valid = data_in_valid;
+
+assign ready_to_calculate = 1;
+
+*/
 
 
 endmodule

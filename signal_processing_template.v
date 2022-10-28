@@ -83,6 +83,7 @@ wire reset_physical = KEY[0];
 
 wire [31:0] amplitud_ruido;
 wire [31:0] frames_integracion;
+wire [31:0] frames_promC;
 
 control nios (
 
@@ -97,6 +98,7 @@ control nios (
 	 // Parametros reconfigurables
 	 .parameter_out_0			(amplitud_ruido),
 	 .parameter_out_1			(frames_integracion),
+	 .parameter_out_2			(frames_promC),
 	
 	 // Resultados de procesamiento de 32 bits
 	 .result_0_32_bit			(datos_simulados),
@@ -244,6 +246,7 @@ signal_processing signal_processing_inst(
 	
 	.parameter_in_0(32),
 	.parameter_in_1(frames_integracion),
+	.parameter_in_2(frames_promC),
 	
 
 
@@ -266,7 +269,15 @@ begin
 end
 
 assign LED[0] = ( count > (65000000 >> 1) );
-	 
+
+
+////////////////////////////////////////////////
+// ====== Algunos LED para ver cositas  =========
+////////////////////////////////////////////////
+
+assign LED[1] = amplitud_ruido[0];
+assign LED[2] = frames_integracion[0];
+assign LED[3] = enable;
 	 
 	 
 endmodule

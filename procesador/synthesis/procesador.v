@@ -182,13 +182,6 @@ module procesador (
 	wire   [1:0] mm_interconnect_0_enable_s1_address;                              // mm_interconnect_0:enable_s1_address -> enable:address
 	wire         mm_interconnect_0_enable_s1_write;                                // mm_interconnect_0:enable_s1_write -> enable:write_n
 	wire  [31:0] mm_interconnect_0_enable_s1_writedata;                            // mm_interconnect_0:enable_s1_writedata -> enable:writedata
-	wire         mm_interconnect_0_program_memory_s1_chipselect;                   // mm_interconnect_0:program_memory_s1_chipselect -> program_memory:chipselect
-	wire  [31:0] mm_interconnect_0_program_memory_s1_readdata;                     // program_memory:readdata -> mm_interconnect_0:program_memory_s1_readdata
-	wire  [15:0] mm_interconnect_0_program_memory_s1_address;                      // mm_interconnect_0:program_memory_s1_address -> program_memory:address
-	wire   [3:0] mm_interconnect_0_program_memory_s1_byteenable;                   // mm_interconnect_0:program_memory_s1_byteenable -> program_memory:byteenable
-	wire         mm_interconnect_0_program_memory_s1_write;                        // mm_interconnect_0:program_memory_s1_write -> program_memory:write
-	wire  [31:0] mm_interconnect_0_program_memory_s1_writedata;                    // mm_interconnect_0:program_memory_s1_writedata -> program_memory:writedata
-	wire         mm_interconnect_0_program_memory_s1_clken;                        // mm_interconnect_0:program_memory_s1_clken -> program_memory:clken
 	wire  [31:0] mm_interconnect_0_result0_64_bit_up_s1_readdata;                  // result0_64_bit_up:readdata -> mm_interconnect_0:result0_64_bit_up_s1_readdata
 	wire   [1:0] mm_interconnect_0_result0_64_bit_up_s1_address;                   // mm_interconnect_0:result0_64_bit_up_s1_address -> result0_64_bit_up:address
 	wire  [31:0] mm_interconnect_0_result0_64_bit_down_s1_readdata;                // result0_64_bit_down:readdata -> mm_interconnect_0:result0_64_bit_down_s1_readdata
@@ -201,13 +194,20 @@ module procesador (
 	wire   [1:0] mm_interconnect_0_result0_32_bit_s1_address;                      // mm_interconnect_0:result0_32_bit_s1_address -> result0_32_bit:address
 	wire  [31:0] mm_interconnect_0_result1_32_bit_s1_readdata;                     // result1_32_bit:readdata -> mm_interconnect_0:result1_32_bit_s1_readdata
 	wire   [1:0] mm_interconnect_0_result1_32_bit_s1_address;                      // mm_interconnect_0:result1_32_bit_s1_address -> result1_32_bit:address
+	wire         mm_interconnect_0_program_memory_s1_chipselect;                   // mm_interconnect_0:program_memory_s1_chipselect -> program_memory:chipselect
+	wire  [31:0] mm_interconnect_0_program_memory_s1_readdata;                     // program_memory:readdata -> mm_interconnect_0:program_memory_s1_readdata
+	wire  [15:0] mm_interconnect_0_program_memory_s1_address;                      // mm_interconnect_0:program_memory_s1_address -> program_memory:address
+	wire   [3:0] mm_interconnect_0_program_memory_s1_byteenable;                   // mm_interconnect_0:program_memory_s1_byteenable -> program_memory:byteenable
+	wire         mm_interconnect_0_program_memory_s1_write;                        // mm_interconnect_0:program_memory_s1_write -> program_memory:write
+	wire  [31:0] mm_interconnect_0_program_memory_s1_writedata;                    // mm_interconnect_0:program_memory_s1_writedata -> program_memory:writedata
+	wire         mm_interconnect_0_program_memory_s1_clken;                        // mm_interconnect_0:program_memory_s1_clken -> program_memory:clken
+	wire  [31:0] mm_interconnect_0_finalizacion_s1_readdata;                       // finalizacion:readdata -> mm_interconnect_0:finalizacion_s1_readdata
+	wire   [1:0] mm_interconnect_0_finalizacion_s1_address;                        // mm_interconnect_0:finalizacion_s1_address -> finalizacion:address
 	wire         mm_interconnect_0_divisor_clock_s1_chipselect;                    // mm_interconnect_0:divisor_clock_s1_chipselect -> divisor_clock:chipselect
 	wire  [31:0] mm_interconnect_0_divisor_clock_s1_readdata;                      // divisor_clock:readdata -> mm_interconnect_0:divisor_clock_s1_readdata
 	wire   [1:0] mm_interconnect_0_divisor_clock_s1_address;                       // mm_interconnect_0:divisor_clock_s1_address -> divisor_clock:address
 	wire         mm_interconnect_0_divisor_clock_s1_write;                         // mm_interconnect_0:divisor_clock_s1_write -> divisor_clock:write_n
 	wire  [31:0] mm_interconnect_0_divisor_clock_s1_writedata;                     // mm_interconnect_0:divisor_clock_s1_writedata -> divisor_clock:writedata
-	wire  [31:0] mm_interconnect_0_finalizacion_s1_readdata;                       // finalizacion:readdata -> mm_interconnect_0:finalizacion_s1_readdata
-	wire   [1:0] mm_interconnect_0_finalizacion_s1_address;                        // mm_interconnect_0:finalizacion_s1_address -> finalizacion:address
 	wire         irq_mapper_receiver0_irq;                                         // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                             // irq_mapper:sender_irq -> nios2_gen2_0:irq
 	wire         rst_controller_reset_out_reset;                                   // rst_controller:reset_out -> [divisor_clock:reset_n, enable:reset_n, finalizacion:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:jtag_uart_0_reset_reset_bridge_in_reset_reset, parameters:reset, pll_reconfigurar:mgmt_reset, program_memory:reset, result0_32_bit:reset_n, result0_64_bit_down:reset_n, result0_64_bit_up:reset_n, result1_32_bit:reset_n, result1_64_bit_down:reset_n, result1_64_bit_up:reset_n, rst_translator:in_reset]
