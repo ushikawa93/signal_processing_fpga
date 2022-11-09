@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Oct 13 19:02:48 2022
+Analysis & Synthesis Status : Successful - Wed Nov 09 16:37:04 2022
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : signal_processing_template
 Top-level Entity Name : signal_processing_template
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 10309
+Total registers : 12128
 Total pins : 157
 Total virtual pins : 0
-Total block memory bits : 2,288,512
-Total DSP Blocks : 11
+Total block memory bits : 1,473,536
+Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

@@ -1,25 +1,144 @@
-18:21:49 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+19:23:55 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
 make all 
+Compiling alt_alarm_start.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_alarm_start.o HAL/src/alt_alarm_start.c
+Compiling alt_busy_sleep.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_busy_sleep.o HAL/src/alt_busy_sleep.c
+Compiling alt_close.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_close.o HAL/src/alt_close.c
+Compiling alt_dcache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dcache_flush.o HAL/src/alt_dcache_flush.c
+Compiling alt_dcache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dcache_flush_all.o HAL/src/alt_dcache_flush_all.c
+Compiling alt_dcache_flush_no_writeback.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dcache_flush_no_writeback.o HAL/src/alt_dcache_flush_no_writeback.c
+Compiling alt_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dev.o HAL/src/alt_dev.c
+Compiling alt_dma_rxchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dma_rxchan_open.o HAL/src/alt_dma_rxchan_open.c
+Compiling alt_dma_txchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dma_txchan_open.o HAL/src/alt_dma_txchan_open.c
+Compiling alt_ecc_fatal_exception.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_ecc_fatal_exception.o HAL/src/alt_ecc_fatal_exception.c
+Compiling alt_exception_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_entry.o HAL/src/alt_exception_entry.S
+Compiling alt_exit.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_exit.o HAL/src/alt_exit.c
+Compiling alt_fcntl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fcntl.o HAL/src/alt_fcntl.c
+Compiling alt_fd_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fd_lock.o HAL/src/alt_fd_lock.c
+Compiling alt_fd_unlock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fd_unlock.o HAL/src/alt_fd_unlock.c
+Compiling alt_find_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_find_dev.o HAL/src/alt_find_dev.c
+Compiling alt_find_file.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_find_file.o HAL/src/alt_find_file.c
+Compiling alt_flash_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_flash_dev.o HAL/src/alt_flash_dev.c
+Compiling alt_fs_reg.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fs_reg.o HAL/src/alt_fs_reg.c
+Compiling alt_fstat.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fstat.o HAL/src/alt_fstat.c
+Compiling alt_get_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_get_fd.o HAL/src/alt_get_fd.c
+Compiling alt_gmon.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_gmon.o HAL/src/alt_gmon.c
+Compiling alt_icache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_icache_flush.o HAL/src/alt_icache_flush.c
+Compiling alt_icache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_icache_flush_all.o HAL/src/alt_icache_flush_all.c
+Compiling alt_iic.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_iic.o HAL/src/alt_iic.c
+Compiling alt_iic_isr_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_iic_isr_register.o HAL/src/alt_iic_isr_register.c
+Compiling alt_instruction_exception_entry.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_instruction_exception_entry.o HAL/src/alt_instruction_exception_entry.c
+Compiling alt_instruction_exception_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_instruction_exception_register.o HAL/src/alt_instruction_exception_register.c
+Compiling alt_io_redirect.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_io_redirect.o HAL/src/alt_io_redirect.c
+Compiling alt_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_ioctl.o HAL/src/alt_ioctl.c
+Compiling alt_irq_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_irq_entry.o HAL/src/alt_irq_entry.S
+Compiling alt_irq_handler.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_irq_handler.o HAL/src/alt_irq_handler.c
+Compiling alt_irq_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_irq_register.o HAL/src/alt_irq_register.c
+Compiling alt_irq_vars.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_irq_vars.o HAL/src/alt_irq_vars.c
+Compiling alt_isatty.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_isatty.o HAL/src/alt_isatty.c
+Compiling alt_lseek.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_lseek.o HAL/src/alt_lseek.c
+Compiling alt_main.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_main.o HAL/src/alt_main.c
+Compiling alt_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_open.o HAL/src/alt_open.c
+Compiling alt_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_read.o HAL/src/alt_read.c
+Compiling alt_release_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_release_fd.o HAL/src/alt_release_fd.c
+Compiling alt_remap_cached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_remap_cached.o HAL/src/alt_remap_cached.c
+Compiling alt_remap_uncached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_remap_uncached.o HAL/src/alt_remap_uncached.c
+Compiling alt_sbrk.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_sbrk.o HAL/src/alt_sbrk.c
+Compiling alt_software_exception.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_software_exception.o HAL/src/alt_software_exception.S
+Compiling alt_tick.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_tick.o HAL/src/alt_tick.c
+Compiling alt_uncached_free.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_uncached_free.o HAL/src/alt_uncached_free.c
+Compiling alt_uncached_malloc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_uncached_malloc.o HAL/src/alt_uncached_malloc.c
+Compiling alt_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_write.o HAL/src/alt_write.c
+Compiling altera_nios2_gen2_irq.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/altera_nios2_gen2_irq.o HAL/src/altera_nios2_gen2_irq.c
+Compiling crt0.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/crt0.o HAL/src/crt0.S
+Compiling alt_sys_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/alt_sys_init.o alt_sys_init.c
+Compiling altera_avalon_jtag_uart_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_fd.o drivers/src/altera_avalon_jtag_uart_fd.c
+Compiling altera_avalon_jtag_uart_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_init.o drivers/src/altera_avalon_jtag_uart_init.c
+Compiling altera_avalon_jtag_uart_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o drivers/src/altera_avalon_jtag_uart_ioctl.c
+Compiling altera_avalon_jtag_uart_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_read.o drivers/src/altera_avalon_jtag_uart_read.c
+Compiling altera_avalon_jtag_uart_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_write.o drivers/src/altera_avalon_jtag_uart_write.c
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_fifo_util.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o
 [BSP build complete]
-18:21:51 **** Incremental Build of configuration Nios II for project signal_procesing ****
+19:24:02 **** Incremental Build of configuration Nios II for project signal_procesing ****
 make all 
 Info: Building ../signal_procesing_bsp/
 C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
 [BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:54:6: warning: unused variable 'pts_x_ciclo' [-Wunused-variable]
+  int pts_x_ciclo = 16;
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 104 KBytes program size (code + initialized data).
+Info:                        35 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
 [signal_procesing build complete]
-18:44:35 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+19:27:52 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
 make all 
 [BSP build complete]
-18:44:36 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-[signal_procesing build complete]
-18:45:58 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-18:45:59 **** Incremental Build of configuration Nios II for project signal_procesing ****
+19:27:53 **** Incremental Build of configuration Nios II for project signal_procesing ****
 make all 
 Info: Building ../signal_procesing_bsp/
 C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
@@ -29,35 +148,976 @@ nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_pro
 Info: Linking signal_procesing.elf
 nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
 nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
-Info: (signal_procesing.elf) 103 KBytes program size (code + initialized data).
-Info:                        36 KBytes free for stack + heap.
+Info: (signal_procesing.elf) 104 KBytes program size (code + initialized data).
+Info:                        35 KBytes free for stack + heap.
 Info: Creating signal_procesing.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
 [signal_procesing build complete]
-18:46:08 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+19:40:55 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
 make all 
 [BSP build complete]
-18:46:09 **** Incremental Build of configuration Nios II for project signal_procesing ****
-make all 
-Info: Building ../signal_procesing_bsp/
-C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
-[BSP build complete]
-[signal_procesing build complete]
-18:46:11 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
-make all 
-[BSP build complete]
-18:46:11 **** Incremental Build of configuration Nios II for project signal_procesing ****
+19:40:56 **** Incremental Build of configuration Nios II for project signal_procesing ****
 make all 
 Info: Building ../signal_procesing_bsp/
 C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
 [BSP build complete]
 [signal_procesing build complete]
-18:50:53 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+19:43:42 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
 make all 
 [BSP build complete]
-18:50:54 **** Incremental Build of configuration Nios II for project signal_procesing ****
+19:43:43 **** Incremental Build of configuration Nios II for project signal_procesing ****
 make all 
 Info: Building ../signal_procesing_bsp/
 C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
 [BSP build complete]
+[signal_procesing build complete]
+19:48:43 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+19:48:44 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+19:54:06 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+19:54:07 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 104 KBytes program size (code + initialized data).
+Info:                        35 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+20:10:02 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+20:10:04 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+20:10:17 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+20:10:17 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+13:08:53 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+13:08:54 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+13:08:57 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+13:08:58 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+13:10:36 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+13:10:36 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 104 KBytes program size (code + initialized data).
+Info:                        35 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+13:27:08 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+13:27:09 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 104 KBytes program size (code + initialized data).
+Info:                        35 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+14:15:22 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+14:15:22 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 104 KBytes program size (code + initialized data).
+Info:                        35 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+14:26:15 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+14:26:15 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+14:26:35 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+14:26:36 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+14:29:18 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+14:29:19 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+15:28:18 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+15:28:19 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+15:28:58 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+15:28:59 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+15:29:09 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+15:29:10 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+15:29:35 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+15:29:35 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+15:53:23 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+15:53:24 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+16:29:20 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+16:29:21 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+16:29:46 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+16:29:47 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+16:30:29 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+16:30:29 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 104 KBytes program size (code + initialized data).
+Info:                        35 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+16:49:12 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+16:49:13 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+16:49:37 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+16:49:37 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 104 KBytes program size (code + initialized data).
+Info:                        35 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:17:51 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:17:53 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:69:6: warning: unused variable 'PA_0_1' [-Wunused-variable]
+  int PA_0_1 [33] = {99, 123, 162, 204, 219, 166, -1, -323, -827, -1517, -2365, -3315, -4286, -5183, -5908, -6381, 58900, -6381, -5908, -5183, -4286, -3315, -2365, -1517, -827, -323, -1, 166, 219, 204, 162, 123, 99};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        33 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:18:07 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:18:08 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+17:22:20 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:22:21 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:90:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+  printf("Frecuencia de corte actual: %d", 0.05 * indice_filtro * f_muestreo / 2 );
+         ^
+main.c:90:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:69:6: warning: unused variable 'PA_0_1' [-Wunused-variable]
+  int PA_0_1 [33] = {99, 123, 162, 204, 219, 166, -1, -323, -827, -1517, -2365, -3315, -4286, -5183, -5908, -6381, 58900, -6381, -5908, -5183, -4286, -3315, -2365, -1517, -827, -323, -1, 166, 219, 204, 162, 123, 99};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        33 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:22:24 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:22:24 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+[signal_procesing build complete]
+17:22:54 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:22:54 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:69:6: warning: unused variable 'PA_0_1' [-Wunused-variable]
+  int PA_0_1 [33] = {99, 123, 162, 204, 219, 166, -1, -323, -827, -1517, -2365, -3315, -4286, -5183, -5908, -6381, 58900, -6381, -5908, -5183, -4286, -3315, -2365, -1517, -827, -323, -1, 166, 219, 204, 162, 123, 99};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:23:28 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:23:28 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:69:6: warning: unused variable 'PA_0_1' [-Wunused-variable]
+  int PA_0_1 [33] = {99, 123, 162, 204, 219, 166, -1, -323, -827, -1517, -2365, -3315, -4286, -5183, -5908, -6381, 58900, -6381, -5908, -5183, -4286, -3315, -2365, -1517, -827, -323, -1, 166, 219, 204, 162, 123, 99};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:61:6: warning: unused variable 'PB_0_1' [-Wunused-variable]
+  int PB_0_1 [33] = {-101, -125, -165, -207, -222, -169, 0, 325, 835, 1533, 2391, 3352, 4334, 5241, 5975, 6453, 6619, 6453, 5975, 5241, 4334, 3352, 2391, 1533, 835, 325, 0, -169, -222, -207, -165, -125, -101};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:24:11 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:24:12 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:69:6: warning: unused variable 'PA_0_1' [-Wunused-variable]
+  int PA_0_1 [33] = {99, 123, 162, 204, 219, 166, -1, -323, -827, -1517, -2365, -3315, -4286, -5183, -5908, -6381, 58900, -6381, -5908, -5183, -4286, -3315, -2365, -1517, -827, -323, -1, 166, 219, 204, 162, 123, 99};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:61:6: warning: unused variable 'PB_0_1' [-Wunused-variable]
+  int PB_0_1 [33] = {-101, -125, -165, -207, -222, -169, 0, 325, 835, 1533, 2391, 3352, 4334, 5241, 5975, 6453, 6619, 6453, 5975, 5241, 4334, 3352, 2391, 1533, 835, 325, 0, -169, -222, -207, -165, -125, -101};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:24:50 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:24:50 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:69:6: warning: unused variable 'PA_0_1' [-Wunused-variable]
+  int PA_0_1 [33] = {99, 123, 162, 204, 219, 166, -1, -323, -827, -1517, -2365, -3315, -4286, -5183, -5908, -6381, 58900, -6381, -5908, -5183, -4286, -3315, -2365, -1517, -827, -323, -1, 166, 219, 204, 162, 123, 99};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:61:6: warning: unused variable 'PB_0_1' [-Wunused-variable]
+  int PB_0_1 [33] = {-101, -125, -165, -207, -222, -169, 0, 325, 835, 1533, 2391, 3352, 4334, 5241, 5975, 6453, 6619, 6453, 5975, 5241, 4334, 3352, 2391, 1533, 835, 325, 0, -169, -222, -207, -165, -125, -101};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:25:45 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:25:46 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:69:6: warning: unused variable 'PA_0_1' [-Wunused-variable]
+  int PA_0_1 [33] = {99, 123, 162, 204, 219, 166, -1, -323, -827, -1517, -2365, -3315, -4286, -5183, -5908, -6381, 58900, -6381, -5908, -5183, -4286, -3315, -2365, -1517, -827, -323, -1, 166, 219, 204, 162, 123, 99};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:61:6: warning: unused variable 'PB_0_1' [-Wunused-variable]
+  int PB_0_1 [33] = {-101, -125, -165, -207, -222, -169, 0, 325, 835, 1533, 2391, 3352, 4334, 5241, 5975, 6453, 6619, 6453, 5975, 5241, 4334, 3352, 2391, 1533, 835, 325, 0, -169, -222, -207, -165, -125, -101};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:26:49 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:26:49 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:61:6: warning: unused variable 'PB_0_1' [-Wunused-variable]
+  int PB_0_1 [33] = {-101, -125, -165, -207, -222, -169, 0, 325, 835, 1533, 2391, 3352, 4334, 5241, 5975, 6453, 6619, 6453, 5975, 5241, 4334, 3352, 2391, 1533, 835, 325, 0, -169, -222, -207, -165, -125, -101};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:27:18 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:27:19 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:61:6: warning: unused variable 'PB_0_1' [-Wunused-variable]
+  int PB_0_1 [33] = {-101, -125, -165, -207, -222, -169, 0, 325, 835, 1533, 2391, 3352, 4334, 5241, 5975, 6453, 6619, 6453, 5975, 5241, 4334, 3352, 2391, 1533, 835, 325, 0, -169, -222, -207, -165, -125, -101};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:28:18 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:28:19 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:69:6: warning: unused variable 'PA_0_1' [-Wunused-variable]
+  int PA_0_1 [33] = {99, 123, 162, 204, 219, 166, -1, -323, -827, -1517, -2365, -3315, -4286, -5183, -5908, -6381, 58900, -6381, -5908, -5183, -4286, -3315, -2365, -1517, -827, -323, -1, 166, 219, 204, 162, 123, 99};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:32:30 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:32:31 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:61:6: warning: unused variable 'PB_0_1' [-Wunused-variable]
+  int PB_0_1 [33] = {-101, -125, -165, -207, -222, -169, 0, 325, 835, 1533, 2391, 3352, 4334, 5241, 5975, 6453, 6619, 6453, 5975, 5241, 4334, 3352, 2391, 1533, 835, 325, 0, -169, -222, -207, -165, -125, -101};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:33:44 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:33:44 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:69:6: warning: unused variable 'PA_0_1' [-Wunused-variable]
+  int PA_0_1 [33] = {99, 123, 162, 204, 219, 166, -1, -323, -827, -1517, -2365, -3315, -4286, -5183, -5908, -6381, 58900, -6381, -5908, -5183, -4286, -3315, -2365, -1517, -827, -323, -1, 166, 219, 204, 162, 123, 99};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:61:6: warning: unused variable 'PB_0_1' [-Wunused-variable]
+  int PB_0_1 [33] = {-101, -125, -165, -207, -222, -169, 0, 325, 835, 1533, 2391, 3352, 4334, 5241, 5975, 6453, 6619, 6453, 5975, 5241, 4334, 3352, 2391, 1533, 835, 325, 0, -169, -222, -207, -165, -125, -101};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
+[signal_procesing build complete]
+17:34:53 **** Incremental Build of configuration Nios II for project signal_procesing_bsp ****
+make all 
+[BSP build complete]
+17:34:54 **** Incremental Build of configuration Nios II for project signal_procesing ****
+make all 
+Info: Building ../signal_procesing_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../signal_procesing_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../signal_procesing_bsp//HAL/inc -I../signal_procesing_bsp/ -I../signal_procesing_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:73:6: warning: unused variable 'PA_0_3' [-Wunused-variable]
+  int PA_0_3 [33] = {-62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62};
+      ^
+main.c:72:6: warning: unused variable 'PA_0_25' [-Wunused-variable]
+  int PA_0_25 [33] = {-1, 87, 171, 178, -1, -382, -760, -739, -1, 1327, 2491, 2348, -1, -4539, -10072, -14630, 49182, -14630, -10072, -4539, -1, 2348, 2491, 1327, -1, -739, -760, -382, -1, 178, 171, 87, -1};
+      ^
+main.c:71:6: warning: unused variable 'PA_0_2' [-Wunused-variable]
+  int PA_0_2 [33] = {61, 0, -101, -241, -355, -317, -1, 612, 1337, 1782, 1461, 0, -2649, -6093, -9561, -12138, 52360, -12138, -9561, -6093, -2649, 0, 1461, 1782, 1337, 612, -1, -317, -355, -241, -101, 0, 61};
+      ^
+main.c:70:6: warning: unused variable 'PA_0_15' [-Wunused-variable]
+  int PA_0_15 [33] = {-100, -88, -54, 39, 219, 481, 760, 931, 828, 294, -771, -2351, -4299, -6346, -8156, -9402, 55793, -9402, -8156, -6346, -4299, -2351, -771, 294, 828, 931, 760, 481, 219, 39, -54, -88, -100};
+      ^
+main.c:68:6: warning: unused variable 'PA_0_05' [-Wunused-variable]
+  int PA_0_05 [33] = {-62, -88, -139, -226, -356, -534, -760, -1032, -1341, -1674, -2016, -2349, -2655, -2915, -3113, -3238, 62309, -3238, -3113, -2915, -2655, -2349, -2016, -1674, -1341, -1032, -760, -534, -356, -226, -139, -88, -62};
+      ^
+main.c:65:6: warning: unused variable 'PB_0_3' [-Wunused-variable]
+  int PB_0_3 [33] = {61, 123, 100, -78, -355, -436, -1, 842, 1335, 578, -1460, -3311, -2646, 1976, 9546, 16682, 19607, 16682, 9546, 1976, -2646, -3311, -1460, 578, 1335, 842, -1, -436, -355, -78, 100, 123, 61};
+      ^
+main.c:64:6: warning: unused variable 'PB_0_25' [-Wunused-variable]
+  int PB_0_25 [33] = { -1, -88, -172, -180, 0, 382, 761, 739, -1, -1331, -2496, -2353, 0, 4546, 10088, 14654, 16422, 14654, 10088, 4546, 0, -2353, -2496, -1331, -1, 739, 761, 382, 0, -180, -172, -88, -1};
+      ^
+main.c:63:6: warning: unused variable 'PB_0_2' [-Wunused-variable]
+  int PB_0_2 [33] = {-62, 0, 100, 240, 354, 316, -1, -614, -1339, -1785, -1463, 0, 2651, 6097, 9567, 12147, 13100, 12147, 9567, 6097, 2651, 0, -1463, -1785, -1339, -614, -1, 316, 354, 240, 100, 0, -62};
+      ^
+main.c:62:6: warning: unused variable 'PB_0_15' [-Wunused-variable]
+  int PB_0_15 [33] = {98, 87, 52, -40, -219, -480, -757, -927, -825, -293, 766, 2339, 4277, 6314, 8115, 9355, 9797, 9355, 8115, 6314, 4277, 2339, 766, -293, -825, -927, -757, -480, -219, -40, 52, 87, 98};
+      ^
+main.c:61:6: warning: unused variable 'PB_0_1' [-Wunused-variable]
+  int PB_0_1 [33] = {-101, -125, -165, -207, -222, -169, 0, 325, 835, 1533, 2391, 3352, 4334, 5241, 5975, 6453, 6619, 6453, 5975, 5241, 4334, 3352, 2391, 1533, 835, 325, 0, -169, -222, -207, -165, -125, -101};
+      ^
+main.c:60:6: warning: unused variable 'PB_0_05' [-Wunused-variable]
+  int PB_0_05 [33] = {83, 118, 188, 306, 482, 724, 1031, 1400, 1820, 2272, 2737, 3189, 3604, 3957, 4227, 4395, 4453, 4395, 4227, 3957, 3604, 3189, 2737, 2272, 1820, 1400, 1031, 724, 482, 306, 188, 118, 83};
+      ^
+Info: Linking signal_procesing.elf
+nios2-elf-g++  -T'../signal_procesing_bsp//linker.x' -msys-crt0='../signal_procesing_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../signal_procesing_bsp/   -Wl,-Map=signal_procesing.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o signal_procesing.elf obj/default/funciones_pll.o obj/default/main.o obj/default/parameters_control.o -lm -msys-lib=m
+nios2-elf-insert signal_procesing.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name procesador --quartus_project_dir "C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template" --jdi ../..//output_files/signal_processing_template.jdi --sopcinfo C:/Users/MatiOliva/Documents/00-ProyectosQuartus/signal_processing_template/software/signal_procesing_bsp/../../procesador.sopcinfo
+Info: (signal_procesing.elf) 106 KBytes program size (code + initialized data).
+Info:                        32 KBytes free for stack + heap.
+Info: Creating signal_procesing.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source signal_procesing.elf >signal_procesing.objdump
 [signal_procesing build complete]

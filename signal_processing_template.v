@@ -81,9 +81,8 @@ wire clk_custom;
 wire reset_from_control;
 wire reset_physical = KEY[0];
 
-wire [31:0] amplitud_ruido;
-wire [31:0] frames_integracion;
-wire [31:0] frames_promC;
+parameter N_filtro = 32;
+wire [31:0] filter_coeff [0:N_filtro];
 
 control nios (
 
@@ -96,16 +95,49 @@ control nios (
 	 .calculo_finalizado 	(calculo_finalizado),
 	 
 	 // Parametros reconfigurables
-	 .parameter_out_0			(amplitud_ruido),
-	 .parameter_out_1			(frames_integracion),
-	 .parameter_out_2			(frames_promC),
+	 .parameter_out_0			(filter_coeff[0]),
+	 .parameter_out_1			(filter_coeff[1]),
+	 .parameter_out_2			(filter_coeff[2]),
+	 .parameter_out_3			(filter_coeff[3]),
+	 .parameter_out_4			(filter_coeff[4]),
+	 .parameter_out_5			(filter_coeff[5]),
+	 .parameter_out_6			(filter_coeff[6]),
+	 .parameter_out_7			(filter_coeff[7]),
+	 .parameter_out_8			(filter_coeff[8]),	 
+	 .parameter_out_9			(filter_coeff[9]),
+	 
+	 .parameter_out_10		(filter_coeff[10]),
+	 .parameter_out_11		(filter_coeff[11]),
+	 .parameter_out_12		(filter_coeff[12]),
+	 .parameter_out_13		(filter_coeff[13]),
+	 .parameter_out_14		(filter_coeff[14]),
+	 .parameter_out_15		(filter_coeff[15]),
+	 .parameter_out_16		(filter_coeff[16]),
+	 .parameter_out_17		(filter_coeff[17]),
+	 .parameter_out_18		(filter_coeff[18]),	 
+	 .parameter_out_19		(filter_coeff[19]),
+	 
+	 .parameter_out_20		(filter_coeff[20]),
+	 .parameter_out_21		(filter_coeff[21]),
+	 .parameter_out_22		(filter_coeff[22]),
+	 .parameter_out_23		(filter_coeff[23]),
+	 .parameter_out_24		(filter_coeff[24]),
+	 .parameter_out_25		(filter_coeff[25]),
+	 .parameter_out_26		(filter_coeff[26]),
+	 .parameter_out_27		(filter_coeff[27]),
+	 .parameter_out_28		(filter_coeff[28]),	 
+	 .parameter_out_29		(filter_coeff[29]),
+	 
+	 .parameter_out_30		(filter_coeff[30]),
+	 .parameter_out_31		(filter_coeff[31]),
+	 .parameter_out_32		(filter_coeff[32]),
 	
 	 // Resultados de procesamiento de 32 bits
 	 .result_0_32_bit			(datos_simulados),
 	 .result_0_32_bit_valid	(datos_simulados_valid),
 	
-	 .result_1_32_bit			(data_adc_2308),
-	 .result_1_32_bit_valid (data_adc_2308_valid),
+	 .result_1_32_bit			(data_canal_b),
+	 .result_1_32_bit_valid (data_adc_valid),
 	 
 	 .result_0_64_bit			(data_procesada1),
 	 .result_0_64_bit_valid	(data_procesada1_valid),
@@ -151,11 +183,11 @@ data_in data(
 	.clk_adc_2308(clk_custom),
 		
 	// Parametros de configuracion -> Podrian conectarse a el Nios o HPS si quisieramos...
-	.simulation_noise_bits(amplitud_ruido),
+	.simulation_noise_bits(0),
 	.ptos_x_ciclo_sim(32),
 	.metodo_ruido(0),
 	.ptos_x_ciclo_dac(32),
-	.sincronizar_adc_con_dac(1),
+	.sincronizar_adc_con_dac(0),
 	.f_muestreo_2308(1000),
 	.sel_ch_2308(0),	
 	
@@ -171,8 +203,7 @@ data_in data(
 	// Salida avalon streaming	ADC 2308
 	.data_adc_2308_valid(data_adc_2308_valid),
 	.data_adc_2308(data_adc_2308),
-	
-	
+		
 	
 	// Entradas y salidas del ADC/DAC HIghSPEED
 	.ADC_CLK_A(ADC_CLK_A),
@@ -197,6 +228,10 @@ data_in data(
 	.OSC_SMA_ADC4(OSC_SMA_ADC4),
 	.POWER_ON(POWER_ON),
 	.SMA_DAC4(SMA_DAC4),
+	
+	// Entradas digitales para el DAC
+	.digital_data_in(data_procesada1),
+	.digital_data_in_valid(data_procesada1_valid),
 	
 	// Entradas y salidas del ADC 2308
 	.adc_cs_n(adc_cs_n),
@@ -232,8 +267,10 @@ signal_processing signal_processing_inst(
 	.reset_n(reset_n),
 	.enable_gral(enable),	
 	
-	.data_in(datos_simulados),
-	.data_in_valid(datos_simulados_valid),
+	.bypass(SW[0]),
+	
+	.data_in(data_canal_b),
+	.data_in_valid(data_adc_valid),
 	
 	.data_out1(data_procesada1),
 	.data_out1_valid(data_procesada1_valid),
@@ -244,10 +281,42 @@ signal_processing signal_processing_inst(
 	.ready_to_calculate(ready_to_calculate),
 	.processing_finished(calculo_finalizado),
 	
-	.parameter_in_0(32),
-	.parameter_in_1(frames_integracion),
-	.parameter_in_2(frames_promC),
+	.parameter_in_0(filter_coeff[0]),
+	.parameter_in_1(filter_coeff[1]),
+	.parameter_in_2(filter_coeff[2]),
+	.parameter_in_3(filter_coeff[3]),
+	.parameter_in_4(filter_coeff[4]),
+	.parameter_in_5(filter_coeff[5]),
+	.parameter_in_6(filter_coeff[6]),
+	.parameter_in_7(filter_coeff[7]),
+	.parameter_in_8(filter_coeff[8]),
+	.parameter_in_9(filter_coeff[9]),
 	
+	.parameter_in_10(filter_coeff[10]),
+	.parameter_in_11(filter_coeff[11]),
+	.parameter_in_12(filter_coeff[12]),
+	.parameter_in_13(filter_coeff[13]),
+	.parameter_in_14(filter_coeff[14]),
+	.parameter_in_15(filter_coeff[15]),
+	.parameter_in_16(filter_coeff[16]),
+	.parameter_in_17(filter_coeff[17]),
+	.parameter_in_18(filter_coeff[18]),
+	.parameter_in_19(filter_coeff[19]),
+	
+	.parameter_in_20(filter_coeff[20]),
+	.parameter_in_21(filter_coeff[21]),
+	.parameter_in_22(filter_coeff[22]),
+	.parameter_in_23(filter_coeff[23]),
+	.parameter_in_24(filter_coeff[24]),
+	.parameter_in_25(filter_coeff[25]),
+	.parameter_in_26(filter_coeff[26]),
+	.parameter_in_27(filter_coeff[27]),
+	.parameter_in_28(filter_coeff[28]),
+	.parameter_in_29(filter_coeff[29]),
+	
+	.parameter_in_30(filter_coeff[30]),
+	.parameter_in_31(filter_coeff[31]),
+	.parameter_in_32(filter_coeff[32]),
 
 
 );
@@ -275,9 +344,9 @@ assign LED[0] = ( count > (65000000 >> 1) );
 // ====== Algunos LED para ver cositas  =========
 ////////////////////////////////////////////////
 
-assign LED[1] = amplitud_ruido[0];
-assign LED[2] = frames_integracion[0];
-assign LED[3] = enable;
+assign LED[1] = SW[0];
+assign LED[2] = SW[1];
+assign LED[3] = SW[2];
 	 
 	 
 endmodule

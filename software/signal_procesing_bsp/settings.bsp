@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>13/10/2022 18:21:46</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1665696106032</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>08/11/2022 19:13:30</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1667945610245</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\MatiOliva\Documents\00-ProyectosQuartus\signal_processing_template\software\signal_procesing_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\procesador.sopcinfo</SopcDesignFile>
@@ -900,121 +900,139 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>program_memory</slaveDescriptor>
-                <addressRange>0x00040000 - 0x000649EF</addressRange>
+                <addressRange>0x00000000 - 0x000249EF</addressRange>
                 <addressSpan>150000</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>parameters_3</slaveDescriptor>
+                <addressRange>0x00040000 - 0x000407FF</addressRange>
+                <addressSpan>2048</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>parameters_2</slaveDescriptor>
+                <addressRange>0x00040800 - 0x00040FFF</addressRange>
+                <addressSpan>2048</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>parameters_1</slaveDescriptor>
+                <addressRange>0x00041000 - 0x000417FF</addressRange>
+                <addressSpan>2048</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>parameters</slaveDescriptor>
-                <addressRange>0x00080800 - 0x00080FFF</addressRange>
+                <addressRange>0x00041800 - 0x00041FFF</addressRange>
                 <addressSpan>2048</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>pll_reconfigurar</slaveDescriptor>
-                <addressRange>0x00081800 - 0x000818FF</addressRange>
+                <addressRange>0x00042000 - 0x000420FF</addressRange>
                 <addressSpan>256</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>finalizacion</slaveDescriptor>
-                <addressRange>0x00081900 - 0x0008190F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>divisor_clock</slaveDescriptor>
-                <addressRange>0x00081910 - 0x0008191F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>result1_32_bit</slaveDescriptor>
-                <addressRange>0x00081920 - 0x0008192F</addressRange>
+                <addressRange>0x00042100 - 0x0004210F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>result0_32_bit</slaveDescriptor>
-                <addressRange>0x00081930 - 0x0008193F</addressRange>
+                <addressRange>0x00042110 - 0x0004211F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>result1_64_bit_down</slaveDescriptor>
-                <addressRange>0x00081940 - 0x0008194F</addressRange>
+                <addressRange>0x00042120 - 0x0004212F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>result1_64_bit_up</slaveDescriptor>
-                <addressRange>0x00081950 - 0x0008195F</addressRange>
+                <addressRange>0x00042130 - 0x0004213F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>result0_64_bit_down</slaveDescriptor>
-                <addressRange>0x00081960 - 0x0008196F</addressRange>
+                <addressRange>0x00042140 - 0x0004214F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>result0_64_bit_up</slaveDescriptor>
-                <addressRange>0x00081970 - 0x0008197F</addressRange>
+                <addressRange>0x00042150 - 0x0004215F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>finalizacion</slaveDescriptor>
+                <addressRange>0x00042160 - 0x0004216F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>enable</slaveDescriptor>
-                <addressRange>0x00081980 - 0x0008198F</addressRange>
+                <addressRange>0x00042170 - 0x0004217F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>reset</slaveDescriptor>
-                <addressRange>0x00081990 - 0x0008199F</addressRange>
+                <addressRange>0x00042180 - 0x0004218F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>divisor_clock</slaveDescriptor>
+                <addressRange>0x00042190 - 0x0004219F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>fifo1_32_bit</slaveDescriptor>
-                <addressRange>0x000819A0 - 0x000819A7</addressRange>
+                <addressRange>0x000421A0 - 0x000421A7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>fifo0_32_bit</slaveDescriptor>
-                <addressRange>0x000819A8 - 0x000819AF</addressRange>
+                <addressRange>0x000421A8 - 0x000421AF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>fifo1_64_bit_down</slaveDescriptor>
-                <addressRange>0x000819B0 - 0x000819B7</addressRange>
-                <addressSpan>8</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>fifo0_64_bit_down</slaveDescriptor>
-                <addressRange>0x000819B8 - 0x000819BF</addressRange>
+                <addressRange>0x000421B0 - 0x000421B7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>fifo1_64_bit_up</slaveDescriptor>
-                <addressRange>0x000819C0 - 0x000819C7</addressRange>
+                <addressRange>0x000421B8 - 0x000421BF</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>fifo0_64_bit_down</slaveDescriptor>
+                <addressRange>0x000421C0 - 0x000421C7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>fifo0_64_bit_up</slaveDescriptor>
-                <addressRange>0x000819C8 - 0x000819CF</addressRange>
+                <addressRange>0x000421C8 - 0x000421CF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x000819D0 - 0x000819D7</addressRange>
+                <addressRange>0x000421D0 - 0x000421D7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

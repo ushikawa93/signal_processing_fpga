@@ -53,6 +53,10 @@ module data_in(
 	output	adc_din,
 	input 	adc_dout,
 	
+	// Entradas digitales para el DAC
+	input [13:0] 	 digital_data_in,
+	input 			 digital_data_in_valid,
+	
 	
 	// Interfaces de salida de datos:
 	
@@ -112,6 +116,10 @@ dac_driver dac_HS(
 	.ptos_x_ciclo(ptos_x_ciclo_dac),
 	.seleccion_dac(0),
 	
+	// Entrada digital (si no se usa una tabla de look up)...
+	.digital_data_in(digital_data_in),
+	.digital_data_in_valid(digital_data_in_valid),
+	
 	// Entradas y salidas del DAC
 	.DAC_CLK_A(DAC_CLK_A),
 	.DAC_DA(DAC_DA),
@@ -129,6 +137,8 @@ dac_driver dac_HS(
 
 
 );
+
+
 
 /////////////////////////////////////////////////
 // ===================== ADC  ===================
@@ -179,7 +189,7 @@ adc_driver adc_HS(
 	data_adc_2308_valid sirve para sincronizar el procesamiento de 
 	etapas posteriores.
 
-*/
+*//*
 embedded_adc adc_2308(
 
 	// Entradas de control
@@ -203,6 +213,6 @@ embedded_adc adc_2308(
 	.data_stream_adc(data_adc_2308)
 
 );
-
+*/
 
 endmodule

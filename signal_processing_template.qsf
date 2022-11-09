@@ -360,6 +360,7 @@ set_location_assignment PIN_AB26 -to HEX5[4]
 set_location_assignment PIN_AA26 -to HEX5[5]
 set_location_assignment PIN_AA25 -to HEX5[6]
 set_location_assignment PIN_AG18 -to watch
+set_global_assignment -name DSP_BLOCK_BALANCING "LOGIC ELEMENTS"
 set_global_assignment -name VERILOG_FILE custom_ip/processing/prom_coherente_pipelined.v
 set_global_assignment -name SDC_FILE timing.sdc
 set_global_assignment -name VERILOG_FILE custom_ip/processing/remove_mean_value_pipelined.v
@@ -384,4 +385,5 @@ set_global_assignment -name VERILOG_FILE signal_processing.v
 set_global_assignment -name VERILOG_FILE custom_ip/processing/multiplicador.v
 set_global_assignment -name VERILOG_FILE custom_ip/processing/referencias.v
 set_global_assignment -name VERILOG_FILE custom_ip/processing/reference_mixer.v
+set_global_assignment -name VERILOG_FILE custom_ip/processing/FIR_filter.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

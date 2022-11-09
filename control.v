@@ -41,7 +41,33 @@ module control (
 	output [31:0] parameter_out_7,
 	output [31:0] parameter_out_8,
 	output [31:0] parameter_out_9,
+
 	output [31:0] parameter_out_10,
+	output [31:0] parameter_out_11,
+	output [31:0] parameter_out_12,
+	output [31:0] parameter_out_13,
+	output [31:0] parameter_out_14,
+	output [31:0] parameter_out_15,
+	output [31:0] parameter_out_16,
+	output [31:0] parameter_out_17,
+	output [31:0] parameter_out_18,
+	output [31:0] parameter_out_19,
+	
+	output [31:0] parameter_out_20,	
+	output [31:0] parameter_out_21,
+	output [31:0] parameter_out_22,
+	output [31:0] parameter_out_23,
+	output [31:0] parameter_out_24,
+	output [31:0] parameter_out_25,
+	output [31:0] parameter_out_26,
+	output [31:0] parameter_out_27,
+	output [31:0] parameter_out_28,
+	output [31:0] parameter_out_29,
+	
+	output [31:0] parameter_out_30,
+	output [31:0] parameter_out_31,
+	output [31:0] parameter_out_32,
+	
 	
 	// Parametros necesarios para el HPS
 	//////// HPS ////////////
@@ -125,14 +151,68 @@ procesador nios2 (
         .parameters_user_interface_dataout_7 (parameter_out_7), //                          .dataout_7
         .parameters_user_interface_dataout_8 (parameter_out_8), //                          .dataout_8
         .parameters_user_interface_dataout_9 (parameter_out_9), //                          .dataout_9
-        .parameters_user_interface_datain_10 (parameter_out_10), //                          .datain_10
+		  
+		  .parameters_1_user_interface_dataout_0 (parameter_out_10), // parameters_1_user_interface.dataout_0
+        .parameters_1_user_interface_dataout_1 (parameter_out_11), //                            .dataout_1
+        .parameters_1_user_interface_dataout_2 (parameter_out_12), //                            .dataout_2
+        .parameters_1_user_interface_dataout_3 (parameter_out_13), //                            .dataout_3
+        .parameters_1_user_interface_dataout_4 (parameter_out_14), //                            .dataout_4
+        .parameters_1_user_interface_dataout_5 (parameter_out_15), //                            .dataout_5
+        .parameters_1_user_interface_dataout_6 (parameter_out_16), //                            .dataout_6
+        .parameters_1_user_interface_dataout_7 (parameter_out_17), //                            .dataout_7
+        .parameters_1_user_interface_dataout_8 (parameter_out_18), //                            .dataout_8
+        .parameters_1_user_interface_dataout_9 (parameter_out_19), //                            .dataout_9
+		  
+		  .parameters_2_user_interface_dataout_0 (parameter_out_20), // parameters_1_user_interface.dataout_0
+        .parameters_2_user_interface_dataout_1 (parameter_out_21), //                            .dataout_1
+        .parameters_2_user_interface_dataout_2 (parameter_out_22), //                            .dataout_2
+        .parameters_2_user_interface_dataout_3 (parameter_out_23), //                            .dataout_3
+        .parameters_2_user_interface_dataout_4 (parameter_out_24), //                            .dataout_4
+        .parameters_2_user_interface_dataout_5 (parameter_out_25), //                            .dataout_5
+        .parameters_2_user_interface_dataout_6 (parameter_out_26), //                            .dataout_6
+        .parameters_2_user_interface_dataout_7 (parameter_out_27), //                            .dataout_7
+        .parameters_2_user_interface_dataout_8 (parameter_out_28), //                            .dataout_8
+        .parameters_2_user_interface_dataout_9 (parameter_out_29), //                            .dataout_9
+		  
+		  .parameters_3_user_interface_dataout_0 (parameter_out_30), // parameters_1_user_interface.dataout_0
+        .parameters_3_user_interface_dataout_1 (parameter_out_31), //                            .dataout_1
+        .parameters_3_user_interface_dataout_2 (parameter_out_32), //                            .dataout_2
+        .parameters_3_user_interface_dataout_3 (), //                            .dataout_3
+        .parameters_3_user_interface_dataout_4 (), //                            .dataout_4
+        .parameters_3_user_interface_dataout_5 (), //                            .dataout_5
+        .parameters_3_user_interface_dataout_6 (), //                            .dataout_6
+        .parameters_3_user_interface_dataout_7 (), //                            .dataout_7
+        .parameters_3_user_interface_dataout_8 (), //                            .dataout_8
+        .parameters_3_user_interface_dataout_9 (), //                            .dataout_9
        
 		  // Salidas opcionales desde la FPGA al NIOS o HPS:
-		  .parameters_user_interface_datain_11 (parameter_in_0), //                          .datain_11
-        .parameters_user_interface_datain_12 (parameter_in_1), //                          .datain_12
-        .parameters_user_interface_datain_13 (parameter_in_2), //                          .datain_13
-        .parameters_user_interface_datain_14 (parameter_in_3), //                          .datain_14
-        .parameters_user_interface_datain_15 (parameter_in_4), //                          .datain_15
+		  .parameters_user_interface_datain_10 (parameter_in_0), //                          .datain_10
+		  .parameters_user_interface_datain_11 (parameter_in_1), //                          .datain_11
+        .parameters_user_interface_datain_12 (parameter_in_2), //                          .datain_12
+        .parameters_user_interface_datain_13 (parameter_in_3), //                          .datain_13
+        .parameters_user_interface_datain_14 (parameter_in_4), //                          .datain_14
+        .parameters_user_interface_datain_15 (), //                          .datain_15
+		  
+        .parameters_1_user_interface_datain_10 (), //                          .datain_10
+		  .parameters_1_user_interface_datain_11 (), //                          .datain_11
+        .parameters_1_user_interface_datain_12 (), //                          .datain_12
+        .parameters_1_user_interface_datain_13 (), //                          .datain_13
+        .parameters_1_user_interface_datain_14 (), //                          .datain_14
+        .parameters_1_user_interface_datain_15 (), //                          .datain_15
+
+        .parameters_2_user_interface_datain_10 (), //                          .datain_10
+		  .parameters_2_user_interface_datain_11 (), //                          .datain_11
+        .parameters_2_user_interface_datain_12 (), //                          .datain_12
+        .parameters_2_user_interface_datain_13 (), //                          .datain_13
+        .parameters_2_user_interface_datain_14 (), //                          .datain_14
+        .parameters_2_user_interface_datain_15 (), //                          .datain_15
+		  
+        .parameters_3_user_interface_datain_10 (), //                          .datain_10
+		  .parameters_3_user_interface_datain_11 (), //                          .datain_11
+        .parameters_3_user_interface_datain_12 (), //                          .datain_12
+        .parameters_3_user_interface_datain_13 (), //                          .datain_13
+        .parameters_3_user_interface_datain_14 (), //                          .datain_14
+        .parameters_3_user_interface_datain_15 (), //                          .datain_15
       
 		  
 	 

@@ -9,6 +9,10 @@ module dac_driver(
 	// Parametros de configuracion
 	input [15:0]	 ptos_x_ciclo,
 	input 			 seleccion_dac,		// 0 -> seno / 1 -> constante
+	
+	// Entrada digital (si no se usa una tabla de look up)...
+	input [13:0] 	 digital_data_in,
+	input 			 digital_data_in_valid,
 
 	// Entradas y salidas del DAC
 	output			 DAC_CLK_A,
@@ -29,14 +33,15 @@ module dac_driver(
 
 );
 
+parameter LU_table = 0;
 
 //=======================================================
 // Origen de los datos para el dac (LU table) 
 //=======================================================
 
 
-wire data_valid_dac;
-wire [13:0] dato_dac;
+wire dato_dac_lu_table_valid;
+wire [13:0] dato_dac_lu_table;
 wire zero_cross;
 
 
@@ -50,10 +55,61 @@ data_source_dac data_s (
 	.seleccion_dac(seleccion_dac),
 	
 	.zero_cross(zero_cross),
-	.data_valid(data_valid_dac),
-	.data(dato_dac)
+	.data_valid(dato_dac_lu_table_valid),
+	.data(dato_dac_lu_table)
 	
 );
+
+
+//=======================================================
+// Acondicionamiento de señal externa
+//=======================================================
+
+// Esto es para acomodar niveles de DAC y ADC
+parameter mult_factor = 1148;
+parameter div_factor = 1024;	// Lo mismo que un right shift de 10
+
+reg [31:0] digital_data_in_reg,digital_data_in_reg_1;
+reg digital_data_in_valid_reg,digital_data_in_valid_reg_1;
+
+always @ (posedge CLK_65)
+begin
+	
+	digital_data_in_reg_1			<= digital_data_in * mult_factor;	
+	digital_data_in_valid_reg_1	<= digital_data_in_valid;
+	
+	digital_data_in_reg 				<= digital_data_in_reg_1 >>> 10;
+	digital_data_in_valid_reg	 	<= digital_data_in_valid_reg_1;
+	
+end
+
+
+
+
+//=======================================================
+// Seleccion de datos para el dac
+//=======================================================
+
+wire [13:0] dato_dac;
+wire data_dac_valid;
+
+assign dato_dac = (LU_table) ? dato_dac_lu_table : digital_data_in_reg;
+assign data_dac_valid = (LU_table) ? dato_dac_lu_table_valid : digital_data_in_valid_reg;
+
+reg [31:0] dato_dac_reg;
+	
+	always @ (posedge CLK_65)
+	begin
+		if(!reset_n)
+		begin
+			dato_dac_reg <= nivel_idle;
+		end
+		if(digital_data_in_valid_reg)
+		begin
+			dato_dac_reg <= dato_dac;
+		end
+				
+	end
 
 //=======================================================
 //  DAC REG/WIRE declarations
@@ -76,8 +132,8 @@ assign  DAC_CLK_A = CLK_65; 	    //PLL Clock to DAC_A
 
 assign  POWER_ON  = 1;            //Disable OSC_SMA
 
-assign  DAC_DA = (data_valid_dac)? dato_dac : nivel_idle ; 
-assign  DAC_DB = (data_valid_dac)? dato_dac : nivel_idle ; 
+assign  DAC_DA = (data_dac_valid)? dato_dac : dato_dac_reg ; 
+assign  DAC_DB = (data_dac_valid)? dato_dac : dato_dac_reg ; 
 
 
 
@@ -97,7 +153,7 @@ reg [15:0] counter_pipeline;
 always @ (posedge CLK_65)
 	if(!reset_n)
 		counter_pipeline <= 0;
-	else if(data_valid_dac)
+	else if(data_dac_valid)
 		counter_pipeline <= (counter_pipeline == delay)? counter_pipeline : counter_pipeline + 1;
 
 
@@ -105,7 +161,7 @@ always @ (posedge CLK_65)
 //  Salidas
 //=======================================================
 
-assign data_valid_dac_export = (data_valid_dac && (counter_pipeline == delay));
+assign data_valid_dac_export = (data_dac_valid && (counter_pipeline == delay));
 
 
 endmodule

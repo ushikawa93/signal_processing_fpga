@@ -4,71 +4,119 @@
 
 `timescale 1 ps / 1 ps
 module procesador (
-		input  wire        clk_clk,                             //                       clk.clk
-		input  wire        clk_custom_in_clk,                   //             clk_custom_in.clk
-		output wire        clk_custom_out_clk,                  //            clk_custom_out.clk
-		output wire [31:0] divisor_clock_export,                //             divisor_clock.export
-		output wire        enable_export,                       //                    enable.export
-		input  wire        fifo0_32_bit_in_valid,               //           fifo0_32_bit_in.valid
-		input  wire [31:0] fifo0_32_bit_in_data,                //                          .data
-		output wire        fifo0_32_bit_in_ready,               //                          .ready
-		input  wire        fifo0_64_bit_down_in_valid,          //      fifo0_64_bit_down_in.valid
-		input  wire [31:0] fifo0_64_bit_down_in_data,           //                          .data
-		output wire        fifo0_64_bit_down_in_ready,          //                          .ready
-		input  wire        fifo0_64_bit_up_in_valid,            //        fifo0_64_bit_up_in.valid
-		input  wire [31:0] fifo0_64_bit_up_in_data,             //                          .data
-		output wire        fifo0_64_bit_up_in_ready,            //                          .ready
-		input  wire        fifo1_32_bit_in_valid,               //           fifo1_32_bit_in.valid
-		input  wire [31:0] fifo1_32_bit_in_data,                //                          .data
-		output wire        fifo1_32_bit_in_ready,               //                          .ready
-		input  wire        fifo1_64_bit_down_in_valid,          //      fifo1_64_bit_down_in.valid
-		input  wire [31:0] fifo1_64_bit_down_in_data,           //                          .data
-		output wire        fifo1_64_bit_down_in_ready,          //                          .ready
-		input  wire        fifo1_64_bit_up_in_valid,            //        fifo1_64_bit_up_in.valid
-		input  wire [31:0] fifo1_64_bit_up_in_data,             //                          .data
-		output wire        fifo1_64_bit_up_in_ready,            //                          .ready
-		input  wire        finalizacion_export,                 //              finalizacion.export
-		output wire [12:0] memory_mem_a,                        //                    memory.mem_a
-		output wire [2:0]  memory_mem_ba,                       //                          .mem_ba
-		output wire        memory_mem_ck,                       //                          .mem_ck
-		output wire        memory_mem_ck_n,                     //                          .mem_ck_n
-		output wire        memory_mem_cke,                      //                          .mem_cke
-		output wire        memory_mem_cs_n,                     //                          .mem_cs_n
-		output wire        memory_mem_ras_n,                    //                          .mem_ras_n
-		output wire        memory_mem_cas_n,                    //                          .mem_cas_n
-		output wire        memory_mem_we_n,                     //                          .mem_we_n
-		output wire        memory_mem_reset_n,                  //                          .mem_reset_n
-		inout  wire [7:0]  memory_mem_dq,                       //                          .mem_dq
-		inout  wire        memory_mem_dqs,                      //                          .mem_dqs
-		inout  wire        memory_mem_dqs_n,                    //                          .mem_dqs_n
-		output wire        memory_mem_odt,                      //                          .mem_odt
-		output wire        memory_mem_dm,                       //                          .mem_dm
-		input  wire        memory_oct_rzqin,                    //                          .oct_rzqin
-		output wire [31:0] parameters_user_interface_dataout_0, // parameters_user_interface.dataout_0
-		output wire [31:0] parameters_user_interface_dataout_1, //                          .dataout_1
-		output wire [31:0] parameters_user_interface_dataout_2, //                          .dataout_2
-		output wire [31:0] parameters_user_interface_dataout_3, //                          .dataout_3
-		output wire [31:0] parameters_user_interface_dataout_4, //                          .dataout_4
-		output wire [31:0] parameters_user_interface_dataout_5, //                          .dataout_5
-		output wire [31:0] parameters_user_interface_dataout_6, //                          .dataout_6
-		output wire [31:0] parameters_user_interface_dataout_7, //                          .dataout_7
-		output wire [31:0] parameters_user_interface_dataout_8, //                          .dataout_8
-		output wire [31:0] parameters_user_interface_dataout_9, //                          .dataout_9
-		input  wire [31:0] parameters_user_interface_datain_10, //                          .datain_10
-		input  wire [31:0] parameters_user_interface_datain_11, //                          .datain_11
-		input  wire [31:0] parameters_user_interface_datain_12, //                          .datain_12
-		input  wire [31:0] parameters_user_interface_datain_13, //                          .datain_13
-		input  wire [31:0] parameters_user_interface_datain_14, //                          .datain_14
-		input  wire [31:0] parameters_user_interface_datain_15, //                          .datain_15
-		input  wire        reset_reset_n,                       //                     reset.reset_n
-		input  wire        reset_fifos_reset,                   //               reset_fifos.reset
-		output wire        reset_op_export,                     //                  reset_op.export
-		input  wire [31:0] result0_32_bit_in_export,            //         result0_32_bit_in.export
-		input  wire [31:0] result0_64_bit_down_in_export,       //    result0_64_bit_down_in.export
-		input  wire [31:0] result0_64_bit_up_in_export,         //      result0_64_bit_up_in.export
-		input  wire [31:0] result1_32_bit_in_export,            //         result1_32_bit_in.export
-		input  wire [31:0] result1_64_bit_down_in_export,       //    result1_64_bit_down_in.export
-		input  wire [31:0] result1_64_bit_up_in_export          //      result1_64_bit_up_in.export
+		input  wire        clk_clk,                               //                         clk.clk
+		input  wire        clk_custom_in_clk,                     //               clk_custom_in.clk
+		output wire        clk_custom_out_clk,                    //              clk_custom_out.clk
+		output wire [31:0] divisor_clock_export,                  //               divisor_clock.export
+		output wire        enable_export,                         //                      enable.export
+		input  wire        fifo0_32_bit_in_valid,                 //             fifo0_32_bit_in.valid
+		input  wire [31:0] fifo0_32_bit_in_data,                  //                            .data
+		output wire        fifo0_32_bit_in_ready,                 //                            .ready
+		input  wire        fifo0_64_bit_down_in_valid,            //        fifo0_64_bit_down_in.valid
+		input  wire [31:0] fifo0_64_bit_down_in_data,             //                            .data
+		output wire        fifo0_64_bit_down_in_ready,            //                            .ready
+		input  wire        fifo0_64_bit_up_in_valid,              //          fifo0_64_bit_up_in.valid
+		input  wire [31:0] fifo0_64_bit_up_in_data,               //                            .data
+		output wire        fifo0_64_bit_up_in_ready,              //                            .ready
+		input  wire        fifo1_32_bit_in_valid,                 //             fifo1_32_bit_in.valid
+		input  wire [31:0] fifo1_32_bit_in_data,                  //                            .data
+		output wire        fifo1_32_bit_in_ready,                 //                            .ready
+		input  wire        fifo1_64_bit_down_in_valid,            //        fifo1_64_bit_down_in.valid
+		input  wire [31:0] fifo1_64_bit_down_in_data,             //                            .data
+		output wire        fifo1_64_bit_down_in_ready,            //                            .ready
+		input  wire        fifo1_64_bit_up_in_valid,              //          fifo1_64_bit_up_in.valid
+		input  wire [31:0] fifo1_64_bit_up_in_data,               //                            .data
+		output wire        fifo1_64_bit_up_in_ready,              //                            .ready
+		input  wire        finalizacion_export,                   //                finalizacion.export
+		output wire [12:0] memory_mem_a,                          //                      memory.mem_a
+		output wire [2:0]  memory_mem_ba,                         //                            .mem_ba
+		output wire        memory_mem_ck,                         //                            .mem_ck
+		output wire        memory_mem_ck_n,                       //                            .mem_ck_n
+		output wire        memory_mem_cke,                        //                            .mem_cke
+		output wire        memory_mem_cs_n,                       //                            .mem_cs_n
+		output wire        memory_mem_ras_n,                      //                            .mem_ras_n
+		output wire        memory_mem_cas_n,                      //                            .mem_cas_n
+		output wire        memory_mem_we_n,                       //                            .mem_we_n
+		output wire        memory_mem_reset_n,                    //                            .mem_reset_n
+		inout  wire [7:0]  memory_mem_dq,                         //                            .mem_dq
+		inout  wire        memory_mem_dqs,                        //                            .mem_dqs
+		inout  wire        memory_mem_dqs_n,                      //                            .mem_dqs_n
+		output wire        memory_mem_odt,                        //                            .mem_odt
+		output wire        memory_mem_dm,                         //                            .mem_dm
+		input  wire        memory_oct_rzqin,                      //                            .oct_rzqin
+		output wire [31:0] parameters_1_user_interface_dataout_0, // parameters_1_user_interface.dataout_0
+		output wire [31:0] parameters_1_user_interface_dataout_1, //                            .dataout_1
+		output wire [31:0] parameters_1_user_interface_dataout_2, //                            .dataout_2
+		output wire [31:0] parameters_1_user_interface_dataout_3, //                            .dataout_3
+		output wire [31:0] parameters_1_user_interface_dataout_4, //                            .dataout_4
+		output wire [31:0] parameters_1_user_interface_dataout_5, //                            .dataout_5
+		output wire [31:0] parameters_1_user_interface_dataout_6, //                            .dataout_6
+		output wire [31:0] parameters_1_user_interface_dataout_7, //                            .dataout_7
+		output wire [31:0] parameters_1_user_interface_dataout_8, //                            .dataout_8
+		output wire [31:0] parameters_1_user_interface_dataout_9, //                            .dataout_9
+		input  wire [31:0] parameters_1_user_interface_datain_10, //                            .datain_10
+		input  wire [31:0] parameters_1_user_interface_datain_11, //                            .datain_11
+		input  wire [31:0] parameters_1_user_interface_datain_12, //                            .datain_12
+		input  wire [31:0] parameters_1_user_interface_datain_13, //                            .datain_13
+		input  wire [31:0] parameters_1_user_interface_datain_14, //                            .datain_14
+		input  wire [31:0] parameters_1_user_interface_datain_15, //                            .datain_15
+		output wire [31:0] parameters_2_user_interface_dataout_0, // parameters_2_user_interface.dataout_0
+		output wire [31:0] parameters_2_user_interface_dataout_1, //                            .dataout_1
+		output wire [31:0] parameters_2_user_interface_dataout_2, //                            .dataout_2
+		output wire [31:0] parameters_2_user_interface_dataout_3, //                            .dataout_3
+		output wire [31:0] parameters_2_user_interface_dataout_4, //                            .dataout_4
+		output wire [31:0] parameters_2_user_interface_dataout_5, //                            .dataout_5
+		output wire [31:0] parameters_2_user_interface_dataout_6, //                            .dataout_6
+		output wire [31:0] parameters_2_user_interface_dataout_7, //                            .dataout_7
+		output wire [31:0] parameters_2_user_interface_dataout_8, //                            .dataout_8
+		output wire [31:0] parameters_2_user_interface_dataout_9, //                            .dataout_9
+		input  wire [31:0] parameters_2_user_interface_datain_10, //                            .datain_10
+		input  wire [31:0] parameters_2_user_interface_datain_11, //                            .datain_11
+		input  wire [31:0] parameters_2_user_interface_datain_12, //                            .datain_12
+		input  wire [31:0] parameters_2_user_interface_datain_13, //                            .datain_13
+		input  wire [31:0] parameters_2_user_interface_datain_14, //                            .datain_14
+		input  wire [31:0] parameters_2_user_interface_datain_15, //                            .datain_15
+		output wire [31:0] parameters_3_user_interface_dataout_0, // parameters_3_user_interface.dataout_0
+		output wire [31:0] parameters_3_user_interface_dataout_1, //                            .dataout_1
+		output wire [31:0] parameters_3_user_interface_dataout_2, //                            .dataout_2
+		output wire [31:0] parameters_3_user_interface_dataout_3, //                            .dataout_3
+		output wire [31:0] parameters_3_user_interface_dataout_4, //                            .dataout_4
+		output wire [31:0] parameters_3_user_interface_dataout_5, //                            .dataout_5
+		output wire [31:0] parameters_3_user_interface_dataout_6, //                            .dataout_6
+		output wire [31:0] parameters_3_user_interface_dataout_7, //                            .dataout_7
+		output wire [31:0] parameters_3_user_interface_dataout_8, //                            .dataout_8
+		output wire [31:0] parameters_3_user_interface_dataout_9, //                            .dataout_9
+		input  wire [31:0] parameters_3_user_interface_datain_10, //                            .datain_10
+		input  wire [31:0] parameters_3_user_interface_datain_11, //                            .datain_11
+		input  wire [31:0] parameters_3_user_interface_datain_12, //                            .datain_12
+		input  wire [31:0] parameters_3_user_interface_datain_13, //                            .datain_13
+		input  wire [31:0] parameters_3_user_interface_datain_14, //                            .datain_14
+		input  wire [31:0] parameters_3_user_interface_datain_15, //                            .datain_15
+		output wire [31:0] parameters_user_interface_dataout_0,   //   parameters_user_interface.dataout_0
+		output wire [31:0] parameters_user_interface_dataout_1,   //                            .dataout_1
+		output wire [31:0] parameters_user_interface_dataout_2,   //                            .dataout_2
+		output wire [31:0] parameters_user_interface_dataout_3,   //                            .dataout_3
+		output wire [31:0] parameters_user_interface_dataout_4,   //                            .dataout_4
+		output wire [31:0] parameters_user_interface_dataout_5,   //                            .dataout_5
+		output wire [31:0] parameters_user_interface_dataout_6,   //                            .dataout_6
+		output wire [31:0] parameters_user_interface_dataout_7,   //                            .dataout_7
+		output wire [31:0] parameters_user_interface_dataout_8,   //                            .dataout_8
+		output wire [31:0] parameters_user_interface_dataout_9,   //                            .dataout_9
+		input  wire [31:0] parameters_user_interface_datain_10,   //                            .datain_10
+		input  wire [31:0] parameters_user_interface_datain_11,   //                            .datain_11
+		input  wire [31:0] parameters_user_interface_datain_12,   //                            .datain_12
+		input  wire [31:0] parameters_user_interface_datain_13,   //                            .datain_13
+		input  wire [31:0] parameters_user_interface_datain_14,   //                            .datain_14
+		input  wire [31:0] parameters_user_interface_datain_15,   //                            .datain_15
+		input  wire        reset_reset_n,                         //                       reset.reset_n
+		input  wire        reset_fifos_reset,                     //                 reset_fifos.reset
+		output wire        reset_op_export,                       //                    reset_op.export
+		input  wire [31:0] result0_32_bit_in_export,              //           result0_32_bit_in.export
+		input  wire [31:0] result0_64_bit_down_in_export,         //      result0_64_bit_down_in.export
+		input  wire [31:0] result0_64_bit_up_in_export,           //        result0_64_bit_up_in.export
+		input  wire [31:0] result1_32_bit_in_export,              //           result1_32_bit_in.export
+		input  wire [31:0] result1_64_bit_down_in_export,         //      result1_64_bit_down_in.export
+		input  wire [31:0] result1_64_bit_up_in_export            //        result1_64_bit_up_in.export
 	);
 
 	wire  [63:0] pll_reconfig_from_pll_reconfig_from_pll;                          // pll:reconfig_from_pll -> pll_reconfigurar:reconfig_from_pll
@@ -76,7 +124,7 @@ module procesador (
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                                // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                             // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                             // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
-	wire  [19:0] nios2_gen2_0_data_master_address;                                 // nios2_gen2_0:d_address -> mm_interconnect_0:nios2_gen2_0_data_master_address
+	wire  [18:0] nios2_gen2_0_data_master_address;                                 // nios2_gen2_0:d_address -> mm_interconnect_0:nios2_gen2_0_data_master_address
 	wire   [3:0] nios2_gen2_0_data_master_byteenable;                              // nios2_gen2_0:d_byteenable -> mm_interconnect_0:nios2_gen2_0_data_master_byteenable
 	wire         nios2_gen2_0_data_master_read;                                    // nios2_gen2_0:d_read -> mm_interconnect_0:nios2_gen2_0_data_master_read
 	wire         nios2_gen2_0_data_master_write;                                   // nios2_gen2_0:d_write -> mm_interconnect_0:nios2_gen2_0_data_master_write
@@ -119,7 +167,7 @@ module procesador (
 	wire         hps_0_h2f_lw_axi_master_rvalid;                                   // mm_interconnect_0:hps_0_h2f_lw_axi_master_rvalid -> hps_0:h2f_lw_RVALID
 	wire  [31:0] nios2_gen2_0_instruction_master_readdata;                         // mm_interconnect_0:nios2_gen2_0_instruction_master_readdata -> nios2_gen2_0:i_readdata
 	wire         nios2_gen2_0_instruction_master_waitrequest;                      // mm_interconnect_0:nios2_gen2_0_instruction_master_waitrequest -> nios2_gen2_0:i_waitrequest
-	wire  [19:0] nios2_gen2_0_instruction_master_address;                          // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
+	wire  [18:0] nios2_gen2_0_instruction_master_address;                          // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
 	wire         nios2_gen2_0_instruction_master_read;                             // nios2_gen2_0:i_read -> mm_interconnect_0:nios2_gen2_0_instruction_master_read
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect;       // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_chipselect -> jtag_uart_0:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata;         // jtag_uart_0:av_readdata -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_readdata
@@ -172,6 +220,24 @@ module procesador (
 	wire   [3:0] mm_interconnect_0_parameters_s0_byteenable;                       // mm_interconnect_0:parameters_s0_byteenable -> parameters:slave_byteenable
 	wire         mm_interconnect_0_parameters_s0_write;                            // mm_interconnect_0:parameters_s0_write -> parameters:slave_write
 	wire  [31:0] mm_interconnect_0_parameters_s0_writedata;                        // mm_interconnect_0:parameters_s0_writedata -> parameters:slave_writedata
+	wire  [31:0] mm_interconnect_0_parameters_1_s0_readdata;                       // parameters_1:slave_readdata -> mm_interconnect_0:parameters_1_s0_readdata
+	wire   [8:0] mm_interconnect_0_parameters_1_s0_address;                        // mm_interconnect_0:parameters_1_s0_address -> parameters_1:slave_address
+	wire         mm_interconnect_0_parameters_1_s0_read;                           // mm_interconnect_0:parameters_1_s0_read -> parameters_1:slave_read
+	wire   [3:0] mm_interconnect_0_parameters_1_s0_byteenable;                     // mm_interconnect_0:parameters_1_s0_byteenable -> parameters_1:slave_byteenable
+	wire         mm_interconnect_0_parameters_1_s0_write;                          // mm_interconnect_0:parameters_1_s0_write -> parameters_1:slave_write
+	wire  [31:0] mm_interconnect_0_parameters_1_s0_writedata;                      // mm_interconnect_0:parameters_1_s0_writedata -> parameters_1:slave_writedata
+	wire  [31:0] mm_interconnect_0_parameters_2_s0_readdata;                       // parameters_2:slave_readdata -> mm_interconnect_0:parameters_2_s0_readdata
+	wire   [8:0] mm_interconnect_0_parameters_2_s0_address;                        // mm_interconnect_0:parameters_2_s0_address -> parameters_2:slave_address
+	wire         mm_interconnect_0_parameters_2_s0_read;                           // mm_interconnect_0:parameters_2_s0_read -> parameters_2:slave_read
+	wire   [3:0] mm_interconnect_0_parameters_2_s0_byteenable;                     // mm_interconnect_0:parameters_2_s0_byteenable -> parameters_2:slave_byteenable
+	wire         mm_interconnect_0_parameters_2_s0_write;                          // mm_interconnect_0:parameters_2_s0_write -> parameters_2:slave_write
+	wire  [31:0] mm_interconnect_0_parameters_2_s0_writedata;                      // mm_interconnect_0:parameters_2_s0_writedata -> parameters_2:slave_writedata
+	wire  [31:0] mm_interconnect_0_parameters_3_s0_readdata;                       // parameters_3:slave_readdata -> mm_interconnect_0:parameters_3_s0_readdata
+	wire   [8:0] mm_interconnect_0_parameters_3_s0_address;                        // mm_interconnect_0:parameters_3_s0_address -> parameters_3:slave_address
+	wire         mm_interconnect_0_parameters_3_s0_read;                           // mm_interconnect_0:parameters_3_s0_read -> parameters_3:slave_read
+	wire   [3:0] mm_interconnect_0_parameters_3_s0_byteenable;                     // mm_interconnect_0:parameters_3_s0_byteenable -> parameters_3:slave_byteenable
+	wire         mm_interconnect_0_parameters_3_s0_write;                          // mm_interconnect_0:parameters_3_s0_write -> parameters_3:slave_write
+	wire  [31:0] mm_interconnect_0_parameters_3_s0_writedata;                      // mm_interconnect_0:parameters_3_s0_writedata -> parameters_3:slave_writedata
 	wire         mm_interconnect_0_reset_s1_chipselect;                            // mm_interconnect_0:reset_s1_chipselect -> reset:chipselect
 	wire  [31:0] mm_interconnect_0_reset_s1_readdata;                              // reset:readdata -> mm_interconnect_0:reset_s1_readdata
 	wire   [1:0] mm_interconnect_0_reset_s1_address;                               // mm_interconnect_0:reset_s1_address -> reset:address
@@ -210,7 +276,7 @@ module procesador (
 	wire  [31:0] mm_interconnect_0_divisor_clock_s1_writedata;                     // mm_interconnect_0:divisor_clock_s1_writedata -> divisor_clock:writedata
 	wire         irq_mapper_receiver0_irq;                                         // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                             // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                                   // rst_controller:reset_out -> [divisor_clock:reset_n, enable:reset_n, finalizacion:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:jtag_uart_0_reset_reset_bridge_in_reset_reset, parameters:reset, pll_reconfigurar:mgmt_reset, program_memory:reset, result0_32_bit:reset_n, result0_64_bit_down:reset_n, result0_64_bit_up:reset_n, result1_32_bit:reset_n, result1_64_bit_down:reset_n, result1_64_bit_up:reset_n, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                                   // rst_controller:reset_out -> [divisor_clock:reset_n, enable:reset_n, finalizacion:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:jtag_uart_0_reset_reset_bridge_in_reset_reset, parameters:reset, parameters_1:reset, parameters_2:reset, parameters_3:reset, pll_reconfigurar:mgmt_reset, program_memory:reset, result0_32_bit:reset_n, result0_64_bit_down:reset_n, result0_64_bit_up:reset_n, result1_32_bit:reset_n, result1_64_bit_down:reset_n, result1_64_bit_up:reset_n, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                               // rst_controller:reset_req -> [program_memory:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                               // rst_controller_001:reset_out -> [fifo0_32_bit:reset_n, fifo0_64_bit_down:reset_n, fifo0_64_bit_up:reset_n, fifo1_32_bit:reset_n, fifo1_64_bit_down:reset_n, fifo1_64_bit_up:reset_n, mm_interconnect_0:fifo0_64_bit_up_reset_in_reset_bridge_in_reset_reset]
 	wire         rst_controller_002_reset_out_reset;                               // rst_controller_002:reset_out -> [irq_mapper:reset, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n]
@@ -491,6 +557,207 @@ module procesador (
 		.user_chipselect  ()                                            //       (terminated)
 	);
 
+	slave_template #(
+		.DATA_WIDTH          (32),
+		.ENABLE_SYNC_SIGNALS (0),
+		.MODE_0              (0),
+		.MODE_1              (0),
+		.MODE_2              (0),
+		.MODE_3              (0),
+		.MODE_4              (0),
+		.MODE_5              (0),
+		.MODE_6              (0),
+		.MODE_7              (0),
+		.MODE_8              (0),
+		.MODE_9              (0),
+		.MODE_10             (1),
+		.MODE_11             (1),
+		.MODE_12             (1),
+		.MODE_13             (1),
+		.MODE_14             (1),
+		.MODE_15             (1),
+		.IRQ_EN              (0)
+	) parameters_1 (
+		.clk              (clk_clk),                                      //       clock_reset.clk
+		.reset            (rst_controller_reset_out_reset),               // clock_reset_reset.reset
+		.slave_address    (mm_interconnect_0_parameters_1_s0_address),    //                s0.address
+		.slave_read       (mm_interconnect_0_parameters_1_s0_read),       //                  .read
+		.slave_write      (mm_interconnect_0_parameters_1_s0_write),      //                  .write
+		.slave_readdata   (mm_interconnect_0_parameters_1_s0_readdata),   //                  .readdata
+		.slave_writedata  (mm_interconnect_0_parameters_1_s0_writedata),  //                  .writedata
+		.slave_byteenable (mm_interconnect_0_parameters_1_s0_byteenable), //                  .byteenable
+		.user_dataout_0   (parameters_1_user_interface_dataout_0),        //    user_interface.export
+		.user_dataout_1   (parameters_1_user_interface_dataout_1),        //                  .export
+		.user_dataout_2   (parameters_1_user_interface_dataout_2),        //                  .export
+		.user_dataout_3   (parameters_1_user_interface_dataout_3),        //                  .export
+		.user_dataout_4   (parameters_1_user_interface_dataout_4),        //                  .export
+		.user_dataout_5   (parameters_1_user_interface_dataout_5),        //                  .export
+		.user_dataout_6   (parameters_1_user_interface_dataout_6),        //                  .export
+		.user_dataout_7   (parameters_1_user_interface_dataout_7),        //                  .export
+		.user_dataout_8   (parameters_1_user_interface_dataout_8),        //                  .export
+		.user_dataout_9   (parameters_1_user_interface_dataout_9),        //                  .export
+		.user_datain_10   (parameters_1_user_interface_datain_10),        //                  .export
+		.user_datain_11   (parameters_1_user_interface_datain_11),        //                  .export
+		.user_datain_12   (parameters_1_user_interface_datain_12),        //                  .export
+		.user_datain_13   (parameters_1_user_interface_datain_13),        //                  .export
+		.user_datain_14   (parameters_1_user_interface_datain_14),        //                  .export
+		.user_datain_15   (parameters_1_user_interface_datain_15),        //                  .export
+		.slave_irq        (),                                             //       (terminated)
+		.user_dataout_10  (),                                             //       (terminated)
+		.user_dataout_11  (),                                             //       (terminated)
+		.user_dataout_12  (),                                             //       (terminated)
+		.user_dataout_13  (),                                             //       (terminated)
+		.user_dataout_14  (),                                             //       (terminated)
+		.user_dataout_15  (),                                             //       (terminated)
+		.user_datain_0    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_1    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_2    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_3    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_4    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_5    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_6    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_7    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_8    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_9    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_write       (),                                             //       (terminated)
+		.user_read        (),                                             //       (terminated)
+		.user_chipselect  ()                                              //       (terminated)
+	);
+
+	slave_template #(
+		.DATA_WIDTH          (32),
+		.ENABLE_SYNC_SIGNALS (0),
+		.MODE_0              (0),
+		.MODE_1              (0),
+		.MODE_2              (0),
+		.MODE_3              (0),
+		.MODE_4              (0),
+		.MODE_5              (0),
+		.MODE_6              (0),
+		.MODE_7              (0),
+		.MODE_8              (0),
+		.MODE_9              (0),
+		.MODE_10             (1),
+		.MODE_11             (1),
+		.MODE_12             (1),
+		.MODE_13             (1),
+		.MODE_14             (1),
+		.MODE_15             (1),
+		.IRQ_EN              (0)
+	) parameters_2 (
+		.clk              (clk_clk),                                      //       clock_reset.clk
+		.reset            (rst_controller_reset_out_reset),               // clock_reset_reset.reset
+		.slave_address    (mm_interconnect_0_parameters_2_s0_address),    //                s0.address
+		.slave_read       (mm_interconnect_0_parameters_2_s0_read),       //                  .read
+		.slave_write      (mm_interconnect_0_parameters_2_s0_write),      //                  .write
+		.slave_readdata   (mm_interconnect_0_parameters_2_s0_readdata),   //                  .readdata
+		.slave_writedata  (mm_interconnect_0_parameters_2_s0_writedata),  //                  .writedata
+		.slave_byteenable (mm_interconnect_0_parameters_2_s0_byteenable), //                  .byteenable
+		.user_dataout_0   (parameters_2_user_interface_dataout_0),        //    user_interface.export
+		.user_dataout_1   (parameters_2_user_interface_dataout_1),        //                  .export
+		.user_dataout_2   (parameters_2_user_interface_dataout_2),        //                  .export
+		.user_dataout_3   (parameters_2_user_interface_dataout_3),        //                  .export
+		.user_dataout_4   (parameters_2_user_interface_dataout_4),        //                  .export
+		.user_dataout_5   (parameters_2_user_interface_dataout_5),        //                  .export
+		.user_dataout_6   (parameters_2_user_interface_dataout_6),        //                  .export
+		.user_dataout_7   (parameters_2_user_interface_dataout_7),        //                  .export
+		.user_dataout_8   (parameters_2_user_interface_dataout_8),        //                  .export
+		.user_dataout_9   (parameters_2_user_interface_dataout_9),        //                  .export
+		.user_datain_10   (parameters_2_user_interface_datain_10),        //                  .export
+		.user_datain_11   (parameters_2_user_interface_datain_11),        //                  .export
+		.user_datain_12   (parameters_2_user_interface_datain_12),        //                  .export
+		.user_datain_13   (parameters_2_user_interface_datain_13),        //                  .export
+		.user_datain_14   (parameters_2_user_interface_datain_14),        //                  .export
+		.user_datain_15   (parameters_2_user_interface_datain_15),        //                  .export
+		.slave_irq        (),                                             //       (terminated)
+		.user_dataout_10  (),                                             //       (terminated)
+		.user_dataout_11  (),                                             //       (terminated)
+		.user_dataout_12  (),                                             //       (terminated)
+		.user_dataout_13  (),                                             //       (terminated)
+		.user_dataout_14  (),                                             //       (terminated)
+		.user_dataout_15  (),                                             //       (terminated)
+		.user_datain_0    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_1    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_2    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_3    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_4    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_5    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_6    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_7    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_8    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_9    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_write       (),                                             //       (terminated)
+		.user_read        (),                                             //       (terminated)
+		.user_chipselect  ()                                              //       (terminated)
+	);
+
+	slave_template #(
+		.DATA_WIDTH          (32),
+		.ENABLE_SYNC_SIGNALS (0),
+		.MODE_0              (0),
+		.MODE_1              (0),
+		.MODE_2              (0),
+		.MODE_3              (0),
+		.MODE_4              (0),
+		.MODE_5              (0),
+		.MODE_6              (0),
+		.MODE_7              (0),
+		.MODE_8              (0),
+		.MODE_9              (0),
+		.MODE_10             (1),
+		.MODE_11             (1),
+		.MODE_12             (1),
+		.MODE_13             (1),
+		.MODE_14             (1),
+		.MODE_15             (1),
+		.IRQ_EN              (0)
+	) parameters_3 (
+		.clk              (clk_clk),                                      //       clock_reset.clk
+		.reset            (rst_controller_reset_out_reset),               // clock_reset_reset.reset
+		.slave_address    (mm_interconnect_0_parameters_3_s0_address),    //                s0.address
+		.slave_read       (mm_interconnect_0_parameters_3_s0_read),       //                  .read
+		.slave_write      (mm_interconnect_0_parameters_3_s0_write),      //                  .write
+		.slave_readdata   (mm_interconnect_0_parameters_3_s0_readdata),   //                  .readdata
+		.slave_writedata  (mm_interconnect_0_parameters_3_s0_writedata),  //                  .writedata
+		.slave_byteenable (mm_interconnect_0_parameters_3_s0_byteenable), //                  .byteenable
+		.user_dataout_0   (parameters_3_user_interface_dataout_0),        //    user_interface.export
+		.user_dataout_1   (parameters_3_user_interface_dataout_1),        //                  .export
+		.user_dataout_2   (parameters_3_user_interface_dataout_2),        //                  .export
+		.user_dataout_3   (parameters_3_user_interface_dataout_3),        //                  .export
+		.user_dataout_4   (parameters_3_user_interface_dataout_4),        //                  .export
+		.user_dataout_5   (parameters_3_user_interface_dataout_5),        //                  .export
+		.user_dataout_6   (parameters_3_user_interface_dataout_6),        //                  .export
+		.user_dataout_7   (parameters_3_user_interface_dataout_7),        //                  .export
+		.user_dataout_8   (parameters_3_user_interface_dataout_8),        //                  .export
+		.user_dataout_9   (parameters_3_user_interface_dataout_9),        //                  .export
+		.user_datain_10   (parameters_3_user_interface_datain_10),        //                  .export
+		.user_datain_11   (parameters_3_user_interface_datain_11),        //                  .export
+		.user_datain_12   (parameters_3_user_interface_datain_12),        //                  .export
+		.user_datain_13   (parameters_3_user_interface_datain_13),        //                  .export
+		.user_datain_14   (parameters_3_user_interface_datain_14),        //                  .export
+		.user_datain_15   (parameters_3_user_interface_datain_15),        //                  .export
+		.slave_irq        (),                                             //       (terminated)
+		.user_dataout_10  (),                                             //       (terminated)
+		.user_dataout_11  (),                                             //       (terminated)
+		.user_dataout_12  (),                                             //       (terminated)
+		.user_dataout_13  (),                                             //       (terminated)
+		.user_dataout_14  (),                                             //       (terminated)
+		.user_dataout_15  (),                                             //       (terminated)
+		.user_datain_0    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_1    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_2    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_3    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_4    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_5    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_6    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_7    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_8    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_datain_9    (32'b00000000000000000000000000000000),         //       (terminated)
+		.user_write       (),                                             //       (terminated)
+		.user_read        (),                                             //       (terminated)
+		.user_chipselect  ()                                              //       (terminated)
+	);
+
 	procesador_pll pll (
 		.refclk            (clk_clk),                                          //            refclk.clk
 		.rst               (~reset_reset_n),                                   //             reset.reset
@@ -710,6 +977,24 @@ module procesador (
 		.parameters_s0_readdata                                              (mm_interconnect_0_parameters_s0_readdata),                         //                                                              .readdata
 		.parameters_s0_writedata                                             (mm_interconnect_0_parameters_s0_writedata),                        //                                                              .writedata
 		.parameters_s0_byteenable                                            (mm_interconnect_0_parameters_s0_byteenable),                       //                                                              .byteenable
+		.parameters_1_s0_address                                             (mm_interconnect_0_parameters_1_s0_address),                        //                                               parameters_1_s0.address
+		.parameters_1_s0_write                                               (mm_interconnect_0_parameters_1_s0_write),                          //                                                              .write
+		.parameters_1_s0_read                                                (mm_interconnect_0_parameters_1_s0_read),                           //                                                              .read
+		.parameters_1_s0_readdata                                            (mm_interconnect_0_parameters_1_s0_readdata),                       //                                                              .readdata
+		.parameters_1_s0_writedata                                           (mm_interconnect_0_parameters_1_s0_writedata),                      //                                                              .writedata
+		.parameters_1_s0_byteenable                                          (mm_interconnect_0_parameters_1_s0_byteenable),                     //                                                              .byteenable
+		.parameters_2_s0_address                                             (mm_interconnect_0_parameters_2_s0_address),                        //                                               parameters_2_s0.address
+		.parameters_2_s0_write                                               (mm_interconnect_0_parameters_2_s0_write),                          //                                                              .write
+		.parameters_2_s0_read                                                (mm_interconnect_0_parameters_2_s0_read),                           //                                                              .read
+		.parameters_2_s0_readdata                                            (mm_interconnect_0_parameters_2_s0_readdata),                       //                                                              .readdata
+		.parameters_2_s0_writedata                                           (mm_interconnect_0_parameters_2_s0_writedata),                      //                                                              .writedata
+		.parameters_2_s0_byteenable                                          (mm_interconnect_0_parameters_2_s0_byteenable),                     //                                                              .byteenable
+		.parameters_3_s0_address                                             (mm_interconnect_0_parameters_3_s0_address),                        //                                               parameters_3_s0.address
+		.parameters_3_s0_write                                               (mm_interconnect_0_parameters_3_s0_write),                          //                                                              .write
+		.parameters_3_s0_read                                                (mm_interconnect_0_parameters_3_s0_read),                           //                                                              .read
+		.parameters_3_s0_readdata                                            (mm_interconnect_0_parameters_3_s0_readdata),                       //                                                              .readdata
+		.parameters_3_s0_writedata                                           (mm_interconnect_0_parameters_3_s0_writedata),                      //                                                              .writedata
+		.parameters_3_s0_byteenable                                          (mm_interconnect_0_parameters_3_s0_byteenable),                     //                                                              .byteenable
 		.pll_reconfigurar_mgmt_avalon_slave_address                          (mm_interconnect_0_pll_reconfigurar_mgmt_avalon_slave_address),     //                            pll_reconfigurar_mgmt_avalon_slave.address
 		.pll_reconfigurar_mgmt_avalon_slave_write                            (mm_interconnect_0_pll_reconfigurar_mgmt_avalon_slave_write),       //                                                              .write
 		.pll_reconfigurar_mgmt_avalon_slave_read                             (mm_interconnect_0_pll_reconfigurar_mgmt_avalon_slave_read),        //                                                              .read

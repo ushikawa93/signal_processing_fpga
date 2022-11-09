@@ -25,6 +25,7 @@
 
 // Parametros de configuracion
 
+int setParam(int parametro,int value,int* parameters_addr);
 int setParam0(int parametro,int* parameters_addr);
 int setParam1(int parametro,int* parameters_addr);
 int setParam2(int parametro,int* parameters_addr);

@@ -64,7 +64,55 @@ module procesador (
 	result0_64_bit_up_in_export,
 	result1_32_bit_in_export,
 	result1_64_bit_down_in_export,
-	result1_64_bit_up_in_export);	
+	result1_64_bit_up_in_export,
+	parameters_1_user_interface_dataout_0,
+	parameters_1_user_interface_dataout_1,
+	parameters_1_user_interface_dataout_2,
+	parameters_1_user_interface_dataout_3,
+	parameters_1_user_interface_dataout_4,
+	parameters_1_user_interface_dataout_5,
+	parameters_1_user_interface_dataout_6,
+	parameters_1_user_interface_dataout_7,
+	parameters_1_user_interface_dataout_8,
+	parameters_1_user_interface_dataout_9,
+	parameters_1_user_interface_datain_10,
+	parameters_1_user_interface_datain_11,
+	parameters_1_user_interface_datain_12,
+	parameters_1_user_interface_datain_13,
+	parameters_1_user_interface_datain_14,
+	parameters_1_user_interface_datain_15,
+	parameters_2_user_interface_dataout_0,
+	parameters_2_user_interface_dataout_1,
+	parameters_2_user_interface_dataout_2,
+	parameters_2_user_interface_dataout_3,
+	parameters_2_user_interface_dataout_4,
+	parameters_2_user_interface_dataout_5,
+	parameters_2_user_interface_dataout_6,
+	parameters_2_user_interface_dataout_7,
+	parameters_2_user_interface_dataout_8,
+	parameters_2_user_interface_dataout_9,
+	parameters_2_user_interface_datain_10,
+	parameters_2_user_interface_datain_11,
+	parameters_2_user_interface_datain_12,
+	parameters_2_user_interface_datain_13,
+	parameters_2_user_interface_datain_14,
+	parameters_2_user_interface_datain_15,
+	parameters_3_user_interface_dataout_0,
+	parameters_3_user_interface_dataout_1,
+	parameters_3_user_interface_dataout_2,
+	parameters_3_user_interface_dataout_3,
+	parameters_3_user_interface_dataout_4,
+	parameters_3_user_interface_dataout_5,
+	parameters_3_user_interface_dataout_6,
+	parameters_3_user_interface_dataout_7,
+	parameters_3_user_interface_dataout_8,
+	parameters_3_user_interface_dataout_9,
+	parameters_3_user_interface_datain_10,
+	parameters_3_user_interface_datain_11,
+	parameters_3_user_interface_datain_12,
+	parameters_3_user_interface_datain_13,
+	parameters_3_user_interface_datain_14,
+	parameters_3_user_interface_datain_15);	
 
 	input		clk_clk;
 	input		clk_custom_in_clk;
@@ -131,4 +179,52 @@ module procesador (
 	input	[31:0]	result1_32_bit_in_export;
 	input	[31:0]	result1_64_bit_down_in_export;
 	input	[31:0]	result1_64_bit_up_in_export;
+	output	[31:0]	parameters_1_user_interface_dataout_0;
+	output	[31:0]	parameters_1_user_interface_dataout_1;
+	output	[31:0]	parameters_1_user_interface_dataout_2;
+	output	[31:0]	parameters_1_user_interface_dataout_3;
+	output	[31:0]	parameters_1_user_interface_dataout_4;
+	output	[31:0]	parameters_1_user_interface_dataout_5;
+	output	[31:0]	parameters_1_user_interface_dataout_6;
+	output	[31:0]	parameters_1_user_interface_dataout_7;
+	output	[31:0]	parameters_1_user_interface_dataout_8;
+	output	[31:0]	parameters_1_user_interface_dataout_9;
+	input	[31:0]	parameters_1_user_interface_datain_10;
+	input	[31:0]	parameters_1_user_interface_datain_11;
+	input	[31:0]	parameters_1_user_interface_datain_12;
+	input	[31:0]	parameters_1_user_interface_datain_13;
+	input	[31:0]	parameters_1_user_interface_datain_14;
+	input	[31:0]	parameters_1_user_interface_datain_15;
+	output	[31:0]	parameters_2_user_interface_dataout_0;
+	output	[31:0]	parameters_2_user_interface_dataout_1;
+	output	[31:0]	parameters_2_user_interface_dataout_2;
+	output	[31:0]	parameters_2_user_interface_dataout_3;
+	output	[31:0]	parameters_2_user_interface_dataout_4;
+	output	[31:0]	parameters_2_user_interface_dataout_5;
+	output	[31:0]	parameters_2_user_interface_dataout_6;
+	output	[31:0]	parameters_2_user_interface_dataout_7;
+	output	[31:0]	parameters_2_user_interface_dataout_8;
+	output	[31:0]	parameters_2_user_interface_dataout_9;
+	input	[31:0]	parameters_2_user_interface_datain_10;
+	input	[31:0]	parameters_2_user_interface_datain_11;
+	input	[31:0]	parameters_2_user_interface_datain_12;
+	input	[31:0]	parameters_2_user_interface_datain_13;
+	input	[31:0]	parameters_2_user_interface_datain_14;
+	input	[31:0]	parameters_2_user_interface_datain_15;
+	output	[31:0]	parameters_3_user_interface_dataout_0;
+	output	[31:0]	parameters_3_user_interface_dataout_1;
+	output	[31:0]	parameters_3_user_interface_dataout_2;
+	output	[31:0]	parameters_3_user_interface_dataout_3;
+	output	[31:0]	parameters_3_user_interface_dataout_4;
+	output	[31:0]	parameters_3_user_interface_dataout_5;
+	output	[31:0]	parameters_3_user_interface_dataout_6;
+	output	[31:0]	parameters_3_user_interface_dataout_7;
+	output	[31:0]	parameters_3_user_interface_dataout_8;
+	output	[31:0]	parameters_3_user_interface_dataout_9;
+	input	[31:0]	parameters_3_user_interface_datain_10;
+	input	[31:0]	parameters_3_user_interface_datain_11;
+	input	[31:0]	parameters_3_user_interface_datain_12;
+	input	[31:0]	parameters_3_user_interface_datain_13;
+	input	[31:0]	parameters_3_user_interface_datain_14;
+	input	[31:0]	parameters_3_user_interface_datain_15;
 endmodule

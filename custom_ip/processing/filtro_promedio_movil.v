@@ -32,9 +32,15 @@ parameter buf_tam = 4096;					// Con 8192 ya me paso de la cantidad de bloques d
 parameter delay=3;
 parameter fifo_depth = 2048;
 
+parameter M = 32;
+parameter N = 32;
+
+/*
+
 wire [15:0] M;	assign M = ptos_x_ciclo;				// Puntos por ciclo de señal
 wire [7:0] N; 	assign N = frames_integracion;		// Frames de integracion // Largo del lockin M*N	
 
+*/
 
 //=======================================================
 // Reg/Wire declarations

@@ -20,4 +20,19 @@ float fase_lockin(long long X, long long Y,int div){
 	long double X_1= X/div;
 	long double Y_1= Y/div;
 	return (atan(Y_1/X_1))*180/3.1415;
+
 }
+
+
+
+/*  Ejemplo de uso...
+
+  	div = M*N_LIA*N_PROMC
+    long long X = leer_resultado_64_bit(result0_64_bit_down,result0_64_bit_up);
+
+	long long Y = leer_resultado_64_bit(result1_64_bit_down,result1_64_bit_up);
+
+	printf("\n\nAmplitud: %f", amplitud_lockin(X,Y,div));
+	printf("\n\nFase: %f", fase_lockin(X,Y,div));
+
+*/
