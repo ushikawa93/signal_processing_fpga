@@ -133,6 +133,25 @@ wire signed [63:0] data_cos_mixer;
 wire signed [63:0] data_out_promC;
 wire data_out_promC_valid;
 
+parameter offset_in = 8192;
+parameter offset_out = 8192;
+parameter low_threshold = 0;
+parameter high_threshold = 14612;
+
+wire signed [31:0] data_out_fir;
+wire data_out_fir_valid;
+
+wire signed [31:0] data_in_fir;
+wire data_in_fir_valid;
+
+assign data_in_fir = data_in - offset_in;
+assign data_in_fir_valid = data_in_valid;
+
+wire [31:0] data_out_intermedia = data_out_fir + offset_out;
+
+
+assign data_out1 = ( data_out_intermedia < low_threshold ) ? low_threshold  : ( (data_out_intermedia > high_threshold) ? high_threshold :  data_out_intermedia ) ;
+assign data_out1_valid = data_out_fir_valid;
 
 
 FIR_filter filtro (
@@ -180,11 +199,11 @@ FIR_filter filtro (
 	.coef_32(parameter_32_reg),
 
 
-	.data_in(data_in),
-	.data_in_valid(data_in_valid),
+	.data_in(data_in_fir),
+	.data_in_valid(data_in_fir_valid),
 	
-	.data_out(data_out1),
-	.data_out_valid(data_out1_valid),
+	.data_out(data_out_fir),
+	.data_out_valid(data_out_fir_valid),
 
 
 );

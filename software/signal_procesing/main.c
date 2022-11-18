@@ -74,12 +74,12 @@ int main()
 
 	int f	= 1;	//En MHZ
 	int div = 1; // Si queremos f_muestreo menor a 1MHz
-	int imprimir = 0;
+	int imprimir = 1;
 
 	setClockDivider(f ,clk_divider_ptr);
 	configurar_pll(div,pll_ptr);
 
-	int * filtro_usado = PA_0_1;
+	int * filtro_usado = PB_0_1;
 	float indice_filtro = 1;
 
 	float f_muestreo = f*1000000/div;
@@ -94,11 +94,11 @@ int main()
 	waitForFin(finish_ptr);
 
 	if (imprimir == 1){
+		printf("\n\nResultados FIFO 0 32 bits: \n");
+		imprimir_buffer_32bit(512,leer_fifo_32_bit(fifo0_32_bit_ptr));
+
 		printf("\n\nResultados FIFO 1 32 bits: \n");
 		imprimir_buffer_32bit(512,leer_fifo_32_bit(fifo1_32_bit_ptr));
-
-		printf("\n\nResultados FIFO 0 64 bits: \n");
-		imprimir_buffer_64bit(512,leer_fifo_64_bit(fifo0_64_bit_down_ptr,fifo0_64_bit_up_ptr));
 	}
 
 

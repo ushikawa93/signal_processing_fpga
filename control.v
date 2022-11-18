@@ -67,6 +67,13 @@ module control (
 	output [31:0] parameter_out_30,
 	output [31:0] parameter_out_31,
 	output [31:0] parameter_out_32,
+	output [31:0] parameter_out_33,
+	output [31:0] parameter_out_34,
+	output [31:0] parameter_out_35,
+	output [31:0] parameter_out_36,
+	output [31:0] parameter_out_37,
+	output [31:0] parameter_out_38,
+	output [31:0] parameter_out_39,
 	
 	
 	// Parametros necesarios para el HPS
@@ -177,13 +184,13 @@ procesador nios2 (
 		  .parameters_3_user_interface_dataout_0 (parameter_out_30), // parameters_1_user_interface.dataout_0
         .parameters_3_user_interface_dataout_1 (parameter_out_31), //                            .dataout_1
         .parameters_3_user_interface_dataout_2 (parameter_out_32), //                            .dataout_2
-        .parameters_3_user_interface_dataout_3 (), //                            .dataout_3
-        .parameters_3_user_interface_dataout_4 (), //                            .dataout_4
-        .parameters_3_user_interface_dataout_5 (), //                            .dataout_5
-        .parameters_3_user_interface_dataout_6 (), //                            .dataout_6
-        .parameters_3_user_interface_dataout_7 (), //                            .dataout_7
-        .parameters_3_user_interface_dataout_8 (), //                            .dataout_8
-        .parameters_3_user_interface_dataout_9 (), //                            .dataout_9
+        .parameters_3_user_interface_dataout_3 (parameter_out_33), //                            .dataout_3
+        .parameters_3_user_interface_dataout_4 (parameter_out_34), //                            .dataout_4
+        .parameters_3_user_interface_dataout_5 (parameter_out_35), //                            .dataout_5
+        .parameters_3_user_interface_dataout_6 (parameter_out_36), //                            .dataout_6
+        .parameters_3_user_interface_dataout_7 (parameter_out_37), //                            .dataout_7
+        .parameters_3_user_interface_dataout_8 (parameter_out_38), //                            .dataout_8
+        .parameters_3_user_interface_dataout_9 (parameter_out_39), //                            .dataout_9
        
 		  // Salidas opcionales desde la FPGA al NIOS o HPS:
 		  .parameters_user_interface_datain_10 (parameter_in_0), //                          .datain_10

@@ -65,6 +65,271 @@ module signal_processing_template(
 	input 	adc_dout
 );
 
+////////////////////////////////////////////////
+// ============= Ruteo de las señales  =============
+////////////////////////////////////////////////
+
+// Posibilidades...
+parameter adc_2308 = 0;
+parameter adc_hs = 1;
+parameter simulacion = 2;
+parameter procesada_1 = 3;
+parameter procesada_2 = 4;
+parameter open = 5;
+
+// Fuentes de señal para cada etapa del proceso
+
+parameter fuente_procesamiento = adc_hs;
+parameter fuente_dac = procesada_1 ;
+
+parameter fuente_fifo0_32bit = adc_hs;
+parameter fuente_fifo1_32bit = procesada_1;
+parameter fuente_fifo0_64bit = procesada_2;
+parameter fuente_fifo1_64bit = open;
+
+
+wire [31:0] data_in_procesamiento = (fuente_procesamiento == adc_2308)? data_adc_2308 : ((fuente_procesamiento == adc_hs)? data_canal_b : ((fuente_procesamiento == simulacion)? datos_simulados : 0)); 
+wire data_in_procesamiento_valid = (fuente_procesamiento == adc_2308)? data_adc_2308_valid : ((fuente_procesamiento == adc_hs)? data_adc_valid : ((fuente_procesamiento == simulacion)? datos_simulados_valid : 0)); 
+
+// Valores para el DAC
+
+
+
+reg [31:0] data_in_dac;
+reg data_in_dac_valid;
+
+always @ (fuente_dac)
+begin
+	
+	case (fuente_dac)
+	
+		adc_2308:
+		begin
+			data_in_dac = data_adc_2308;
+			data_in_dac_valid = data_adc_2308_valid;
+		end
+		
+		adc_hs:
+		begin
+			data_in_dac = data_canal_b;
+			data_in_dac_valid = data_adc_valid;
+		end
+		
+		simulacion:
+		begin
+			data_in_dac = datos_simulados;
+			data_in_dac_valid = datos_simulados_valid;
+		end
+		
+		procesada_1:
+		begin
+			data_in_dac = data_procesada1;
+			data_in_dac_valid = data_procesada1_valid;
+		end
+		
+		procesada_2:
+		begin
+			data_in_dac = data_procesada2;
+			data_in_dac_valid = data_procesada2_valid;
+		end
+		
+		open:
+		begin
+			data_in_dac = 0;
+			data_in_dac_valid = 0;
+		end
+	endcase
+
+end
+
+
+// Entrada de memorias FIFO
+
+
+
+reg [31:0] data_in_fifo0_32bit,				data_in_fifo1_32bit,				data_in_fifo0_64bit,				data_in_fifo1_64bit;
+reg 		  data_in_fifo0_32bit_valid,		data_in_fifo1_32bit_valid,		data_in_fifo0_64bit_valid,		data_in_fifo1_64bit_valid;
+
+always @ (fuente_fifo0_32bit)
+begin
+	
+	case (fuente_fifo0_32bit)
+	
+		adc_2308:
+		begin
+			data_in_fifo0_32bit = data_adc_2308;
+			data_in_fifo0_32bit_valid = data_adc_2308_valid;
+		end
+		
+		adc_hs:
+		begin
+			data_in_fifo0_32bit = data_canal_b;
+			data_in_fifo0_32bit_valid = data_adc_valid;
+		end
+		
+		simulacion:
+		begin
+			data_in_fifo0_32bit = datos_simulados;
+			data_in_fifo0_32bit_valid = datos_simulados_valid;
+		end
+		
+		procesada_1:
+		begin
+			data_in_fifo0_32bit = data_procesada1;
+			data_in_fifo0_32bit_valid = data_procesada1_valid;
+		end
+		
+		procesada_2:
+		begin
+			data_in_fifo0_32bit = data_procesada2;
+			data_in_fifo0_32bit_valid = data_procesada2_valid;
+		end
+		
+		open:
+		begin
+			data_in_fifo0_32bit = 0;
+			data_in_fifo0_32bit_valid = 0;
+		end
+	endcase
+
+end
+
+
+always @ (fuente_fifo1_32bit)
+begin
+	
+	case (fuente_fifo1_32bit)
+	
+		adc_2308:
+		begin
+			data_in_fifo1_32bit = data_adc_2308;
+			data_in_fifo1_32bit_valid = data_adc_2308_valid;
+		end
+		
+		adc_hs:
+		begin
+			data_in_fifo1_32bit = data_canal_b;
+			data_in_fifo1_32bit_valid = data_adc_valid;
+		end
+		
+		simulacion:
+		begin
+			data_in_fifo1_32bit = datos_simulados;
+			data_in_fifo1_32bit_valid = datos_simulados_valid;
+		end
+		
+		procesada_1:
+		begin
+			data_in_fifo1_32bit = data_procesada1;
+			data_in_fifo1_32bit_valid = data_procesada1_valid;
+		end
+		
+		procesada_2:
+		begin
+			data_in_fifo1_32bit = data_procesada2;
+			data_in_fifo1_32bit_valid = data_procesada2_valid;
+		end
+					
+		open:
+		begin
+			data_in_fifo1_32bit = 0;
+			data_in_fifo1_32bit_valid = 0;
+		end
+	endcase
+
+end
+
+
+always @ (fuente_fifo0_64bit)
+begin
+	
+	case (fuente_fifo0_64bit)
+	
+		adc_2308:
+		begin
+			data_in_fifo0_64bit = data_adc_2308;
+			data_in_fifo0_64bit_valid = data_adc_2308_valid;
+		end
+		
+		adc_hs:
+		begin
+			data_in_fifo0_64bit = data_canal_b;
+			data_in_fifo0_64bit_valid = data_adc_valid;
+		end
+		
+		simulacion:
+		begin
+			data_in_fifo0_64bit = datos_simulados;
+			data_in_fifo0_64bit_valid = datos_simulados_valid;
+		end
+		
+		procesada_1:
+		begin
+			data_in_fifo0_64bit = data_procesada1;
+			data_in_fifo0_64bit_valid = data_procesada1_valid;
+		end
+		
+		procesada_2:
+		begin
+			data_in_fifo0_64bit = data_procesada2;
+			data_in_fifo0_64bit_valid = data_procesada2_valid;
+		end
+		
+		open:
+		begin
+			data_in_fifo0_64bit = 0;
+			data_in_fifo0_64bit_valid = 0;
+		end
+	endcase
+
+end
+
+always @ (fuente_fifo1_64bit)
+begin
+	
+	case (fuente_fifo1_64bit)
+	
+		adc_2308:
+		begin
+			data_in_fifo1_64bit = data_adc_2308;
+			data_in_fifo1_64bit_valid = data_adc_2308_valid;
+		end
+		
+		adc_hs:
+		begin
+			data_in_fifo1_64bit = data_canal_b;
+			data_in_fifo1_64bit_valid = data_adc_valid;
+		end
+		
+		simulacion:
+		begin
+			data_in_fifo1_64bit = datos_simulados;
+			data_in_fifo1_64bit_valid = datos_simulados_valid;
+		end
+		
+		procesada_1:
+		begin
+			data_in_fifo1_64bit = data_procesada1;
+			data_in_fifo1_64bit_valid = data_procesada1_valid;
+		end
+		
+		procesada_2:
+		begin
+			data_in_fifo1_64bit = data_procesada2;
+			data_in_fifo1_64bit_valid = data_procesada2_valid;
+		end
+		
+		open:
+		begin
+			data_in_fifo1_64bit = 0;
+			data_in_fifo1_64bit_valid = 0;
+		end
+	endcase
+
+end
+
+
+
 
 ////////////////////////////////////////////////
 // ============= Interfaz de control  =============
@@ -79,6 +344,9 @@ wire reset_n;
 wire enable_from_control;
 wire clk_custom;
 wire reset_from_control;
+wire bypass_processing_from_control;
+wire led_test;
+
 wire reset_physical = KEY[0];
 
 parameter N_filtro = 32;
@@ -131,19 +399,21 @@ control nios (
 	 .parameter_out_30		(filter_coeff[30]),
 	 .parameter_out_31		(filter_coeff[31]),
 	 .parameter_out_32		(filter_coeff[32]),
+	 .parameter_out_33		(bypass_processing_from_control),
+	 .parameter_out_34		(led_test),
 	
 	 // Resultados de procesamiento de 32 bits
-	 .result_0_32_bit			(datos_simulados),
-	 .result_0_32_bit_valid	(datos_simulados_valid),
+	 .result_0_32_bit			(data_in_fifo0_32bit),
+	 .result_0_32_bit_valid	(data_in_fifo0_32bit_valid),
 	
-	 .result_1_32_bit			(data_canal_b),
-	 .result_1_32_bit_valid (data_adc_valid),
+	 .result_1_32_bit			(data_in_fifo1_32bit),
+	 .result_1_32_bit_valid (data_in_fifo1_32bit_valid),
 	 
-	 .result_0_64_bit			(data_procesada1),
-	 .result_0_64_bit_valid	(data_procesada1_valid),
+	 .result_0_64_bit			(data_in_fifo0_64bit),
+	 .result_0_64_bit_valid	(data_in_fifo0_64bit_valid),
 	 
-	 .result_1_64_bit			(data_procesada2),
-	 .result_1_64_bit_valid	(data_procesada2_valid),
+	 .result_1_64_bit			(data_in_fifo1_64bit),
+	 .result_1_64_bit_valid	(data_in_fifo1_64bit_valid),
 
 	 // Memoria DDR3 del HPS
 	 .HPS_DDR3_ADDR         (HPS_DDR3_ADDR),                          //          memory.mem_a
@@ -230,8 +500,8 @@ data_in data(
 	.SMA_DAC4(SMA_DAC4),
 	
 	// Entradas digitales para el DAC
-	.digital_data_in(data_procesada1),
-	.digital_data_in_valid(data_procesada1_valid),
+	.digital_data_in(data_in_dac),
+	.digital_data_in_valid(data_in_dac_valid),
 	
 	// Entradas y salidas del ADC 2308
 	.adc_cs_n(adc_cs_n),
@@ -260,6 +530,7 @@ wire data_adc_2308_valid;
 // ====== Procesamiento de señal  =========
 ////////////////////////////////////////////////
 
+wire bypass_processing = SW[0] || bypass_processing_from_control;
 
 signal_processing signal_processing_inst(
 
@@ -267,10 +538,10 @@ signal_processing signal_processing_inst(
 	.reset_n(reset_n),
 	.enable_gral(enable),	
 	
-	.bypass(SW[0]),
+	.bypass(bypass_processing),
 	
-	.data_in(data_canal_b),
-	.data_in_valid(data_adc_valid),
+	.data_in(data_in_procesamiento),
+	.data_in_valid(data_in_procesamiento_valid),
 	
 	.data_out1(data_procesada1),
 	.data_out1_valid(data_procesada1_valid),
@@ -344,9 +615,7 @@ assign LED[0] = ( count > (65000000 >> 1) );
 // ====== Algunos LED para ver cositas  =========
 ////////////////////////////////////////////////
 
-assign LED[1] = SW[0];
-assign LED[2] = SW[1];
-assign LED[3] = SW[2];
+assign LED[3] = led_test;
 	 
 	 
 endmodule

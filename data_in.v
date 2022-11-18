@@ -54,7 +54,7 @@ module data_in(
 	input 	adc_dout,
 	
 	// Entradas digitales para el DAC
-	input [13:0] 	 digital_data_in,
+	input [31:0] 	 digital_data_in,
 	input 			 digital_data_in_valid,
 	
 	

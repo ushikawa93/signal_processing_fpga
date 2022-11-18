@@ -40,10 +40,10 @@ module FIR_filter (
 	input [31:0] coef_31,
 	input [31:0] coef_32,
 
-	input [31:0] data_in,
+	input signed [31:0] data_in,
 	input data_in_valid,
 	
-	output [31:0] data_out,
+	output signed [31:0] data_out,
 	output data_out_valid
 
 
@@ -148,7 +148,7 @@ begin
 end
 
 
-assign data_out = (bypass == 0) ?  y >> 16: data_in;  //y >> 16 : data_in;
+assign data_out = (bypass == 0) ?  y >>> 16: data_in;  //y >> 16 : data_in;
 assign data_out_valid = (bypass == 0) ? data_valid_reg : data_in_valid;
 
 endmodule

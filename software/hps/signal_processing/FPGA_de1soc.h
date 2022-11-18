@@ -22,7 +22,9 @@ class FPGA_de1soc {
 		long long fifo0_64_bit[BUFFER_SIZE_RAW];
 		long long fifo1_64_bit[BUFFER_SIZE_RAW];
 
-		int parameter_0,parameter_1, parameter_2, parameter_3, parameter_4, parameter_5, parameter_6, parameter_7 , parameter_8, parameter_9, parameter_10;
+		int parameters [N_parametros];
+		int PARAM_MACROS_ARRAY [10] = {PARAMETER_0,PARAMETER_1,PARAMETER_2,PARAMETER_3,PARAMETER_4,PARAMETER_5,PARAMETER_6,PARAMETER_7,PARAMETER_8,PARAMETER_9};
+
 		int frec_clk,div_clk;
 		bool calculos_disponibles;
 		FPGA_IO_simple fpga;
@@ -56,6 +58,11 @@ class FPGA_de1soc {
 	public:	
 
 		//--------------- Funciones de control -------------------------------//
+		void Comenzar()
+		{
+			Reset();	
+			Iniciar();
+		}
 		void Calcular()
 		{
 			Reset();	
@@ -74,85 +81,41 @@ class FPGA_de1soc {
 		// Inicializo la FPGA con 0s por defecto:
 		
 		FPGA_de1soc(){
-			set_parametros (0,0,0,0,0,0,0,0,0,0,0); 	
+			int zero_arr[N_parametros] = { 0 }; 
+			set_N_parametros (N_parametros , zero_arr ); 	
 			calculos_disponibles=false;	
-		}	
+		}
 		
-		void set_parametros (int parameter_0,
-							 int parameter_1,
-							 int parameter_2,
-							 int parameter_3,
-							 int parameter_4,
-							 int parameter_5,
-							 int parameter_6,
-							 int parameter_7,
-							 int parameter_8,
-							 int parameter_9,
-							 int parameter_10
-							 )
-							{	
-								set_parameter(parameter_0,0);
-								set_parameter(parameter_1,1);
-								set_parameter(parameter_2,2);
-								set_parameter(parameter_3,3);
-								set_parameter(parameter_4,4);
-								set_parameter(parameter_5,5);
-								set_parameter(parameter_6,6);
-								set_parameter(parameter_7,7);
-								set_parameter(parameter_8,8);
-								set_parameter(parameter_9,9);
-								set_parameter(parameter_10,10);
-							}
+		void set_N_parametros (int N, int* paramters_array)
+		{
+			for (int i = 0; i< N; i++)
+			{
+				set_parameter( *(paramters_array + i) , i  );
+			}
+		}
+
 
 		// Setters de cada parametro configurable de la FPGA	
-		void set_parameter(int value,int parameter){
-			switch(parameter){
-				case 0:
-					parameter_0 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_0,  parameter_0 );		
-					break;
-				case 1:
-					parameter_1 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_1,  parameter_1 );	
-					break;
-				case 2:
-					parameter_2 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_2,  parameter_2 );	
-					break;
-				case 3:
-					parameter_3 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_3,  parameter_3 );	
-					break;
-				case 4:
-					parameter_4 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_4,  parameter_4 );	
-					break;
-				case 5:
-					parameter_5 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_5,  parameter_5 );	
-					break;
-				case 6:
-					parameter_6 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_6,  parameter_6 );	
-					break;
-				case 7:				
-					parameter_7 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_7,  parameter_7 );	
-					break;
-				case 8:
-					parameter_8 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_8,  parameter_8 );	
-					break;
-				case 9:
-					parameter_9 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_9,  parameter_9 );	
-					break;
-				case 10:
-					parameter_10 = value;
-					fpga.WriteFPGA ( PARAMETERS_BASE, PARAMETER_10,  parameter_10 );	
-					break;
-				default:
-					break;
+		void set_parameter(int value,int parameter_index){
+
+			parameters[parameter_index] = value;
+
+			// Cada interfaz parameters recibe hasta 10 parametros, por eso tengo 4 para setear 40 cosas
+			if ( (parameter_index >= 0) &&(parameter_index < 10) )
+			{				
+				fpga.WriteFPGA (PARAMETERS_BASE,PARAM_MACROS_ARRAY[parameter_index],parameters[parameter_index]);
+			}
+			else if ( (parameter_index >= 10) &&(parameter_index < 20) )
+			{
+				fpga.WriteFPGA (PARAMETERS_1_BASE,PARAM_MACROS_ARRAY[parameter_index-10],parameters[parameter_index]);
+			}
+			else if ( (parameter_index >= 20) &&(parameter_index < 30) )
+			{
+				fpga.WriteFPGA (PARAMETERS_2_BASE,PARAM_MACROS_ARRAY[parameter_index-20],parameters[parameter_index]);
+			}
+			else if ( (parameter_index >= 30) &&(parameter_index < 40) )
+			{
+				fpga.WriteFPGA (PARAMETERS_3_BASE,PARAM_MACROS_ARRAY[parameter_index-30],parameters[parameter_index]);
 			}
 		}
 
@@ -169,9 +132,9 @@ class FPGA_de1soc {
 		}
 
 		
-		// Setea la frec de lockin dejando ptos_x_ciclo constante (cambia frec_clk y divisor del clock)
+		// Setea la frec de muestreo (cambia frec_clk y divisor del clock)
 		// es medio bruto el algoritmo asi, estaria bueno optimizarlo un poco
-		void set_clk_from_frec (int frecuencia,int pts_x_ciclo)
+		void set_clk_from_frec (int frecuencia)
 		{
 			double frec,divisor;
 			
@@ -187,7 +150,7 @@ class FPGA_de1soc {
             {
 				for(divisor = min_divisor; divisor <= max_divisor; divisor++)
 				{
-					double error = std::abs(frecuencia - frec * 1000000 / (divisor*pts_x_ciclo));
+					double error = std::abs(frecuencia - frec * 1000000 / (divisor));
 					if (error == 0)
 					{
 						ready_flag=1;
@@ -213,36 +176,9 @@ class FPGA_de1soc {
 		}
 
 		// Geters para que el programa ppal consulte el estado de la FPGA	
-		int get_parameter(int parameter)
+		int get_parameter(int parameter_index)
 		{
-			switch(parameter){
-				case 0:
-					return parameter_0;
-				case 1:
-					return parameter_1;
-				case 2:
-					return parameter_2;
-				case 3:
-					return parameter_3;
-				case 4:
-					return parameter_4;
-				case 5:
-					return parameter_5;
-				case 6:
-					return parameter_6;
-				case 7:				
-					return parameter_7;
-				case 8:
-					return parameter_8;
-				case 9:
-					return parameter_9;
-				case 10:
-					return parameter_10;
-				default:
-					return 0;
-
-			}
-
+			return (parameters[parameter_index]);
 		}
 
 		//------------------------ Funciones de resultados -------------------------------//

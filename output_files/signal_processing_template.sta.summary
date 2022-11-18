@@ -2,20 +2,20 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 1.380
-TNS   : 0.000
-
 Type  : Slow 1100mV 85C Model Setup 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
 Slack : 2.563
 TNS   : 0.000
 
+Type  : Slow 1100mV 85C Model Setup 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 3.425
+TNS   : 0.000
+
 Type  : Slow 1100mV 85C Model Setup 'clock_50'
-Slack : 4.058
+Slack : 5.344
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'altera_reserved_tck'
-Slack : 11.835
+Slack : 11.362
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -23,43 +23,43 @@ Slack : 0.143
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'clock_50'
-Slack : 0.244
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.338
+Slack : 0.247
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
 Slack : 0.360
 TNS   : 0.000
 
+Type  : Slow 1100mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.375
+TNS   : 0.000
+
 Type  : Slow 1100mV 85C Model Recovery 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
 Slack : 5.041
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Recovery 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 9.924
+Type  : Slow 1100mV 85C Model Recovery 'clock_50'
+Slack : 11.517
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Recovery 'clock_50'
-Slack : 10.508
+Type  : Slow 1100mV 85C Model Recovery 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 11.587
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 15.230
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.397
+Slack : 14.080
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'clock_50'
-Slack : 0.545
+Slack : 0.587
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 0.803
+Slack : 0.818
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'altera_reserved_tck'
+Slack : 0.914
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -79,31 +79,31 @@ Slack : 1.538
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 6.511
+Slack : 6.322
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_50'
-Slack : 8.871
+Slack : 8.869
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.785
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Setup 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 0.989
+Slack : 15.770
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
 Slack : 2.560
 TNS   : 0.000
 
+Type  : Slow 1100mV 0C Model Setup 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 3.125
+TNS   : 0.000
+
 Type  : Slow 1100mV 0C Model Setup 'clock_50'
-Slack : 4.204
+Slack : 5.447
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'altera_reserved_tck'
-Slack : 11.955
+Slack : 11.533
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -111,11 +111,11 @@ Slack : 0.162
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'clock_50'
-Slack : 0.228
+Slack : 0.234
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.330
+Slack : 0.350
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
@@ -126,28 +126,28 @@ Type  : Slow 1100mV 0C Model Recovery 'control:nios|procesador:nios2|procesador_
 Slack : 5.134
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Recovery 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 10.207
+Type  : Slow 1100mV 0C Model Recovery 'clock_50'
+Slack : 11.736
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Recovery 'clock_50'
-Slack : 10.843
+Type  : Slow 1100mV 0C Model Recovery 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 11.736
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 15.305
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.362
+Slack : 14.185
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'clock_50'
-Slack : 0.514
+Slack : 0.526
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 0.723
+Slack : 0.734
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.845
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -167,15 +167,15 @@ Slack : 1.538
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 6.508
+Slack : 6.281
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_50'
-Slack : 8.822
+Slack : 8.824
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.790
+Slack : 15.783
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -183,31 +183,31 @@ Slack : 2.943
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 7.519
+Slack : 8.611
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'clock_50'
-Slack : 9.880
+Slack : 10.590
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'altera_reserved_tck'
-Slack : 13.853
+Slack : 13.451
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
 Slack : 0.084
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.127
+Type  : Fast 1100mV 85C Model Hold 'clock_50'
+Slack : 0.148
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'clock_50'
-Slack : 0.144
+Type  : Fast 1100mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.156
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 0.177
+Slack : 0.176
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -215,27 +215,27 @@ Slack : 5.393
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 11.543
+Slack : 12.904
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'clock_50'
-Slack : 14.305
+Slack : 14.760
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 16.017
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.134
+Slack : 15.199
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'clock_50'
-Slack : 0.294
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'altera_reserved_tck'
+Slack : 0.477
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 0.467
+Slack : 0.481
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -255,7 +255,7 @@ Slack : 1.538
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 6.637
+Slack : 6.511
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_50'
@@ -263,7 +263,7 @@ Slack : 8.788
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.738
+Slack : 15.754
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -271,15 +271,15 @@ Slack : 2.943
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 8.038
+Slack : 9.014
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'clock_50'
-Slack : 10.671
+Slack : 11.282
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'altera_reserved_tck'
-Slack : 14.179
+Slack : 13.847
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -287,7 +287,7 @@ Slack : 0.077
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.096
+Slack : 0.127
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clock_50'
@@ -303,27 +303,27 @@ Slack : 5.491
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 12.022
+Slack : 13.174
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'clock_50'
-Slack : 14.759
+Slack : 15.106
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 16.126
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.117
+Slack : 15.407
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'clock_50'
-Slack : 0.270
+Slack : 0.298
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.416
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 0.408
+Slack : 0.430
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'control:nios|procesador:nios2|procesador_hps_0:hps_0|procesador_hps_0_hps_io:hps_io|procesador_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
@@ -343,15 +343,15 @@ Slack : 1.538
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'nios|nios2|pll|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
-Slack : 6.653
+Slack : 6.508
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_50'
-Slack : 8.780
+Slack : 8.781
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.764
+Slack : 15.777
 TNS   : 0.000
 
 ------------------------------------------------------------
