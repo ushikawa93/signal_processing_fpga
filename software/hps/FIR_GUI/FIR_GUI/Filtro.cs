@@ -10,7 +10,9 @@ namespace FIR_GUI
     {
         float frecuencia_muestreo;
         float frecuencia_corte_normalizada;
-        int [] coeficientes;  
+        List <int> coeficientes;  
+
+        
 
     }
 }

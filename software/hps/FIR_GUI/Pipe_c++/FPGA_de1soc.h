@@ -219,11 +219,11 @@ class FPGA_de1soc {
 			if(calculos_disponibles){
 				if(fifo == 0)
 				{
-					return (int)fpga.ReadFPGA( FIFO0_32_BIT_BASE,0 );
+					return (int)fpga.ReadFPGA( RESULT0_32_BIT_BASE,0 );
 				}
 				else
 				{
-					return (int)fpga.ReadFPGA( FIFO1_32_BIT_BASE,0 );
+					return (int)fpga.ReadFPGA( RESULT1_32_BIT_BASE,0 );
 				}
 				
 			}
@@ -283,6 +283,34 @@ class FPGA_de1soc {
 				}
 			}
 			return 0;
+		}
+
+		int LeerFIFO32individual(int fifo)
+		{
+			if(fifo == 0)
+			{
+				return (int)fpga.ReadFPGA( FIFO0_32_BIT_BASE,0 );
+			}
+			else
+			{
+				return (int)fpga.ReadFPGA( FIFO1_32_BIT_BASE,0 );
+			}
+		}
+
+		long long int LeerFIFO64individual(int fifo)
+		{
+			if(fifo == 0)
+			{
+				long long res_up = fpga.ReadFPGA( FIFO0_64_BIT_UP_BASE,0 );		
+				long long res_low = fpga.ReadFPGA( FIFO0_64_BIT_DOWN_BASE,0 );			
+				return (res_up << 32) | res_low ;
+			}
+			else
+			{
+				long long res_up = fpga.ReadFPGA( FIFO1_64_BIT_UP_BASE,0 );		
+				long long res_low = fpga.ReadFPGA( FIFO1_64_BIT_DOWN_BASE,0 );			
+				return (res_up << 32) | res_low ;
+			}
 		}
 
 };

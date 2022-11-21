@@ -22,7 +22,8 @@ namespace FIR_GUI
 
         private void Iniciar_button_Click(object sender, EventArgs e)
         {
-             
+            fpga.Start(); 
+            
             fpga.EnviarComando(1);
 
             // Configurar parametros
