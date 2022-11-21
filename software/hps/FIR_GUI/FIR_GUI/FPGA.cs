@@ -105,6 +105,11 @@ namespace FIR_GUI
             }
         }
 
+        public void setFilter_to_FPGA( Filtro filtro )
+        {
+            set_N_param(0,filtro.Coeficientes);
+        }
+
         private void EnviarComando(COMANDOS command)
         {
             pipe.Enviar((int)command);
@@ -116,5 +121,6 @@ namespace FIR_GUI
             return pipe.Recibir();
         }
 
+        
     }
 }
