@@ -62,6 +62,7 @@ namespace FIR_GUI
             this.checkBox_plot_raw = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.exit_button = new System.Windows.Forms.Button();
             this.tableLayoutPanel_fmuestreo.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel_filtro.SuspendLayout();
@@ -118,7 +119,7 @@ namespace FIR_GUI
             // f_muestreo_textbox
             // 
             this.f_muestreo_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.f_muestreo_textbox.Location = new System.Drawing.Point(6, 12);
+            this.f_muestreo_textbox.Location = new System.Drawing.Point(5, 12);
             this.f_muestreo_textbox.Name = "f_muestreo_textbox";
             this.f_muestreo_textbox.Size = new System.Drawing.Size(100, 20);
             this.f_muestreo_textbox.TabIndex = 1;
@@ -128,12 +129,13 @@ namespace FIR_GUI
             // frec_muestreo_button
             // 
             this.frec_muestreo_button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frec_muestreo_button.Location = new System.Drawing.Point(115, 3);
+            this.frec_muestreo_button.Location = new System.Drawing.Point(114, 3);
             this.frec_muestreo_button.Name = "frec_muestreo_button";
-            this.frec_muestreo_button.Size = new System.Drawing.Size(39, 38);
+            this.frec_muestreo_button.Size = new System.Drawing.Size(40, 38);
             this.frec_muestreo_button.TabIndex = 2;
             this.frec_muestreo_button.Text = "OK";
             this.frec_muestreo_button.UseVisualStyleBackColor = true;
+            this.frec_muestreo_button.Click += new System.EventHandler(this.frec_muestreo_ok_Click);
             // 
             // tableLayoutPanel_filtro
             // 
@@ -465,11 +467,22 @@ namespace FIR_GUI
             this.label1.TabIndex = 4;
             this.label1.Text = "FIR Filter DEMO";
             // 
+            // exit_button
+            // 
+            this.exit_button.Location = new System.Drawing.Point(759, 12);
+            this.exit_button.Name = "exit_button";
+            this.exit_button.Size = new System.Drawing.Size(29, 25);
+            this.exit_button.TabIndex = 5;
+            this.exit_button.Text = "X";
+            this.exit_button.UseVisualStyleBackColor = true;
+            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            // 
             // FIR_demo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.exit_button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -477,6 +490,7 @@ namespace FIR_GUI
             this.Controls.Add(this.tableLayoutPanel_fmuestreo);
             this.Name = "FIR_demo";
             this.Text = "FIR Filter Demo";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FIR_demo_FormClosed);
             this.tableLayoutPanel_fmuestreo.ResumeLayout(false);
             this.tableLayoutPanel_fmuestreo.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -534,6 +548,7 @@ namespace FIR_GUI
         private System.Windows.Forms.Button refresh_button;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button frec_muestreo_button;
+        private System.Windows.Forms.Button exit_button;
     }
 }
 

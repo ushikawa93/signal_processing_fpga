@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bancoFiltros.cs" />
+    <Compile Include="Filtro.cs" />
     <Compile Include="FIR_demo.cs">
       <SubType>Form</SubType>
     </Compile>

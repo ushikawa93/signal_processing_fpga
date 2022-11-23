@@ -19,3 +19,13 @@ C:\Users\MatiOliva\Documents\00-ProyectosQuartus\signal_processing_template\soft
 C:\Users\MatiOliva\Documents\00-ProyectosQuartus\signal_processing_template\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.csproj.CoreCompileInputs.cache
 C:\Users\MatiOliva\Documents\00-ProyectosQuartus\signal_processing_template\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.exe
 C:\Users\MatiOliva\Documents\00-ProyectosQuartus\signal_processing_template\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.pdb
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\bin\Debug\FIR_GUI.exe.config
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\bin\Debug\FIR_GUI.exe
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\bin\Debug\FIR_GUI.pdb
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.csproj.AssemblyReference.cache
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.FIR_demo.resources
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.Properties.Resources.resources
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.csproj.GenerateResource.cache
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.csproj.CoreCompileInputs.cache
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.exe
+C:\Users\mati9\Desktop\signal_processing_fpga\software\hps\FIR_GUI\FIR_GUI\obj\Debug\FIR_GUI.pdb

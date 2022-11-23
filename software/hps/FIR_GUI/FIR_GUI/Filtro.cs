@@ -6,33 +6,37 @@ using System.Threading.Tasks;
 
 namespace FIR_GUI
 {
-    class Filtro
+    public class Filtro
     {
-        float f_muestreo;
-        float fc_normalizada;
+        double f_muestreo;
+        double fc_normalizada;
         List <int> coeficientes; 
 
-        public Filtro(List <int> coef, float f_muestreo_i, float fc_normalizada_i  )
+        public Filtro(List <int> coef, double f_muestreo_i, double fc_normalizada_i  )
         {
             fc_normalizada = fc_normalizada_i;
             f_muestreo = f_muestreo_i;
             List <int> coeficientes = coef;
         }
 
-        public float F_muestreo
+        public double F_muestreo
         {
             set
             {
                 f_muestreo = value;
             }
+            get
+            {
+                return f_muestreo;
+            }
 
         }
 
-        public float F_corte
+        public double F_corte
         {
             get
             {
-                return fc_normalizada * f_muestreo /2; 
+                return (double)fc_normalizada * (double)f_muestreo /(double)2; 
             }
         }
 
@@ -41,6 +45,10 @@ namespace FIR_GUI
             get
             {
                 return coeficientes;
+            }
+            set
+            {
+                coeficientes = value;
             }
         }
 

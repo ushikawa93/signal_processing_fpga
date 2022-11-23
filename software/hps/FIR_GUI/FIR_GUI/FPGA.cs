@@ -32,46 +32,46 @@ namespace FIR_GUI
 
         public void Start()
         {
-            EnviarComando(START);
+            EnviarComando(COMANDOS.START);
             return;
         }
 
         public void Reset()
         {
-            EnviarComando(RST);
+            EnviarComando(COMANDOS.RST);
             return;
         }
 
         public void set_clk(int value)
         {
-            EnviarComando(SET_CLK);
-            EnviarComando(value);
+            EnviarComando(COMANDOS.SET_CLK);
+            EnviarValor(value);
             return;
         }
 
         public void set_param(int param_index, int value)
         {
-            EnviarComando(SET_PARAM);
-            EnviarComando(param_index);
-            EnviarComando(value);
+            EnviarComando(COMANDOS.SET_PARAM);
+            EnviarValor(param_index);
+            EnviarValor(value);
             return;
         }
 
         public int get_param(int param_index)
         {
-            EnviarComando(GET_PARAM);
-            EnviarComando(param_index);
+            EnviarComando(COMANDOS.GET_PARAM);
+            EnviarValor(param_index);
             return RecibirComando();
         }
 
         public void Terminate(){
-            EnviarComando(TERMINATE);
+            EnviarComando(COMANDOS.TERMINATE);
             return;
         }
 
         public void set_N_param ( int start_index ,  List <int> parametros  )
         {
-            param_index = start_index;
+            int param_index = start_index;
             foreach (int param in parametros)
             {
                 set_param( param_index, param );
@@ -82,37 +82,43 @@ namespace FIR_GUI
         
         public List <int> get_from_fifo (FIFO_DIRECTION fifo_direction, int N)
         {
-            List <int> values;
+            List <int> values= new List<int>();
             for (int i = 0; i< N; i++)
             {
-                values.Add(get_fifo(FIFO_DIRECTION));
+                values.Add(get_fifo(fifo_direction));
             }
             return values;
         }
 
         private int get_fifo (FIFO_DIRECTION fifo_direction)
         {
-            EnviarComando(RD_FIFO);
-            EnviarComando(fifo_direction);
-            if( fifo_direction == F0_32   ||  fifo_direction == F1_32   )
+            EnviarComando(COMANDOS.RD_FIFO);
+            EnviarValor((int)fifo_direction);
+            if( fifo_direction == FIFO_DIRECTION.F0_32 ||  fifo_direction == FIFO_DIRECTION.F1_32)
             {
-                return pipe.Recibir_int32();
+                return pipe.Recibir();
             }
             else
             {
                 // Esto todavia no esta andando igual, por ahora devuelvo enteros
-                return pipe.Recibir_int64();
+                return pipe.Recibir();
             }
         }
 
-        public void setFilter_to_FPGA( Filtro filtro )
+        public void setFilter_to_FPGA( Filtro filter )
         {
-            set_N_param(0,filtro.Coeficientes);
+            set_N_param (0, filter.Coeficientes);
         }
 
         private void EnviarComando(COMANDOS command)
         {
             pipe.Enviar((int)command);
+            return;
+        }
+
+        private void EnviarValor(int value)
+        {
+            pipe.Enviar((int)value);
             return;
         }
 
