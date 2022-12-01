@@ -39,31 +39,6 @@
 		.memory_mem_odt                        (<connected-to-memory_mem_odt>),                        //                            .mem_odt
 		.memory_mem_dm                         (<connected-to-memory_mem_dm>),                         //                            .mem_dm
 		.memory_oct_rzqin                      (<connected-to-memory_oct_rzqin>),                      //                            .oct_rzqin
-		.parameters_user_interface_dataout_0   (<connected-to-parameters_user_interface_dataout_0>),   //   parameters_user_interface.dataout_0
-		.parameters_user_interface_dataout_1   (<connected-to-parameters_user_interface_dataout_1>),   //                            .dataout_1
-		.parameters_user_interface_dataout_2   (<connected-to-parameters_user_interface_dataout_2>),   //                            .dataout_2
-		.parameters_user_interface_dataout_3   (<connected-to-parameters_user_interface_dataout_3>),   //                            .dataout_3
-		.parameters_user_interface_dataout_4   (<connected-to-parameters_user_interface_dataout_4>),   //                            .dataout_4
-		.parameters_user_interface_dataout_5   (<connected-to-parameters_user_interface_dataout_5>),   //                            .dataout_5
-		.parameters_user_interface_dataout_6   (<connected-to-parameters_user_interface_dataout_6>),   //                            .dataout_6
-		.parameters_user_interface_dataout_7   (<connected-to-parameters_user_interface_dataout_7>),   //                            .dataout_7
-		.parameters_user_interface_dataout_8   (<connected-to-parameters_user_interface_dataout_8>),   //                            .dataout_8
-		.parameters_user_interface_dataout_9   (<connected-to-parameters_user_interface_dataout_9>),   //                            .dataout_9
-		.parameters_user_interface_datain_10   (<connected-to-parameters_user_interface_datain_10>),   //                            .datain_10
-		.parameters_user_interface_datain_11   (<connected-to-parameters_user_interface_datain_11>),   //                            .datain_11
-		.parameters_user_interface_datain_12   (<connected-to-parameters_user_interface_datain_12>),   //                            .datain_12
-		.parameters_user_interface_datain_13   (<connected-to-parameters_user_interface_datain_13>),   //                            .datain_13
-		.parameters_user_interface_datain_14   (<connected-to-parameters_user_interface_datain_14>),   //                            .datain_14
-		.parameters_user_interface_datain_15   (<connected-to-parameters_user_interface_datain_15>),   //                            .datain_15
-		.reset_reset_n                         (<connected-to-reset_reset_n>),                         //                       reset.reset_n
-		.reset_fifos_reset                     (<connected-to-reset_fifos_reset>),                     //                 reset_fifos.reset
-		.reset_op_export                       (<connected-to-reset_op_export>),                       //                    reset_op.export
-		.result0_32_bit_in_export              (<connected-to-result0_32_bit_in_export>),              //           result0_32_bit_in.export
-		.result0_64_bit_down_in_export         (<connected-to-result0_64_bit_down_in_export>),         //      result0_64_bit_down_in.export
-		.result0_64_bit_up_in_export           (<connected-to-result0_64_bit_up_in_export>),           //        result0_64_bit_up_in.export
-		.result1_32_bit_in_export              (<connected-to-result1_32_bit_in_export>),              //           result1_32_bit_in.export
-		.result1_64_bit_down_in_export         (<connected-to-result1_64_bit_down_in_export>),         //      result1_64_bit_down_in.export
-		.result1_64_bit_up_in_export           (<connected-to-result1_64_bit_up_in_export>),           //        result1_64_bit_up_in.export
 		.parameters_1_user_interface_dataout_0 (<connected-to-parameters_1_user_interface_dataout_0>), // parameters_1_user_interface.dataout_0
 		.parameters_1_user_interface_dataout_1 (<connected-to-parameters_1_user_interface_dataout_1>), //                            .dataout_1
 		.parameters_1_user_interface_dataout_2 (<connected-to-parameters_1_user_interface_dataout_2>), //                            .dataout_2
@@ -111,6 +86,31 @@
 		.parameters_3_user_interface_datain_12 (<connected-to-parameters_3_user_interface_datain_12>), //                            .datain_12
 		.parameters_3_user_interface_datain_13 (<connected-to-parameters_3_user_interface_datain_13>), //                            .datain_13
 		.parameters_3_user_interface_datain_14 (<connected-to-parameters_3_user_interface_datain_14>), //                            .datain_14
-		.parameters_3_user_interface_datain_15 (<connected-to-parameters_3_user_interface_datain_15>)  //                            .datain_15
+		.parameters_3_user_interface_datain_15 (<connected-to-parameters_3_user_interface_datain_15>), //                            .datain_15
+		.parameters_user_interface_dataout_0   (<connected-to-parameters_user_interface_dataout_0>),   //   parameters_user_interface.dataout_0
+		.parameters_user_interface_dataout_1   (<connected-to-parameters_user_interface_dataout_1>),   //                            .dataout_1
+		.parameters_user_interface_dataout_2   (<connected-to-parameters_user_interface_dataout_2>),   //                            .dataout_2
+		.parameters_user_interface_dataout_3   (<connected-to-parameters_user_interface_dataout_3>),   //                            .dataout_3
+		.parameters_user_interface_dataout_4   (<connected-to-parameters_user_interface_dataout_4>),   //                            .dataout_4
+		.parameters_user_interface_dataout_5   (<connected-to-parameters_user_interface_dataout_5>),   //                            .dataout_5
+		.parameters_user_interface_dataout_6   (<connected-to-parameters_user_interface_dataout_6>),   //                            .dataout_6
+		.parameters_user_interface_dataout_7   (<connected-to-parameters_user_interface_dataout_7>),   //                            .dataout_7
+		.parameters_user_interface_dataout_8   (<connected-to-parameters_user_interface_dataout_8>),   //                            .dataout_8
+		.parameters_user_interface_dataout_9   (<connected-to-parameters_user_interface_dataout_9>),   //                            .dataout_9
+		.parameters_user_interface_datain_10   (<connected-to-parameters_user_interface_datain_10>),   //                            .datain_10
+		.parameters_user_interface_datain_11   (<connected-to-parameters_user_interface_datain_11>),   //                            .datain_11
+		.parameters_user_interface_datain_12   (<connected-to-parameters_user_interface_datain_12>),   //                            .datain_12
+		.parameters_user_interface_datain_13   (<connected-to-parameters_user_interface_datain_13>),   //                            .datain_13
+		.parameters_user_interface_datain_14   (<connected-to-parameters_user_interface_datain_14>),   //                            .datain_14
+		.parameters_user_interface_datain_15   (<connected-to-parameters_user_interface_datain_15>),   //                            .datain_15
+		.reset_reset_n                         (<connected-to-reset_reset_n>),                         //                       reset.reset_n
+		.reset_fifos_reset                     (<connected-to-reset_fifos_reset>),                     //                 reset_fifos.reset
+		.reset_op_export                       (<connected-to-reset_op_export>),                       //                    reset_op.export
+		.result0_32_bit_in_export              (<connected-to-result0_32_bit_in_export>),              //           result0_32_bit_in.export
+		.result0_64_bit_down_in_export         (<connected-to-result0_64_bit_down_in_export>),         //      result0_64_bit_down_in.export
+		.result0_64_bit_up_in_export           (<connected-to-result0_64_bit_up_in_export>),           //        result0_64_bit_up_in.export
+		.result1_32_bit_in_export              (<connected-to-result1_32_bit_in_export>),              //           result1_32_bit_in.export
+		.result1_64_bit_down_in_export         (<connected-to-result1_64_bit_down_in_export>),         //      result1_64_bit_down_in.export
+		.result1_64_bit_up_in_export           (<connected-to-result1_64_bit_up_in_export>)            //        result1_64_bit_up_in.export
 	);
 

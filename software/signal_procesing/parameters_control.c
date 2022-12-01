@@ -8,37 +8,37 @@
 int setParam(int parametro,int value,int* parameters_addr){
 	switch(parametro){
 	case 0:
-		*(parameters_addr + PARAMETRO_OUT_0) = parametro;
+			*(parameters_addr + PARAMETRO_OUT_0) = value;
 		break;
 	case 1:
-			*(parameters_addr + PARAMETRO_OUT_0) = value;
-			break;
-	case 2:
 			*(parameters_addr + PARAMETRO_OUT_1) = value;
 			break;
-	case 3:
+	case 2:
 			*(parameters_addr + PARAMETRO_OUT_2) = value;
 			break;
-	case 4:
+	case 3:
 			*(parameters_addr + PARAMETRO_OUT_3) = value;
 			break;
-	case 5:
+	case 4:
 			*(parameters_addr + PARAMETRO_OUT_4) = value;
 			break;
-	case 6:
+	case 5:
 			*(parameters_addr + PARAMETRO_OUT_5) = value;
 			break;
-	case 7:
+	case 6:
 			*(parameters_addr + PARAMETRO_OUT_6) = value;
 			break;
-	case 8:
+	case 7:
 			*(parameters_addr + PARAMETRO_OUT_7) = value;
 			break;
-	case 9:
+	case 8:
 			*(parameters_addr + PARAMETRO_OUT_8) = value;
 			break;
-	case 10:
+	case 9:
 			*(parameters_addr + PARAMETRO_OUT_9) = value;
+			break;
+	case 10:
+			*(parameters_addr + PARAMETRO_OUT_10) = value;
 			break;
 
 	}

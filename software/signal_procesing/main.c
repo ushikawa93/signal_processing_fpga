@@ -72,6 +72,9 @@ int main()
 	int PA_0_25 [33] = {-1,	87,	171,	178,	-1,	-382,	-760,	-739,	-1,	1327,	2491,	2348,	-1,	-4539,	-10072,	-14630,	49182,	-14630,	-10072,	-4539,	-1,	2348,	2491,	1327,	-1,	-739,	-760,	-382,	-1,	178,	171,	87,	-1};
 	int PA_0_3 [33] = {-62,	-124,	-101,	78,	355,	436,	0,	-845,	-1340,	-581,	1463,	3320,	2653,	-1983,	-9576,	-16733,	45888,	-16733,	-9576,	-1983,	2653,	3320,	1463,	-581,	-1340,	-845,	0,	436,	355,	78,	-101,	-124,	-62};
 
+    int Bypass_filter [33] = { 65536, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+
 	int f	= 1;	//En MHZ
 	int div = 1; // Si queremos f_muestreo menor a 1MHz
 	int imprimir = 1;
@@ -79,8 +82,8 @@ int main()
 	setClockDivider(f ,clk_divider_ptr);
 	configurar_pll(div,pll_ptr);
 
-	int * filtro_usado = PB_0_1;
-	float indice_filtro = 1;
+	int * filtro_usado = Bypass_filter;
+	int indice_filtro = 1;
 
 	float f_muestreo = f*1000000/div;
 

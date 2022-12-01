@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="FPGA.cs" />
     <Compile Include="PipeControl.cs" />
+    <Compile Include="Plot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FIR_demo.resx">

@@ -10,10 +10,8 @@ namespace FIR_GUI
     {
         List <Filtro> filtros_PB;
         List <Filtro> filtros_PA;
+        List<Filtro> bypass;
         double f_muestreo;
-        int indice_filtro_actual;
-
-        public enum TIPOS_FILTRO { PA , PB , BYPASS};
 
         // Filtros Pasa-bajos
         List<int> PB_0_05, PB_0_1, PB_0_15, PB_0_2, PB_0_25, PB_0_3;
@@ -21,6 +19,8 @@ namespace FIR_GUI
         // Filtros Pasa-altos
         List<int> PA_0_05, PA_0_1, PA_0_15, PA_0_2, PA_0_25, PA_0_3;
 
+        // Bypass
+        List<int> Bypass_filter;
         
         public BancoFiltros(double f_muestreo_i)
         {
@@ -40,23 +40,27 @@ namespace FIR_GUI
             PA_0_25 = new List<int>     { -1,	87,	171,	178,	-1,	-382,	-760,	-739,	-1,	1327,	2491,	2348,	-1,	-4539,	-10072,	-14630,	49182,	-14630,	-10072,	-4539,	-1,	2348,	2491,	1327,	-1,	-739,	-760,	-382,	-1,	178,	171,	87,	-1};
             PA_0_3 = new List<int> { -62, -124, -101, 78, 355, 436, 0, -845, -1340, -581, 1463, 3320, 2653, -1983, -9576, -16733, 45888, -16733, -9576, -1983, 2653, 3320, 1463, -581, -1340, -845, 0, 436, 355, 78, -101, -124, -62 };
 
+            Bypass_filter = new List<int> { 65536, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+
             filtros_PB = new List<Filtro>();
-            filtros_PB.Add(new Filtro(PB_0_05,f_muestreo,0.05));
-            filtros_PB.Add(new Filtro(PB_0_1,f_muestreo,0.1));
-            filtros_PB.Add(new Filtro(PB_0_15,f_muestreo,0.15));
-            filtros_PB.Add(new Filtro(PB_0_2,f_muestreo,0.2));
-            filtros_PB.Add(new Filtro(PB_0_25,f_muestreo,0.25));
-            filtros_PB.Add(new Filtro(PB_0_3,f_muestreo,0.3));
+            filtros_PB.Add(new Filtro(PB_0_05,f_muestreo,0.05,Filtro.TIPOS_FILTRO.PB));
+            filtros_PB.Add(new Filtro(PB_0_1,f_muestreo,0.1, Filtro.TIPOS_FILTRO.PB));
+            filtros_PB.Add(new Filtro(PB_0_15,f_muestreo,0.15, Filtro.TIPOS_FILTRO.PB));
+            filtros_PB.Add(new Filtro(PB_0_2,f_muestreo,0.2, Filtro.TIPOS_FILTRO.PB));
+            filtros_PB.Add(new Filtro(PB_0_25,f_muestreo,0.25, Filtro.TIPOS_FILTRO.PB));
+            filtros_PB.Add(new Filtro(PB_0_3,f_muestreo,0.3, Filtro.TIPOS_FILTRO.PB));
 
             filtros_PA = new List<Filtro>();
-            filtros_PA.Add(new Filtro(PA_0_05,f_muestreo,0.05));
-            filtros_PA.Add(new Filtro(PA_0_1,f_muestreo,0.1));
-            filtros_PA.Add(new Filtro(PA_0_15,f_muestreo,0.15));
-            filtros_PA.Add(new Filtro(PA_0_2,f_muestreo,0.2));
-            filtros_PA.Add(new Filtro(PA_0_25,f_muestreo,0.25));
-            filtros_PA.Add(new Filtro(PA_0_3,f_muestreo,0.3));
+            filtros_PA.Add(new Filtro(PA_0_05,f_muestreo,0.05, Filtro.TIPOS_FILTRO.PA));
+            filtros_PA.Add(new Filtro(PA_0_1,f_muestreo,0.1, Filtro.TIPOS_FILTRO.PA));
+            filtros_PA.Add(new Filtro(PA_0_15,f_muestreo,0.15, Filtro.TIPOS_FILTRO.PA));
+            filtros_PA.Add(new Filtro(PA_0_2,f_muestreo,0.2, Filtro.TIPOS_FILTRO.PA));
+            filtros_PA.Add(new Filtro(PA_0_25,f_muestreo,0.25, Filtro.TIPOS_FILTRO.PA));
+            filtros_PA.Add(new Filtro(PA_0_3,f_muestreo,0.3, Filtro.TIPOS_FILTRO.PA));
 
-            
+            bypass = new List<Filtro>();
+            bypass.Add(new Filtro(Bypass_filter, f_muestreo, 0, Filtro.TIPOS_FILTRO.BYPASS));
 
         }
 
@@ -72,6 +76,10 @@ namespace FIR_GUI
                 {
                     filt.F_muestreo = value;
                 }
+                foreach (Filtro filt in bypass)
+                {
+                    filt.F_muestreo = value;
+                }
                 f_muestreo = value;
             }
             get
@@ -80,30 +88,30 @@ namespace FIR_GUI
             }
         }
 
-        public void AddFilter( List <int> coef, double f_muestreo_i, double fc_normalizada_i , TIPOS_FILTRO tipo_filtro)
+        public void AddFilter( List <int> coef, double f_muestreo_i, double fc_normalizada_i , Filtro.TIPOS_FILTRO tipo_filtro)
         {
             if (f_muestreo_i != f_muestreo)
             {
                 F_muestreo = f_muestreo_i;
             }
 
-            if(tipo_filtro == TIPOS_FILTRO.PA)
+            if(tipo_filtro == Filtro.TIPOS_FILTRO.PA)
             {
-                filtros_PA.Add(new Filtro (coef,f_muestreo, fc_normalizada_i));
+                filtros_PA.Add(new Filtro (coef,f_muestreo, fc_normalizada_i, Filtro.TIPOS_FILTRO.PA));
 
             }
-            else if (tipo_filtro == TIPOS_FILTRO.PB)
+            else if (tipo_filtro == Filtro.TIPOS_FILTRO.PB)
             {
-                filtros_PB.Add(new Filtro (coef,f_muestreo, fc_normalizada_i));
+                filtros_PB.Add(new Filtro (coef,f_muestreo, fc_normalizada_i, Filtro.TIPOS_FILTRO.PB));
             }
 
         }
 
-        public Filtro getFiltro_from_frec (int frecuencia_corte, TIPOS_FILTRO tipo_filtro)
+        public Filtro getFiltro_from_frec (int frecuencia_corte, Filtro.TIPOS_FILTRO tipo_filtro)
         {
             double error = 100000;
             int filter_index = 0;
-            if(tipo_filtro == TIPOS_FILTRO.PA)
+            if(tipo_filtro == Filtro.TIPOS_FILTRO.PA)
             {
                 foreach (Filtro f in filtros_PA)
                 {
@@ -144,15 +152,27 @@ namespace FIR_GUI
             }            
         }
 
-        public Filtro getFiltro(int index,TIPOS_FILTRO tipo_filtro)
+        public List<Filtro> Bypass
         {
-            if (tipo_filtro == TIPOS_FILTRO.PB)
+            get
+            {
+                return bypass;
+            }
+        }
+
+        public Filtro getFiltro(int index, Filtro.TIPOS_FILTRO tipo_filtro)
+        {
+            if (tipo_filtro == Filtro.TIPOS_FILTRO.PB)
             {
                 return filtros_PB[index];
             }
-            else
+            else if (tipo_filtro == Filtro.TIPOS_FILTRO.PA)
             {
                 return filtros_PA[index];
+            }
+            else
+            {
+                return bypass[0];
             }
         }
 

@@ -40,31 +40,6 @@ module procesador (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	parameters_user_interface_dataout_0,
-	parameters_user_interface_dataout_1,
-	parameters_user_interface_dataout_2,
-	parameters_user_interface_dataout_3,
-	parameters_user_interface_dataout_4,
-	parameters_user_interface_dataout_5,
-	parameters_user_interface_dataout_6,
-	parameters_user_interface_dataout_7,
-	parameters_user_interface_dataout_8,
-	parameters_user_interface_dataout_9,
-	parameters_user_interface_datain_10,
-	parameters_user_interface_datain_11,
-	parameters_user_interface_datain_12,
-	parameters_user_interface_datain_13,
-	parameters_user_interface_datain_14,
-	parameters_user_interface_datain_15,
-	reset_reset_n,
-	reset_fifos_reset,
-	reset_op_export,
-	result0_32_bit_in_export,
-	result0_64_bit_down_in_export,
-	result0_64_bit_up_in_export,
-	result1_32_bit_in_export,
-	result1_64_bit_down_in_export,
-	result1_64_bit_up_in_export,
 	parameters_1_user_interface_dataout_0,
 	parameters_1_user_interface_dataout_1,
 	parameters_1_user_interface_dataout_2,
@@ -112,7 +87,32 @@ module procesador (
 	parameters_3_user_interface_datain_12,
 	parameters_3_user_interface_datain_13,
 	parameters_3_user_interface_datain_14,
-	parameters_3_user_interface_datain_15);	
+	parameters_3_user_interface_datain_15,
+	parameters_user_interface_dataout_0,
+	parameters_user_interface_dataout_1,
+	parameters_user_interface_dataout_2,
+	parameters_user_interface_dataout_3,
+	parameters_user_interface_dataout_4,
+	parameters_user_interface_dataout_5,
+	parameters_user_interface_dataout_6,
+	parameters_user_interface_dataout_7,
+	parameters_user_interface_dataout_8,
+	parameters_user_interface_dataout_9,
+	parameters_user_interface_datain_10,
+	parameters_user_interface_datain_11,
+	parameters_user_interface_datain_12,
+	parameters_user_interface_datain_13,
+	parameters_user_interface_datain_14,
+	parameters_user_interface_datain_15,
+	reset_reset_n,
+	reset_fifos_reset,
+	reset_op_export,
+	result0_32_bit_in_export,
+	result0_64_bit_down_in_export,
+	result0_64_bit_up_in_export,
+	result1_32_bit_in_export,
+	result1_64_bit_down_in_export,
+	result1_64_bit_up_in_export);	
 
 	input		clk_clk;
 	input		clk_custom_in_clk;
@@ -154,31 +154,6 @@ module procesador (
 	output		memory_mem_odt;
 	output		memory_mem_dm;
 	input		memory_oct_rzqin;
-	output	[31:0]	parameters_user_interface_dataout_0;
-	output	[31:0]	parameters_user_interface_dataout_1;
-	output	[31:0]	parameters_user_interface_dataout_2;
-	output	[31:0]	parameters_user_interface_dataout_3;
-	output	[31:0]	parameters_user_interface_dataout_4;
-	output	[31:0]	parameters_user_interface_dataout_5;
-	output	[31:0]	parameters_user_interface_dataout_6;
-	output	[31:0]	parameters_user_interface_dataout_7;
-	output	[31:0]	parameters_user_interface_dataout_8;
-	output	[31:0]	parameters_user_interface_dataout_9;
-	input	[31:0]	parameters_user_interface_datain_10;
-	input	[31:0]	parameters_user_interface_datain_11;
-	input	[31:0]	parameters_user_interface_datain_12;
-	input	[31:0]	parameters_user_interface_datain_13;
-	input	[31:0]	parameters_user_interface_datain_14;
-	input	[31:0]	parameters_user_interface_datain_15;
-	input		reset_reset_n;
-	input		reset_fifos_reset;
-	output		reset_op_export;
-	input	[31:0]	result0_32_bit_in_export;
-	input	[31:0]	result0_64_bit_down_in_export;
-	input	[31:0]	result0_64_bit_up_in_export;
-	input	[31:0]	result1_32_bit_in_export;
-	input	[31:0]	result1_64_bit_down_in_export;
-	input	[31:0]	result1_64_bit_up_in_export;
 	output	[31:0]	parameters_1_user_interface_dataout_0;
 	output	[31:0]	parameters_1_user_interface_dataout_1;
 	output	[31:0]	parameters_1_user_interface_dataout_2;
@@ -227,4 +202,29 @@ module procesador (
 	input	[31:0]	parameters_3_user_interface_datain_13;
 	input	[31:0]	parameters_3_user_interface_datain_14;
 	input	[31:0]	parameters_3_user_interface_datain_15;
+	output	[31:0]	parameters_user_interface_dataout_0;
+	output	[31:0]	parameters_user_interface_dataout_1;
+	output	[31:0]	parameters_user_interface_dataout_2;
+	output	[31:0]	parameters_user_interface_dataout_3;
+	output	[31:0]	parameters_user_interface_dataout_4;
+	output	[31:0]	parameters_user_interface_dataout_5;
+	output	[31:0]	parameters_user_interface_dataout_6;
+	output	[31:0]	parameters_user_interface_dataout_7;
+	output	[31:0]	parameters_user_interface_dataout_8;
+	output	[31:0]	parameters_user_interface_dataout_9;
+	input	[31:0]	parameters_user_interface_datain_10;
+	input	[31:0]	parameters_user_interface_datain_11;
+	input	[31:0]	parameters_user_interface_datain_12;
+	input	[31:0]	parameters_user_interface_datain_13;
+	input	[31:0]	parameters_user_interface_datain_14;
+	input	[31:0]	parameters_user_interface_datain_15;
+	input		reset_reset_n;
+	input		reset_fifos_reset;
+	output		reset_op_export;
+	input	[31:0]	result0_32_bit_in_export;
+	input	[31:0]	result0_64_bit_down_in_export;
+	input	[31:0]	result0_64_bit_up_in_export;
+	input	[31:0]	result1_32_bit_in_export;
+	input	[31:0]	result1_64_bit_down_in_export;
+	input	[31:0]	result1_64_bit_up_in_export;
 endmodule

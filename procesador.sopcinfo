@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="procesador" kind="procesador" version="1.0" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2022.11.08.19:08:44 -->
+ <!-- 2022.11.29.19:05:25 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1667945324</value>
+  <value>1669759524</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -416,15 +416,15 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>nios2_gen2_0</moduleName>
-    <slaveName>clk</slaveName>
-    <name>nios2_gen2_0.clk</name>
-   </clockDomainMember>
-   <clockDomainMember>
-    <isBridge>false</isBridge>
     <moduleName>jtag_uart_0</moduleName>
     <slaveName>clk</slaveName>
     <name>jtag_uart_0.clk</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>nios2_gen2_0</moduleName>
+    <slaveName>clk</slaveName>
+    <name>nios2_gen2_0.clk</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -23590,34 +23590,10 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>fifo0_64_bit_up</moduleName>
+    <moduleName>fifo1_32_bit</moduleName>
     <slaveName>out</slaveName>
-    <name>fifo0_64_bit_up.out</name>
-    <baseAddress>270792</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo0_64_bit_down</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo0_64_bit_down.out</name>
-    <baseAddress>270784</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo1_64_bit_up</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo1_64_bit_up.out</name>
-    <baseAddress>270776</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo1_64_bit_down</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo1_64_bit_down.out</name>
-    <baseAddress>270768</baseAddress>
+    <name>fifo1_32_bit.out</name>
+    <baseAddress>270752</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -23630,26 +23606,42 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>fifo1_32_bit</moduleName>
+    <moduleName>fifo1_64_bit_down</moduleName>
     <slaveName>out</slaveName>
-    <name>fifo1_32_bit.out</name>
-    <baseAddress>270752</baseAddress>
+    <name>fifo1_64_bit_down.out</name>
+    <baseAddress>270768</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters</moduleName>
-    <slaveName>s0</slaveName>
-    <name>parameters.s0</name>
-    <baseAddress>268288</baseAddress>
-    <span>2048</span>
+    <moduleName>fifo1_64_bit_up</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo1_64_bit_up.out</name>
+    <baseAddress>270776</baseAddress>
+    <span>8</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters_1</moduleName>
+    <moduleName>fifo0_64_bit_down</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo0_64_bit_down.out</name>
+    <baseAddress>270784</baseAddress>
+    <span>8</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>fifo0_64_bit_up</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo0_64_bit_up.out</name>
+    <baseAddress>270792</baseAddress>
+    <span>8</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>parameters_3</moduleName>
     <slaveName>s0</slaveName>
-    <name>parameters_1.s0</name>
-    <baseAddress>266240</baseAddress>
+    <name>parameters_3.s0</name>
+    <baseAddress>262144</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -23662,82 +23654,26 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters_3</moduleName>
+    <moduleName>parameters_1</moduleName>
     <slaveName>s0</slaveName>
-    <name>parameters_3.s0</name>
-    <baseAddress>262144</baseAddress>
+    <name>parameters_1.s0</name>
+    <baseAddress>266240</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>program_memory</moduleName>
-    <slaveName>s1</slaveName>
-    <name>program_memory.s1</name>
-    <baseAddress>0</baseAddress>
-    <span>150000</span>
+    <moduleName>parameters</moduleName>
+    <slaveName>s0</slaveName>
+    <name>parameters.s0</name>
+    <baseAddress>268288</baseAddress>
+    <span>2048</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>divisor_clock</moduleName>
+    <moduleName>result1_32_bit</moduleName>
     <slaveName>s1</slaveName>
-    <name>divisor_clock.s1</name>
-    <baseAddress>270736</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>reset</moduleName>
-    <slaveName>s1</slaveName>
-    <name>reset.s1</name>
-    <baseAddress>270720</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>enable</moduleName>
-    <slaveName>s1</slaveName>
-    <name>enable.s1</name>
-    <baseAddress>270704</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>finalizacion</moduleName>
-    <slaveName>s1</slaveName>
-    <name>finalizacion.s1</name>
-    <baseAddress>270688</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result0_64_bit_up</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result0_64_bit_up.s1</name>
-    <baseAddress>270672</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result0_64_bit_down</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result0_64_bit_down.s1</name>
-    <baseAddress>270656</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result1_64_bit_up</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result1_64_bit_up.s1</name>
-    <baseAddress>270640</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result1_64_bit_down</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result1_64_bit_down.s1</name>
-    <baseAddress>270624</baseAddress>
+    <name>result1_32_bit.s1</name>
+    <baseAddress>270592</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -23750,11 +23686,75 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>result1_32_bit</moduleName>
+    <moduleName>result1_64_bit_down</moduleName>
     <slaveName>s1</slaveName>
-    <name>result1_32_bit.s1</name>
-    <baseAddress>270592</baseAddress>
+    <name>result1_64_bit_down.s1</name>
+    <baseAddress>270624</baseAddress>
     <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result1_64_bit_up</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result1_64_bit_up.s1</name>
+    <baseAddress>270640</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result0_64_bit_down</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result0_64_bit_down.s1</name>
+    <baseAddress>270656</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result0_64_bit_up</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result0_64_bit_up.s1</name>
+    <baseAddress>270672</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>finalizacion</moduleName>
+    <slaveName>s1</slaveName>
+    <name>finalizacion.s1</name>
+    <baseAddress>270688</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>enable</moduleName>
+    <slaveName>s1</slaveName>
+    <name>enable.s1</name>
+    <baseAddress>270704</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>reset</moduleName>
+    <slaveName>s1</slaveName>
+    <name>reset.s1</name>
+    <baseAddress>270720</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>divisor_clock</moduleName>
+    <slaveName>s1</slaveName>
+    <name>divisor_clock.s1</name>
+    <baseAddress>270736</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>program_memory</moduleName>
+    <slaveName>s1</slaveName>
+    <name>program_memory.s1</name>
+    <baseAddress>0</baseAddress>
+    <span>150000</span>
    </memoryBlock>
   </interface>
  </module>
@@ -49265,34 +49265,10 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>fifo0_64_bit_up</moduleName>
+    <moduleName>fifo1_32_bit</moduleName>
     <slaveName>out</slaveName>
-    <name>fifo0_64_bit_up.out</name>
-    <baseAddress>270792</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo0_64_bit_down</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo0_64_bit_down.out</name>
-    <baseAddress>270784</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo1_64_bit_up</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo1_64_bit_up.out</name>
-    <baseAddress>270776</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo1_64_bit_down</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo1_64_bit_down.out</name>
-    <baseAddress>270768</baseAddress>
+    <name>fifo1_32_bit.out</name>
+    <baseAddress>270752</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -49305,26 +49281,42 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>fifo1_32_bit</moduleName>
+    <moduleName>fifo1_64_bit_down</moduleName>
     <slaveName>out</slaveName>
-    <name>fifo1_32_bit.out</name>
-    <baseAddress>270752</baseAddress>
+    <name>fifo1_64_bit_down.out</name>
+    <baseAddress>270768</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters</moduleName>
-    <slaveName>s0</slaveName>
-    <name>parameters.s0</name>
-    <baseAddress>268288</baseAddress>
-    <span>2048</span>
+    <moduleName>fifo1_64_bit_up</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo1_64_bit_up.out</name>
+    <baseAddress>270776</baseAddress>
+    <span>8</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters_1</moduleName>
+    <moduleName>fifo0_64_bit_down</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo0_64_bit_down.out</name>
+    <baseAddress>270784</baseAddress>
+    <span>8</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>fifo0_64_bit_up</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo0_64_bit_up.out</name>
+    <baseAddress>270792</baseAddress>
+    <span>8</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>parameters_3</moduleName>
     <slaveName>s0</slaveName>
-    <name>parameters_1.s0</name>
-    <baseAddress>266240</baseAddress>
+    <name>parameters_3.s0</name>
+    <baseAddress>262144</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -49337,82 +49329,26 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters_3</moduleName>
+    <moduleName>parameters_1</moduleName>
     <slaveName>s0</slaveName>
-    <name>parameters_3.s0</name>
-    <baseAddress>262144</baseAddress>
+    <name>parameters_1.s0</name>
+    <baseAddress>266240</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>program_memory</moduleName>
-    <slaveName>s1</slaveName>
-    <name>program_memory.s1</name>
-    <baseAddress>0</baseAddress>
-    <span>150000</span>
+    <moduleName>parameters</moduleName>
+    <slaveName>s0</slaveName>
+    <name>parameters.s0</name>
+    <baseAddress>268288</baseAddress>
+    <span>2048</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>divisor_clock</moduleName>
+    <moduleName>result1_32_bit</moduleName>
     <slaveName>s1</slaveName>
-    <name>divisor_clock.s1</name>
-    <baseAddress>270736</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>reset</moduleName>
-    <slaveName>s1</slaveName>
-    <name>reset.s1</name>
-    <baseAddress>270720</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>enable</moduleName>
-    <slaveName>s1</slaveName>
-    <name>enable.s1</name>
-    <baseAddress>270704</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>finalizacion</moduleName>
-    <slaveName>s1</slaveName>
-    <name>finalizacion.s1</name>
-    <baseAddress>270688</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result0_64_bit_up</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result0_64_bit_up.s1</name>
-    <baseAddress>270672</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result0_64_bit_down</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result0_64_bit_down.s1</name>
-    <baseAddress>270656</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result1_64_bit_up</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result1_64_bit_up.s1</name>
-    <baseAddress>270640</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result1_64_bit_down</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result1_64_bit_down.s1</name>
-    <baseAddress>270624</baseAddress>
+    <name>result1_32_bit.s1</name>
+    <baseAddress>270592</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -49425,11 +49361,75 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>result1_32_bit</moduleName>
+    <moduleName>result1_64_bit_down</moduleName>
     <slaveName>s1</slaveName>
-    <name>result1_32_bit.s1</name>
-    <baseAddress>270592</baseAddress>
+    <name>result1_64_bit_down.s1</name>
+    <baseAddress>270624</baseAddress>
     <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result1_64_bit_up</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result1_64_bit_up.s1</name>
+    <baseAddress>270640</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result0_64_bit_down</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result0_64_bit_down.s1</name>
+    <baseAddress>270656</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result0_64_bit_up</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result0_64_bit_up.s1</name>
+    <baseAddress>270672</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>finalizacion</moduleName>
+    <slaveName>s1</slaveName>
+    <name>finalizacion.s1</name>
+    <baseAddress>270688</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>enable</moduleName>
+    <slaveName>s1</slaveName>
+    <name>enable.s1</name>
+    <baseAddress>270704</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>reset</moduleName>
+    <slaveName>s1</slaveName>
+    <name>reset.s1</name>
+    <baseAddress>270720</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>divisor_clock</moduleName>
+    <slaveName>s1</slaveName>
+    <name>divisor_clock.s1</name>
+    <baseAddress>270736</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>program_memory</moduleName>
+    <slaveName>s1</slaveName>
+    <name>program_memory.s1</name>
+    <baseAddress>0</baseAddress>
+    <span>150000</span>
    </memoryBlock>
   </interface>
  </module>
@@ -50560,34 +50560,10 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>fifo0_64_bit_up</moduleName>
+    <moduleName>fifo1_32_bit</moduleName>
     <slaveName>out</slaveName>
-    <name>fifo0_64_bit_up.out</name>
-    <baseAddress>4280558024</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo0_64_bit_down</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo0_64_bit_down.out</name>
-    <baseAddress>4280558016</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo1_64_bit_up</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo1_64_bit_up.out</name>
-    <baseAddress>4280558008</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo1_64_bit_down</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo1_64_bit_down.out</name>
-    <baseAddress>4280558000</baseAddress>
+    <name>fifo1_32_bit.out</name>
+    <baseAddress>4280557984</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -50600,26 +50576,42 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>fifo1_32_bit</moduleName>
+    <moduleName>fifo1_64_bit_down</moduleName>
     <slaveName>out</slaveName>
-    <name>fifo1_32_bit.out</name>
-    <baseAddress>4280557984</baseAddress>
+    <name>fifo1_64_bit_down.out</name>
+    <baseAddress>4280558000</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters</moduleName>
-    <slaveName>s0</slaveName>
-    <name>parameters.s0</name>
-    <baseAddress>4280555520</baseAddress>
-    <span>2048</span>
+    <moduleName>fifo1_64_bit_up</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo1_64_bit_up.out</name>
+    <baseAddress>4280558008</baseAddress>
+    <span>8</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters_1</moduleName>
+    <moduleName>fifo0_64_bit_down</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo0_64_bit_down.out</name>
+    <baseAddress>4280558016</baseAddress>
+    <span>8</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>fifo0_64_bit_up</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo0_64_bit_up.out</name>
+    <baseAddress>4280558024</baseAddress>
+    <span>8</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>parameters_3</moduleName>
     <slaveName>s0</slaveName>
-    <name>parameters_1.s0</name>
-    <baseAddress>4280553472</baseAddress>
+    <name>parameters_3.s0</name>
+    <baseAddress>4280549376</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -50632,82 +50624,26 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters_3</moduleName>
+    <moduleName>parameters_1</moduleName>
     <slaveName>s0</slaveName>
-    <name>parameters_3.s0</name>
-    <baseAddress>4280549376</baseAddress>
+    <name>parameters_1.s0</name>
+    <baseAddress>4280553472</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>program_memory</moduleName>
-    <slaveName>s1</slaveName>
-    <name>program_memory.s1</name>
-    <baseAddress>4280287232</baseAddress>
-    <span>150000</span>
+    <moduleName>parameters</moduleName>
+    <slaveName>s0</slaveName>
+    <name>parameters.s0</name>
+    <baseAddress>4280555520</baseAddress>
+    <span>2048</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>divisor_clock</moduleName>
+    <moduleName>result1_32_bit</moduleName>
     <slaveName>s1</slaveName>
-    <name>divisor_clock.s1</name>
-    <baseAddress>4280557968</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>reset</moduleName>
-    <slaveName>s1</slaveName>
-    <name>reset.s1</name>
-    <baseAddress>4280557952</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>enable</moduleName>
-    <slaveName>s1</slaveName>
-    <name>enable.s1</name>
-    <baseAddress>4280557936</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>finalizacion</moduleName>
-    <slaveName>s1</slaveName>
-    <name>finalizacion.s1</name>
-    <baseAddress>4280557920</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result0_64_bit_up</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result0_64_bit_up.s1</name>
-    <baseAddress>4280557904</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result0_64_bit_down</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result0_64_bit_down.s1</name>
-    <baseAddress>4280557888</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result1_64_bit_up</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result1_64_bit_up.s1</name>
-    <baseAddress>4280557872</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result1_64_bit_down</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result1_64_bit_down.s1</name>
-    <baseAddress>4280557856</baseAddress>
+    <name>result1_32_bit.s1</name>
+    <baseAddress>4280557824</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -50720,11 +50656,75 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>result1_32_bit</moduleName>
+    <moduleName>result1_64_bit_down</moduleName>
     <slaveName>s1</slaveName>
-    <name>result1_32_bit.s1</name>
-    <baseAddress>4280557824</baseAddress>
+    <name>result1_64_bit_down.s1</name>
+    <baseAddress>4280557856</baseAddress>
     <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result1_64_bit_up</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result1_64_bit_up.s1</name>
+    <baseAddress>4280557872</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result0_64_bit_down</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result0_64_bit_down.s1</name>
+    <baseAddress>4280557888</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result0_64_bit_up</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result0_64_bit_up.s1</name>
+    <baseAddress>4280557904</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>finalizacion</moduleName>
+    <slaveName>s1</slaveName>
+    <name>finalizacion.s1</name>
+    <baseAddress>4280557920</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>enable</moduleName>
+    <slaveName>s1</slaveName>
+    <name>enable.s1</name>
+    <baseAddress>4280557936</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>reset</moduleName>
+    <slaveName>s1</slaveName>
+    <name>reset.s1</name>
+    <baseAddress>4280557952</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>divisor_clock</moduleName>
+    <slaveName>s1</slaveName>
+    <name>divisor_clock.s1</name>
+    <baseAddress>4280557968</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>program_memory</moduleName>
+    <slaveName>s1</slaveName>
+    <name>program_memory.s1</name>
+    <baseAddress>4280287232</baseAddress>
+    <span>150000</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -51551,34 +51551,10 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>fifo0_64_bit_up</moduleName>
+    <moduleName>fifo1_32_bit</moduleName>
     <slaveName>out</slaveName>
-    <name>fifo0_64_bit_up.out</name>
-    <baseAddress>4280558024</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo0_64_bit_down</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo0_64_bit_down.out</name>
-    <baseAddress>4280558016</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo1_64_bit_up</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo1_64_bit_up.out</name>
-    <baseAddress>4280558008</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>fifo1_64_bit_down</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo1_64_bit_down.out</name>
-    <baseAddress>4280558000</baseAddress>
+    <name>fifo1_32_bit.out</name>
+    <baseAddress>4280557984</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -51591,26 +51567,42 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>fifo1_32_bit</moduleName>
+    <moduleName>fifo1_64_bit_down</moduleName>
     <slaveName>out</slaveName>
-    <name>fifo1_32_bit.out</name>
-    <baseAddress>4280557984</baseAddress>
+    <name>fifo1_64_bit_down.out</name>
+    <baseAddress>4280558000</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters</moduleName>
-    <slaveName>s0</slaveName>
-    <name>parameters.s0</name>
-    <baseAddress>4280555520</baseAddress>
-    <span>2048</span>
+    <moduleName>fifo1_64_bit_up</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo1_64_bit_up.out</name>
+    <baseAddress>4280558008</baseAddress>
+    <span>8</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters_1</moduleName>
+    <moduleName>fifo0_64_bit_down</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo0_64_bit_down.out</name>
+    <baseAddress>4280558016</baseAddress>
+    <span>8</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>fifo0_64_bit_up</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo0_64_bit_up.out</name>
+    <baseAddress>4280558024</baseAddress>
+    <span>8</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>parameters_3</moduleName>
     <slaveName>s0</slaveName>
-    <name>parameters_1.s0</name>
-    <baseAddress>4280553472</baseAddress>
+    <name>parameters_3.s0</name>
+    <baseAddress>4280549376</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -51623,82 +51615,26 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>parameters_3</moduleName>
+    <moduleName>parameters_1</moduleName>
     <slaveName>s0</slaveName>
-    <name>parameters_3.s0</name>
-    <baseAddress>4280549376</baseAddress>
+    <name>parameters_1.s0</name>
+    <baseAddress>4280553472</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>program_memory</moduleName>
-    <slaveName>s1</slaveName>
-    <name>program_memory.s1</name>
-    <baseAddress>4280287232</baseAddress>
-    <span>150000</span>
+    <moduleName>parameters</moduleName>
+    <slaveName>s0</slaveName>
+    <name>parameters.s0</name>
+    <baseAddress>4280555520</baseAddress>
+    <span>2048</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>divisor_clock</moduleName>
+    <moduleName>result1_32_bit</moduleName>
     <slaveName>s1</slaveName>
-    <name>divisor_clock.s1</name>
-    <baseAddress>4280557968</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>reset</moduleName>
-    <slaveName>s1</slaveName>
-    <name>reset.s1</name>
-    <baseAddress>4280557952</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>enable</moduleName>
-    <slaveName>s1</slaveName>
-    <name>enable.s1</name>
-    <baseAddress>4280557936</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>finalizacion</moduleName>
-    <slaveName>s1</slaveName>
-    <name>finalizacion.s1</name>
-    <baseAddress>4280557920</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result0_64_bit_up</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result0_64_bit_up.s1</name>
-    <baseAddress>4280557904</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result0_64_bit_down</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result0_64_bit_down.s1</name>
-    <baseAddress>4280557888</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result1_64_bit_up</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result1_64_bit_up.s1</name>
-    <baseAddress>4280557872</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>result1_64_bit_down</moduleName>
-    <slaveName>s1</slaveName>
-    <name>result1_64_bit_down.s1</name>
-    <baseAddress>4280557856</baseAddress>
+    <name>result1_32_bit.s1</name>
+    <baseAddress>4280557824</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -51711,11 +51647,75 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>result1_32_bit</moduleName>
+    <moduleName>result1_64_bit_down</moduleName>
     <slaveName>s1</slaveName>
-    <name>result1_32_bit.s1</name>
-    <baseAddress>4280557824</baseAddress>
+    <name>result1_64_bit_down.s1</name>
+    <baseAddress>4280557856</baseAddress>
     <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result1_64_bit_up</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result1_64_bit_up.s1</name>
+    <baseAddress>4280557872</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result0_64_bit_down</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result0_64_bit_down.s1</name>
+    <baseAddress>4280557888</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>result0_64_bit_up</moduleName>
+    <slaveName>s1</slaveName>
+    <name>result0_64_bit_up.s1</name>
+    <baseAddress>4280557904</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>finalizacion</moduleName>
+    <slaveName>s1</slaveName>
+    <name>finalizacion.s1</name>
+    <baseAddress>4280557920</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>enable</moduleName>
+    <slaveName>s1</slaveName>
+    <name>enable.s1</name>
+    <baseAddress>4280557936</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>reset</moduleName>
+    <slaveName>s1</slaveName>
+    <name>reset.s1</name>
+    <baseAddress>4280557952</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>divisor_clock</moduleName>
+    <slaveName>s1</slaveName>
+    <name>divisor_clock.s1</name>
+    <baseAddress>4280557968</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>program_memory</moduleName>
+    <slaveName>s1</slaveName>
+    <name>program_memory.s1</name>
+    <baseAddress>4280287232</baseAddress>
+    <span>150000</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -82374,18 +82374,18 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>fifo1_64_bit_up</moduleName>
-    <slaveName>out</slaveName>
-    <name>fifo1_64_bit_up.out</name>
-    <baseAddress>270776</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
     <moduleName>fifo0_64_bit_down</moduleName>
     <slaveName>out</slaveName>
     <name>fifo0_64_bit_down.out</name>
     <baseAddress>270784</baseAddress>
+    <span>8</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>fifo1_64_bit_up</moduleName>
+    <slaveName>out</slaveName>
+    <name>fifo1_64_bit_up.out</name>
+    <baseAddress>270776</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -82446,6 +82446,22 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
+    <moduleName>program_memory</moduleName>
+    <slaveName>s1</slaveName>
+    <name>program_memory.s1</name>
+    <baseAddress>0</baseAddress>
+    <span>150000</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>divisor_clock</moduleName>
+    <slaveName>s1</slaveName>
+    <name>divisor_clock.s1</name>
+    <baseAddress>270736</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
     <moduleName>reset</moduleName>
     <slaveName>s1</slaveName>
     <name>reset.s1</name>
@@ -82458,6 +82474,14 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>enable.s1</name>
     <baseAddress>270704</baseAddress>
+    <span>16</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>finalizacion</moduleName>
+    <slaveName>s1</slaveName>
+    <name>finalizacion.s1</name>
+    <baseAddress>270688</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -82506,30 +82530,6 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>result1_32_bit.s1</name>
     <baseAddress>270592</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>program_memory</moduleName>
-    <slaveName>s1</slaveName>
-    <name>program_memory.s1</name>
-    <baseAddress>0</baseAddress>
-    <span>150000</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>finalizacion</moduleName>
-    <slaveName>s1</slaveName>
-    <name>finalizacion.s1</name>
-    <baseAddress>270688</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>divisor_clock</moduleName>
-    <slaveName>s1</slaveName>
-    <name>divisor_clock.s1</name>
-    <baseAddress>270736</baseAddress>
     <span>16</span>
    </memoryBlock>
   </interface>
@@ -105980,57 +105980,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>out</endConnectionPoint>
  </connection>
  <connection
-   name="nios2_gen2_0.data_master/fifo1_64_bit_up.out"
-   kind="avalon"
-   version="17.1"
-   start="nios2_gen2_0.data_master"
-   end="fifo1_64_bit_up.out">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x000421b8</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>nios2_gen2_0</startModule>
-  <startConnectionPoint>data_master</startConnectionPoint>
-  <endModule>fifo1_64_bit_up</endModule>
-  <endConnectionPoint>out</endConnectionPoint>
- </connection>
- <connection
    name="nios2_gen2_0.data_master/fifo0_64_bit_down.out"
    kind="avalon"
    version="17.1"
@@ -106079,6 +106028,57 @@ parameters are a RESULT of the module parameters. -->
   <startModule>nios2_gen2_0</startModule>
   <startConnectionPoint>data_master</startConnectionPoint>
   <endModule>fifo0_64_bit_down</endModule>
+  <endConnectionPoint>out</endConnectionPoint>
+ </connection>
+ <connection
+   name="nios2_gen2_0.data_master/fifo1_64_bit_up.out"
+   kind="avalon"
+   version="17.1"
+   start="nios2_gen2_0.data_master"
+   end="fifo1_64_bit_up.out">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x000421b8</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>nios2_gen2_0</startModule>
+  <startConnectionPoint>data_master</startConnectionPoint>
+  <endModule>fifo1_64_bit_up</endModule>
   <endConnectionPoint>out</endConnectionPoint>
  </connection>
  <connection
@@ -106439,6 +106439,108 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s0</endConnectionPoint>
  </connection>
  <connection
+   name="nios2_gen2_0.data_master/program_memory.s1"
+   kind="avalon"
+   version="17.1"
+   start="nios2_gen2_0.data_master"
+   end="program_memory.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x0000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>nios2_gen2_0</startModule>
+  <startConnectionPoint>data_master</startConnectionPoint>
+  <endModule>program_memory</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="nios2_gen2_0.data_master/divisor_clock.s1"
+   kind="avalon"
+   version="17.1"
+   start="nios2_gen2_0.data_master"
+   end="divisor_clock.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00042190</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>nios2_gen2_0</startModule>
+  <startConnectionPoint>data_master</startConnectionPoint>
+  <endModule>divisor_clock</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
    name="nios2_gen2_0.data_master/reset.s1"
    kind="avalon"
    version="17.1"
@@ -106538,6 +106640,57 @@ parameters are a RESULT of the module parameters. -->
   <startModule>nios2_gen2_0</startModule>
   <startConnectionPoint>data_master</startConnectionPoint>
   <endModule>enable</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="nios2_gen2_0.data_master/finalizacion.s1"
+   kind="avalon"
+   version="17.1"
+   start="nios2_gen2_0.data_master"
+   end="finalizacion.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00042160</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>nios2_gen2_0</startModule>
+  <startConnectionPoint>data_master</startConnectionPoint>
+  <endModule>finalizacion</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
@@ -106847,159 +107000,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="nios2_gen2_0.data_master/program_memory.s1"
-   kind="avalon"
-   version="17.1"
-   start="nios2_gen2_0.data_master"
-   end="program_memory.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x0000</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>nios2_gen2_0</startModule>
-  <startConnectionPoint>data_master</startConnectionPoint>
-  <endModule>program_memory</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="nios2_gen2_0.data_master/finalizacion.s1"
-   kind="avalon"
-   version="17.1"
-   start="nios2_gen2_0.data_master"
-   end="finalizacion.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00042160</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>nios2_gen2_0</startModule>
-  <startConnectionPoint>data_master</startConnectionPoint>
-  <endModule>finalizacion</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="nios2_gen2_0.data_master/divisor_clock.s1"
-   kind="avalon"
-   version="17.1"
-   start="nios2_gen2_0.data_master"
-   end="divisor_clock.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00042190</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>nios2_gen2_0</startModule>
-  <startConnectionPoint>data_master</startConnectionPoint>
-  <endModule>divisor_clock</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
    name="hps_0_bridges.h2f_lw/pll_reconfigurar.mgmt_avalon_slave"
    kind="avalon"
    version="17.1"
@@ -107051,11 +107051,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>mgmt_avalon_slave</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/fifo0_64_bit_up.out"
+   name="hps_0_bridges.h2f_lw/fifo1_32_bit.out"
    kind="avalon"
    version="17.1"
    start="hps_0_bridges.h2f_lw"
-   end="fifo0_64_bit_up.out">
+   end="fifo1_32_bit.out">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -107066,7 +107066,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x000421c8</value>
+   <value>0x000421a0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -107098,160 +107098,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>hps_0_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>fifo0_64_bit_up</endModule>
-  <endConnectionPoint>out</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/fifo0_64_bit_down.out"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="fifo0_64_bit_down.out">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x000421c0</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>fifo0_64_bit_down</endModule>
-  <endConnectionPoint>out</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/fifo1_64_bit_up.out"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="fifo1_64_bit_up.out">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x000421b8</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>fifo1_64_bit_up</endModule>
-  <endConnectionPoint>out</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/fifo1_64_bit_down.out"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="fifo1_64_bit_down.out">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x000421b0</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>fifo1_64_bit_down</endModule>
+  <endModule>fifo1_32_bit</endModule>
   <endConnectionPoint>out</endConnectionPoint>
  </connection>
  <connection
@@ -107306,11 +107153,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>out</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/fifo1_32_bit.out"
+   name="hps_0_bridges.h2f_lw/fifo1_64_bit_down.out"
    kind="avalon"
    version="17.1"
    start="hps_0_bridges.h2f_lw"
-   end="fifo1_32_bit.out">
+   end="fifo1_64_bit_down.out">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -107321,7 +107168,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x000421a0</value>
+   <value>0x000421b0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -107353,15 +107200,15 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>hps_0_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>fifo1_32_bit</endModule>
+  <endModule>fifo1_64_bit_down</endModule>
   <endConnectionPoint>out</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/parameters.s0"
+   name="hps_0_bridges.h2f_lw/fifo1_64_bit_up.out"
    kind="avalon"
    version="17.1"
    start="hps_0_bridges.h2f_lw"
-   end="parameters.s0">
+   end="fifo1_64_bit_up.out">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -107372,7 +107219,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00041800</value>
+   <value>0x000421b8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -107404,15 +107251,15 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>hps_0_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>parameters</endModule>
-  <endConnectionPoint>s0</endConnectionPoint>
+  <endModule>fifo1_64_bit_up</endModule>
+  <endConnectionPoint>out</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/parameters_1.s0"
+   name="hps_0_bridges.h2f_lw/fifo0_64_bit_down.out"
    kind="avalon"
    version="17.1"
    start="hps_0_bridges.h2f_lw"
-   end="parameters_1.s0">
+   end="fifo0_64_bit_down.out">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -107423,7 +107270,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00041000</value>
+   <value>0x000421c0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -107455,7 +107302,109 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>hps_0_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>parameters_1</endModule>
+  <endModule>fifo0_64_bit_down</endModule>
+  <endConnectionPoint>out</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/fifo0_64_bit_up.out"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="fifo0_64_bit_up.out">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x000421c8</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>fifo0_64_bit_up</endModule>
+  <endConnectionPoint>out</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/parameters_3.s0"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="parameters_3.s0">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00040000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>parameters_3</endModule>
   <endConnectionPoint>s0</endConnectionPoint>
  </connection>
  <connection
@@ -107510,11 +107459,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s0</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/parameters_3.s0"
+   name="hps_0_bridges.h2f_lw/parameters_1.s0"
    kind="avalon"
    version="17.1"
    start="hps_0_bridges.h2f_lw"
-   end="parameters_3.s0">
+   end="parameters_1.s0">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -107525,7 +107474,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00040000</value>
+   <value>0x00041000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -107557,15 +107506,15 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>hps_0_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>parameters_3</endModule>
+  <endModule>parameters_1</endModule>
   <endConnectionPoint>s0</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/program_memory.s1"
+   name="hps_0_bridges.h2f_lw/parameters.s0"
    kind="avalon"
    version="17.1"
    start="hps_0_bridges.h2f_lw"
-   end="program_memory.s1">
+   end="parameters.s0">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -107576,7 +107525,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0000</value>
+   <value>0x00041800</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -107608,15 +107557,15 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>hps_0_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>program_memory</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
+  <endModule>parameters</endModule>
+  <endConnectionPoint>s0</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/divisor_clock.s1"
+   name="hps_0_bridges.h2f_lw/result1_32_bit.s1"
    kind="avalon"
    version="17.1"
    start="hps_0_bridges.h2f_lw"
-   end="divisor_clock.s1">
+   end="result1_32_bit.s1">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -107627,7 +107576,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00042190</value>
+   <value>0x00042100</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -107659,364 +107608,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>hps_0_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>divisor_clock</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/reset.s1"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="reset.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00042180</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>reset</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/enable.s1"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="enable.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00042170</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>enable</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/finalizacion.s1"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="finalizacion.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00042160</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>finalizacion</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/result0_64_bit_up.s1"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="result0_64_bit_up.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00042150</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>result0_64_bit_up</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/result0_64_bit_down.s1"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="result0_64_bit_down.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00042140</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>result0_64_bit_down</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/result1_64_bit_up.s1"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="result1_64_bit_up.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00042130</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>result1_64_bit_up</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="hps_0_bridges.h2f_lw/result1_64_bit_down.s1"
-   kind="avalon"
-   version="17.1"
-   start="hps_0_bridges.h2f_lw"
-   end="result1_64_bit_down.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00042120</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>hps_0_bridges</startModule>
-  <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>result1_64_bit_down</endModule>
+  <endModule>result1_32_bit</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
@@ -108071,11 +107663,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/result1_32_bit.s1"
+   name="hps_0_bridges.h2f_lw/result1_64_bit_down.s1"
    kind="avalon"
    version="17.1"
    start="hps_0_bridges.h2f_lw"
-   end="result1_32_bit.s1">
+   end="result1_64_bit_down.s1">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -108086,7 +107678,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00042100</value>
+   <value>0x00042120</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -108118,7 +107710,415 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>hps_0_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>result1_32_bit</endModule>
+  <endModule>result1_64_bit_down</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/result1_64_bit_up.s1"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="result1_64_bit_up.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00042130</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>result1_64_bit_up</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/result0_64_bit_down.s1"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="result0_64_bit_down.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00042140</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>result0_64_bit_down</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/result0_64_bit_up.s1"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="result0_64_bit_up.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00042150</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>result0_64_bit_up</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/finalizacion.s1"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="finalizacion.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00042160</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>finalizacion</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/enable.s1"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="enable.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00042170</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>enable</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/reset.s1"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="reset.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00042180</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>reset</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/divisor_clock.s1"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="divisor_clock.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00042190</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>divisor_clock</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="hps_0_bridges.h2f_lw/program_memory.s1"
+   kind="avalon"
+   version="17.1"
+   start="hps_0_bridges.h2f_lw"
+   end="program_memory.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x0000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>hps_0_bridges</startModule>
+  <startConnectionPoint>h2f_lw</startConnectionPoint>
+  <endModule>program_memory</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
@@ -108467,33 +108467,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk/nios2_gen2_0.clk"
-   kind="clock"
-   version="17.1"
-   start="clk_0.clk"
-   end="nios2_gen2_0.clk">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>clk_0</startModule>
-  <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>nios2_gen2_0</endModule>
-  <endConnectionPoint>clk</endConnectionPoint>
- </connection>
- <connection
    name="clk_0.clk/jtag_uart_0.clk"
    kind="clock"
    version="17.1"
@@ -108518,6 +108491,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
   <endModule>jtag_uart_0</endModule>
+  <endConnectionPoint>clk</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk/nios2_gen2_0.clk"
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="nios2_gen2_0.clk">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk</startConnectionPoint>
+  <endModule>nios2_gen2_0</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection

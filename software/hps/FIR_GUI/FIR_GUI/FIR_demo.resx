@@ -117,30 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button_frecuencia_corte_down.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAbCAYAAAAOEM1uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAFF0RVh0Q29tbWVudABDb3B5cmlnaHQgSU5DT1JTIEdtYkggKHd3dy5pY29uZXhw
-        ZXJpZW5jZS5jb20pIC0gVW5saWNlbnNlZCBwcmV2aWV3IGltYWdltppppgAAADh0RVh0Q29weXJpZ2h0
-        AENvcHlyaWdodCBJTkNPUlMgR21iSCAod3d3Lmljb25leHBlcmllbmNlLmNvbSlOzplOAAAAKXRFWHRU
-        aXRsZQBhcnJvdyB1cCBpY29uIGJ5IGljb25leHBlcmllbmNlLmNvbety6wsAAACySURBVFhH7ZABCgMh
-        DAT7Gf//QcES2kA41rgmSs9yAwOCuTjcq92cJzDLE5glHFhKocxyZiCz3EZ4ejAzbqD3sZ3x7MHMCMPA
-        3hI0g7zCzFjoQNGC7pEWdC96TAWqzIzKzHqEAlfrcWaggBbtcEQ3UEALV8rgBgpo8QpZzg9U0CMRZ6ED
-        FfQoY5TpQAVFILOEAxUUJa4iHSjsCFOWBO6EDqy1fk+fs9VjdD/if/7gb2jtDdL9oLzX/E4EAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
-  <data name="button_frecuencia_corte_up.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAbCAYAAAAOEM1uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAFF0RVh0Q29tbWVudABDb3B5cmlnaHQgSU5DT1JTIEdtYkggKHd3dy5pY29uZXhw
-        ZXJpZW5jZS5jb20pIC0gVW5saWNlbnNlZCBwcmV2aWV3IGltYWdltppppgAAADh0RVh0Q29weXJpZ2h0
-        AENvcHlyaWdodCBJTkNPUlMgR21iSCAod3d3Lmljb25leHBlcmllbmNlLmNvbSlOzplOAAAAKXRFWHRU
-        aXRsZQBhcnJvdyB1cCBpY29uIGJ5IGljb25leHBlcmllbmNlLmNvbety6wsAAACpSURBVFhH7ZABCsQg
-        EAP7Gf//QcEitGUpMcZdhSIdGDgwp0OP8nFCgTnn6xemnltvev+z7P0FESmlxxlMC7Rh1ijhQBSF9OIO
-        RBGKowwHokc9qsiB6JEZ9tgjEF08U0Y3EF24whY0EF20UsTegcrmVtkiXIEWdI60oPMqYjjwDdog3yib
-        ihzYwm6YLXobKZBhH2Ay2IYGKtgIppf9A1fzB0b5A6N8PLCUE0CtoLycQmeiAAAAAElFTkSuQmCC
-</value>
-  </data>
+  <metadata name="timer_plot.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

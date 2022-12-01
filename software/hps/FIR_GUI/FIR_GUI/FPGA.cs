@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 
 
@@ -15,6 +16,8 @@ namespace FIR_GUI
         // Comandos para controlar la cosa
         enum COMANDOS { RST , START, SET_CLK, SET_PARAM, GET_PARAM, RD_FIFO , TERMINATE = 99};
         public enum FIFO_DIRECTION {  F0_32, F1_32, F0_64, F1_64  };
+        bool led_state;
+        int led_base = 34;
 
         // C# le manda enteros de 32 bits a C++. Cada una es una instruccion. Una o mas instrucciones son un comando
             // RST -> Reinicia todo ( rst = 1)
@@ -28,6 +31,7 @@ namespace FIR_GUI
         public FPGA()
         {
             pipe = new PipeControl();
+            led_state = false;
         }
 
         public void Start()
@@ -46,6 +50,7 @@ namespace FIR_GUI
         {
             EnviarComando(COMANDOS.SET_CLK);
             EnviarValor(value);
+            Thread.Sleep(1000);
             return;
         }
 
@@ -66,6 +71,7 @@ namespace FIR_GUI
 
         public void Terminate(){
             EnviarComando(COMANDOS.TERMINATE);
+            pipe.Terminate();
             return;
         }
 
@@ -82,18 +88,20 @@ namespace FIR_GUI
         
         public List <int> get_from_fifo (FIFO_DIRECTION fifo_direction, int N)
         {
-            List <int> values= new List<int>();
-            for (int i = 0; i< N; i++)
-            {
-                values.Add(get_fifo(fifo_direction));
-            }
+            EnviarComando(COMANDOS.RD_FIFO);
+            EnviarValor((int)fifo_direction);
+            EnviarValor((int)N);
+
+            List <int> values = pipe.RecibirN(N);
+         
             return values;
         }
 
-        private int get_fifo (FIFO_DIRECTION fifo_direction)
+        public int get_from_fifo(FIFO_DIRECTION fifo_direction)
         {
             EnviarComando(COMANDOS.RD_FIFO);
             EnviarValor((int)fifo_direction);
+
             if( fifo_direction == FIFO_DIRECTION.F0_32 ||  fifo_direction == FIFO_DIRECTION.F1_32)
             {
                 return pipe.Recibir();
@@ -108,6 +116,14 @@ namespace FIR_GUI
         public void setFilter_to_FPGA( Filtro filter )
         {
             set_N_param (0, filter.Coeficientes);
+            return;
+        }
+
+        public void Toggle_led()
+        {
+            led_state = !led_state;
+            set_param(led_base, (led_state) ? 1 : 0);
+            return;
         }
 
         private void EnviarComando(COMANDOS command)
@@ -130,3 +146,5 @@ namespace FIR_GUI
         
     }
 }
+
+

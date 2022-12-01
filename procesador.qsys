@@ -2125,18 +2125,18 @@
    kind="avalon"
    version="17.1"
    start="nios2_gen2_0.data_master"
-   end="fifo1_64_bit_up.out">
+   end="fifo0_64_bit_down.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000421b8" />
+  <parameter name="baseAddress" value="0x000421c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="17.1"
    start="nios2_gen2_0.data_master"
-   end="fifo0_64_bit_down.out">
+   end="fifo1_64_bit_up.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000421c0" />
+  <parameter name="baseAddress" value="0x000421b8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2206,6 +2206,24 @@
    kind="avalon"
    version="17.1"
    start="nios2_gen2_0.data_master"
+   end="program_memory.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="nios2_gen2_0.data_master"
+   end="divisor_clock.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00042190" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="nios2_gen2_0.data_master"
    end="reset.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00042180" />
@@ -2218,6 +2236,15 @@
    end="enable.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00042170" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="nios2_gen2_0.data_master"
+   end="finalizacion.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00042160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2272,33 +2299,6 @@
    end="result1_32_bit.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00042100" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="nios2_gen2_0.data_master"
-   end="program_memory.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="nios2_gen2_0.data_master"
-   end="finalizacion.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042160" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="nios2_gen2_0.data_master"
-   end="divisor_clock.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042190" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2314,36 +2314,9 @@
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="fifo0_64_bit_up.out">
+   end="fifo1_32_bit.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000421c8" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="fifo0_64_bit_down.out">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000421c0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="fifo1_64_bit_up.out">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000421b8" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="fifo1_64_bit_down.out">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000421b0" />
+  <parameter name="baseAddress" value="0x000421a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2359,36 +2332,36 @@
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="fifo1_32_bit.out">
+   end="fifo1_64_bit_down.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000421a0" />
+  <parameter name="baseAddress" value="0x000421b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="parameters.s0">
+   end="fifo1_64_bit_up.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041800" />
+  <parameter name="baseAddress" value="0x000421b8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="parameters_1.s0">
+   end="fifo0_64_bit_down.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041000" />
+  <parameter name="baseAddress" value="0x000421c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="parameters_2.s0">
+   end="fifo0_64_bit_up.out">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040800" />
+  <parameter name="baseAddress" value="0x000421c8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2404,81 +2377,36 @@
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="program_memory.s1">
+   end="parameters_2.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x00040800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="divisor_clock.s1">
+   end="parameters_1.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042190" />
+  <parameter name="baseAddress" value="0x00041000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="reset.s1">
+   end="parameters.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042180" />
+  <parameter name="baseAddress" value="0x00041800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="enable.s1">
+   end="result1_32_bit.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042170" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="finalizacion.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042160" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="result0_64_bit_up.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042150" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="result0_64_bit_down.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042140" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="result1_64_bit_up.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042130" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="result1_64_bit_down.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042120" />
+  <parameter name="baseAddress" value="0x00042100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2494,9 +2422,81 @@
    kind="avalon"
    version="17.1"
    start="hps_0.h2f_lw_axi_master"
-   end="result1_32_bit.s1">
+   end="result1_64_bit_down.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00042100" />
+  <parameter name="baseAddress" value="0x00042120" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="result1_64_bit_up.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00042130" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="result0_64_bit_down.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00042140" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="result0_64_bit_up.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00042150" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="finalizacion.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00042160" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="enable.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00042170" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="reset.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00042180" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="divisor_clock.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00042190" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="program_memory.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2550,8 +2550,8 @@
    end="result1_32_bit.clk" />
  <connection kind="clock" version="17.1" start="clk_0.clk" end="divisor_clock.clk" />
  <connection kind="clock" version="17.1" start="clk_0.clk" end="finalizacion.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="nios2_gen2_0.clk" />
  <connection kind="clock" version="17.1" start="clk_0.clk" end="jtag_uart_0.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="nios2_gen2_0.clk" />
  <connection
    kind="clock"
    version="17.1"

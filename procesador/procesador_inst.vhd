@@ -40,31 +40,6 @@
 			memory_mem_odt                        : out   std_logic;                                        -- mem_odt
 			memory_mem_dm                         : out   std_logic;                                        -- mem_dm
 			memory_oct_rzqin                      : in    std_logic                     := 'X';             -- oct_rzqin
-			parameters_user_interface_dataout_0   : out   std_logic_vector(31 downto 0);                    -- dataout_0
-			parameters_user_interface_dataout_1   : out   std_logic_vector(31 downto 0);                    -- dataout_1
-			parameters_user_interface_dataout_2   : out   std_logic_vector(31 downto 0);                    -- dataout_2
-			parameters_user_interface_dataout_3   : out   std_logic_vector(31 downto 0);                    -- dataout_3
-			parameters_user_interface_dataout_4   : out   std_logic_vector(31 downto 0);                    -- dataout_4
-			parameters_user_interface_dataout_5   : out   std_logic_vector(31 downto 0);                    -- dataout_5
-			parameters_user_interface_dataout_6   : out   std_logic_vector(31 downto 0);                    -- dataout_6
-			parameters_user_interface_dataout_7   : out   std_logic_vector(31 downto 0);                    -- dataout_7
-			parameters_user_interface_dataout_8   : out   std_logic_vector(31 downto 0);                    -- dataout_8
-			parameters_user_interface_dataout_9   : out   std_logic_vector(31 downto 0);                    -- dataout_9
-			parameters_user_interface_datain_10   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_10
-			parameters_user_interface_datain_11   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_11
-			parameters_user_interface_datain_12   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_12
-			parameters_user_interface_datain_13   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_13
-			parameters_user_interface_datain_14   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_14
-			parameters_user_interface_datain_15   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_15
-			reset_reset_n                         : in    std_logic                     := 'X';             -- reset_n
-			reset_fifos_reset                     : in    std_logic                     := 'X';             -- reset
-			reset_op_export                       : out   std_logic;                                        -- export
-			result0_32_bit_in_export              : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
-			result0_64_bit_down_in_export         : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
-			result0_64_bit_up_in_export           : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
-			result1_32_bit_in_export              : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
-			result1_64_bit_down_in_export         : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
-			result1_64_bit_up_in_export           : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
 			parameters_1_user_interface_dataout_0 : out   std_logic_vector(31 downto 0);                    -- dataout_0
 			parameters_1_user_interface_dataout_1 : out   std_logic_vector(31 downto 0);                    -- dataout_1
 			parameters_1_user_interface_dataout_2 : out   std_logic_vector(31 downto 0);                    -- dataout_2
@@ -112,7 +87,32 @@
 			parameters_3_user_interface_datain_12 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_12
 			parameters_3_user_interface_datain_13 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_13
 			parameters_3_user_interface_datain_14 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_14
-			parameters_3_user_interface_datain_15 : in    std_logic_vector(31 downto 0) := (others => 'X')  -- datain_15
+			parameters_3_user_interface_datain_15 : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_15
+			parameters_user_interface_dataout_0   : out   std_logic_vector(31 downto 0);                    -- dataout_0
+			parameters_user_interface_dataout_1   : out   std_logic_vector(31 downto 0);                    -- dataout_1
+			parameters_user_interface_dataout_2   : out   std_logic_vector(31 downto 0);                    -- dataout_2
+			parameters_user_interface_dataout_3   : out   std_logic_vector(31 downto 0);                    -- dataout_3
+			parameters_user_interface_dataout_4   : out   std_logic_vector(31 downto 0);                    -- dataout_4
+			parameters_user_interface_dataout_5   : out   std_logic_vector(31 downto 0);                    -- dataout_5
+			parameters_user_interface_dataout_6   : out   std_logic_vector(31 downto 0);                    -- dataout_6
+			parameters_user_interface_dataout_7   : out   std_logic_vector(31 downto 0);                    -- dataout_7
+			parameters_user_interface_dataout_8   : out   std_logic_vector(31 downto 0);                    -- dataout_8
+			parameters_user_interface_dataout_9   : out   std_logic_vector(31 downto 0);                    -- dataout_9
+			parameters_user_interface_datain_10   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_10
+			parameters_user_interface_datain_11   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_11
+			parameters_user_interface_datain_12   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_12
+			parameters_user_interface_datain_13   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_13
+			parameters_user_interface_datain_14   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_14
+			parameters_user_interface_datain_15   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- datain_15
+			reset_reset_n                         : in    std_logic                     := 'X';             -- reset_n
+			reset_fifos_reset                     : in    std_logic                     := 'X';             -- reset
+			reset_op_export                       : out   std_logic;                                        -- export
+			result0_32_bit_in_export              : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			result0_64_bit_down_in_export         : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			result0_64_bit_up_in_export           : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			result1_32_bit_in_export              : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			result1_64_bit_down_in_export         : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			result1_64_bit_up_in_export           : in    std_logic_vector(31 downto 0) := (others => 'X')  -- export
 		);
 	end component procesador;
 
@@ -158,31 +158,6 @@
 			memory_mem_odt                        => CONNECTED_TO_memory_mem_odt,                        --                            .mem_odt
 			memory_mem_dm                         => CONNECTED_TO_memory_mem_dm,                         --                            .mem_dm
 			memory_oct_rzqin                      => CONNECTED_TO_memory_oct_rzqin,                      --                            .oct_rzqin
-			parameters_user_interface_dataout_0   => CONNECTED_TO_parameters_user_interface_dataout_0,   --   parameters_user_interface.dataout_0
-			parameters_user_interface_dataout_1   => CONNECTED_TO_parameters_user_interface_dataout_1,   --                            .dataout_1
-			parameters_user_interface_dataout_2   => CONNECTED_TO_parameters_user_interface_dataout_2,   --                            .dataout_2
-			parameters_user_interface_dataout_3   => CONNECTED_TO_parameters_user_interface_dataout_3,   --                            .dataout_3
-			parameters_user_interface_dataout_4   => CONNECTED_TO_parameters_user_interface_dataout_4,   --                            .dataout_4
-			parameters_user_interface_dataout_5   => CONNECTED_TO_parameters_user_interface_dataout_5,   --                            .dataout_5
-			parameters_user_interface_dataout_6   => CONNECTED_TO_parameters_user_interface_dataout_6,   --                            .dataout_6
-			parameters_user_interface_dataout_7   => CONNECTED_TO_parameters_user_interface_dataout_7,   --                            .dataout_7
-			parameters_user_interface_dataout_8   => CONNECTED_TO_parameters_user_interface_dataout_8,   --                            .dataout_8
-			parameters_user_interface_dataout_9   => CONNECTED_TO_parameters_user_interface_dataout_9,   --                            .dataout_9
-			parameters_user_interface_datain_10   => CONNECTED_TO_parameters_user_interface_datain_10,   --                            .datain_10
-			parameters_user_interface_datain_11   => CONNECTED_TO_parameters_user_interface_datain_11,   --                            .datain_11
-			parameters_user_interface_datain_12   => CONNECTED_TO_parameters_user_interface_datain_12,   --                            .datain_12
-			parameters_user_interface_datain_13   => CONNECTED_TO_parameters_user_interface_datain_13,   --                            .datain_13
-			parameters_user_interface_datain_14   => CONNECTED_TO_parameters_user_interface_datain_14,   --                            .datain_14
-			parameters_user_interface_datain_15   => CONNECTED_TO_parameters_user_interface_datain_15,   --                            .datain_15
-			reset_reset_n                         => CONNECTED_TO_reset_reset_n,                         --                       reset.reset_n
-			reset_fifos_reset                     => CONNECTED_TO_reset_fifos_reset,                     --                 reset_fifos.reset
-			reset_op_export                       => CONNECTED_TO_reset_op_export,                       --                    reset_op.export
-			result0_32_bit_in_export              => CONNECTED_TO_result0_32_bit_in_export,              --           result0_32_bit_in.export
-			result0_64_bit_down_in_export         => CONNECTED_TO_result0_64_bit_down_in_export,         --      result0_64_bit_down_in.export
-			result0_64_bit_up_in_export           => CONNECTED_TO_result0_64_bit_up_in_export,           --        result0_64_bit_up_in.export
-			result1_32_bit_in_export              => CONNECTED_TO_result1_32_bit_in_export,              --           result1_32_bit_in.export
-			result1_64_bit_down_in_export         => CONNECTED_TO_result1_64_bit_down_in_export,         --      result1_64_bit_down_in.export
-			result1_64_bit_up_in_export           => CONNECTED_TO_result1_64_bit_up_in_export,           --        result1_64_bit_up_in.export
 			parameters_1_user_interface_dataout_0 => CONNECTED_TO_parameters_1_user_interface_dataout_0, -- parameters_1_user_interface.dataout_0
 			parameters_1_user_interface_dataout_1 => CONNECTED_TO_parameters_1_user_interface_dataout_1, --                            .dataout_1
 			parameters_1_user_interface_dataout_2 => CONNECTED_TO_parameters_1_user_interface_dataout_2, --                            .dataout_2
@@ -230,6 +205,31 @@
 			parameters_3_user_interface_datain_12 => CONNECTED_TO_parameters_3_user_interface_datain_12, --                            .datain_12
 			parameters_3_user_interface_datain_13 => CONNECTED_TO_parameters_3_user_interface_datain_13, --                            .datain_13
 			parameters_3_user_interface_datain_14 => CONNECTED_TO_parameters_3_user_interface_datain_14, --                            .datain_14
-			parameters_3_user_interface_datain_15 => CONNECTED_TO_parameters_3_user_interface_datain_15  --                            .datain_15
+			parameters_3_user_interface_datain_15 => CONNECTED_TO_parameters_3_user_interface_datain_15, --                            .datain_15
+			parameters_user_interface_dataout_0   => CONNECTED_TO_parameters_user_interface_dataout_0,   --   parameters_user_interface.dataout_0
+			parameters_user_interface_dataout_1   => CONNECTED_TO_parameters_user_interface_dataout_1,   --                            .dataout_1
+			parameters_user_interface_dataout_2   => CONNECTED_TO_parameters_user_interface_dataout_2,   --                            .dataout_2
+			parameters_user_interface_dataout_3   => CONNECTED_TO_parameters_user_interface_dataout_3,   --                            .dataout_3
+			parameters_user_interface_dataout_4   => CONNECTED_TO_parameters_user_interface_dataout_4,   --                            .dataout_4
+			parameters_user_interface_dataout_5   => CONNECTED_TO_parameters_user_interface_dataout_5,   --                            .dataout_5
+			parameters_user_interface_dataout_6   => CONNECTED_TO_parameters_user_interface_dataout_6,   --                            .dataout_6
+			parameters_user_interface_dataout_7   => CONNECTED_TO_parameters_user_interface_dataout_7,   --                            .dataout_7
+			parameters_user_interface_dataout_8   => CONNECTED_TO_parameters_user_interface_dataout_8,   --                            .dataout_8
+			parameters_user_interface_dataout_9   => CONNECTED_TO_parameters_user_interface_dataout_9,   --                            .dataout_9
+			parameters_user_interface_datain_10   => CONNECTED_TO_parameters_user_interface_datain_10,   --                            .datain_10
+			parameters_user_interface_datain_11   => CONNECTED_TO_parameters_user_interface_datain_11,   --                            .datain_11
+			parameters_user_interface_datain_12   => CONNECTED_TO_parameters_user_interface_datain_12,   --                            .datain_12
+			parameters_user_interface_datain_13   => CONNECTED_TO_parameters_user_interface_datain_13,   --                            .datain_13
+			parameters_user_interface_datain_14   => CONNECTED_TO_parameters_user_interface_datain_14,   --                            .datain_14
+			parameters_user_interface_datain_15   => CONNECTED_TO_parameters_user_interface_datain_15,   --                            .datain_15
+			reset_reset_n                         => CONNECTED_TO_reset_reset_n,                         --                       reset.reset_n
+			reset_fifos_reset                     => CONNECTED_TO_reset_fifos_reset,                     --                 reset_fifos.reset
+			reset_op_export                       => CONNECTED_TO_reset_op_export,                       --                    reset_op.export
+			result0_32_bit_in_export              => CONNECTED_TO_result0_32_bit_in_export,              --           result0_32_bit_in.export
+			result0_64_bit_down_in_export         => CONNECTED_TO_result0_64_bit_down_in_export,         --      result0_64_bit_down_in.export
+			result0_64_bit_up_in_export           => CONNECTED_TO_result0_64_bit_up_in_export,           --        result0_64_bit_up_in.export
+			result1_32_bit_in_export              => CONNECTED_TO_result1_32_bit_in_export,              --           result1_32_bit_in.export
+			result1_64_bit_down_in_export         => CONNECTED_TO_result1_64_bit_down_in_export,         --      result1_64_bit_down_in.export
+			result1_64_bit_up_in_export           => CONNECTED_TO_result1_64_bit_up_in_export            --        result1_64_bit_up_in.export
 		);
 

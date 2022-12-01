@@ -60,8 +60,11 @@ class FPGA_de1soc {
 		//--------------- Funciones de control -------------------------------//
 		void Comenzar()
 		{
-			Reset();	
 			Iniciar();
+		}
+		void Reiniciar()
+		{
+			Reset();
 		}
 		void Calcular()
 		{
@@ -133,7 +136,7 @@ class FPGA_de1soc {
 
 		
 		// Setea la frec de muestreo (cambia frec_clk y divisor del clock)
-		// es medio bruto el algoritmo asi, estaria bueno optimizarlo un poco
+		// frecuencia debe estar en kHz
 		void set_clk_from_frec (int frecuencia)
 		{
 			double frec,divisor;
@@ -150,7 +153,7 @@ class FPGA_de1soc {
             {
 				for(divisor = min_divisor; divisor <= max_divisor; divisor++)
 				{
-					double error = std::abs(frecuencia - frec * 1000000 / (divisor));
+					double error = std::abs(frecuencia - frec * 1000 / (divisor));
 					if (error == 0)
 					{
 						ready_flag=1;
@@ -185,8 +188,8 @@ class FPGA_de1soc {
 		// Devuelve un puntero al arreglo que tiene guardado los datos de los FIFO de 32 bits
 		int * leer_FIFO_32_bit(int fifo)
 		{			
-			if(calculos_disponibles)
-			{
+			//if(calculos_disponibles)
+			//{
 				int indice;
 				for(indice=0; indice < BUFFER_SIZE_RAW; indice++)
 				{
@@ -195,7 +198,7 @@ class FPGA_de1soc {
 						int sample = (int)fpga.ReadFPGA( FIFO0_32_BIT_BASE,0 );
 						fifo0_32_bit[indice] = sample;	
 					}
-					else if(fifo=1)
+					else if(fifo==1)
 					{
 						int sample = (int)fpga.ReadFPGA( FIFO1_32_BIT_BASE,0 );
 						fifo1_32_bit[indice] = sample;	
@@ -210,7 +213,7 @@ class FPGA_de1soc {
 				{
 					return fifo1_32_bit;
 				}
-			}
+			//}
 			return 0;		
 		}		
 

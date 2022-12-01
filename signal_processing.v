@@ -341,9 +341,7 @@ assign data_out2 = data_in;
 assign data_out2_valid = data_in_valid;
 
 assign ready_to_calculate = 1;
-
 */
-
 
 endmodule
 

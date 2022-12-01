@@ -66,7 +66,7 @@ data_source_dac data_s (
 //=======================================================
 
 // Esto es para acomodar niveles de DAC y ADC
-parameter mult_factor = 1148;
+parameter mult_factor = 1189;
 parameter div_factor = 1024;	// Lo mismo que un right shift de 10
 
 reg [31:0] digital_data_in_reg,digital_data_in_reg_1;

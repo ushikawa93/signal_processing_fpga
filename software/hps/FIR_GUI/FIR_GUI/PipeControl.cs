@@ -20,12 +20,16 @@ namespace FIR_GUI
 
         Queue<int> datos_a_enviar;
         Queue<int> datos_recibidos;
-
+        bool block_read;
+        bool block_write;
 
         public PipeControl()
         {
             datos_a_enviar = new Queue<int>();
             datos_recibidos = new Queue<int>();
+
+            block_read = false;
+            block_write = false;
 
             thread1 = new Thread(new ThreadStart(managePipe1));
             thread1.Start();
@@ -34,9 +38,8 @@ namespace FIR_GUI
             thread2.Start();
         }
 
-        public void Terminate(int command)
+        public void Terminate()
         {
-            Enviar(command);
             thread1.Abort();
             thread2.Abort();
         }
@@ -44,13 +47,30 @@ namespace FIR_GUI
         public int Recibir()
         {
             while (datos_recibidos.Count == 0) { }
+            block_read = true;
             int dato = datos_recibidos.Dequeue();
+            block_read = false;
             return dato;
         }
-
+        
+        public List<int> RecibirN(int N)
+        {
+            while (datos_recibidos.Count < N) { }
+            block_read = true;
+            List <int> datos = new List<int>();
+            for (int i = 0; i < N; i++)
+            {
+                datos.Add(datos_recibidos.Dequeue());
+            }
+            block_read = false;
+            return datos;
+        }
+        
         public void Enviar(int dato)
         {
+            block_write = true;
             datos_a_enviar.Enqueue(dato);
+            block_write = false;
             return;
         }
 
@@ -64,7 +84,15 @@ namespace FIR_GUI
 
             while (true)
             {
-                datos_recibidos.Enqueue(Recibir_int32(client));
+                if (!block_read)
+                {
+                    int dato = Recibir_int32(client);
+                    if(dato != 0)
+                    {
+                        datos_recibidos.Enqueue(dato);
+                    }
+                }
+                
             }
         }
 
@@ -78,9 +106,10 @@ namespace FIR_GUI
 
             while (true)
             {
-                if (datos_a_enviar.Count != 0)
+                if ((datos_a_enviar.Count != 0)&&(!block_write))
                 {
                     Enviar_int32(client, datos_a_enviar.Dequeue());
+                    Thread.Sleep(10);
                 }
             }
         }
