@@ -87,13 +87,12 @@ parameter fuente_fifo1_32bit = procesada_1;
 parameter fuente_fifo0_64bit = procesada_2;
 parameter fuente_fifo1_64bit = open;
 
+// Valores para el procesamiento:
 
 wire [31:0] data_in_procesamiento = (fuente_procesamiento == adc_2308)? data_adc_2308 : ((fuente_procesamiento == adc_hs)? data_canal_b : ((fuente_procesamiento == simulacion)? datos_simulados : 0)); 
 wire data_in_procesamiento_valid = (fuente_procesamiento == adc_2308)? data_adc_2308_valid : ((fuente_procesamiento == adc_hs)? data_adc_valid : ((fuente_procesamiento == simulacion)? datos_simulados_valid : 0)); 
 
-// Valores para el DAC
-
-
+// Valores para el DAC:
 
 reg [31:0] data_in_dac;
 reg data_in_dac_valid;
@@ -144,8 +143,6 @@ end
 
 
 // Entrada de memorias FIFO
-
-
 
 reg [31:0] data_in_fifo0_32bit,				data_in_fifo1_32bit,				data_in_fifo0_64bit,				data_in_fifo1_64bit;
 reg 		  data_in_fifo0_32bit_valid,		data_in_fifo1_32bit_valid,		data_in_fifo0_64bit_valid,		data_in_fifo1_64bit_valid;

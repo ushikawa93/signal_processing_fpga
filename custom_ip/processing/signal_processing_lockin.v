@@ -126,80 +126,108 @@ end
 // ================ Procesamiento ===============
 //////////////////////////////////////////////////
 
-parameter offset_in = 8192;
-parameter offset_out = 8192;
-parameter low_threshold = 0;
-parameter high_threshold = 14612;
+wire data_out_mixer_valid;
+wire signed [63:0] data_sen_mixer;
+wire signed [63:0] data_cos_mixer;
 
-wire signed [31:0] data_out_fir;
-wire data_out_fir_valid;
-
-wire signed [31:0] data_in_fir;
-wire data_in_fir_valid;
-
-assign data_in_fir = data_in - offset_in;
-assign data_in_fir_valid = data_in_valid;
-
-wire [31:0] data_out_intermedia = data_out_fir + offset_out;
+wire signed [63:0] data_out_promC;
+wire data_out_promC_valid;
 
 
-assign data_out1 = ( data_out_intermedia < low_threshold ) ? low_threshold  : ( (data_out_intermedia > high_threshold) ? high_threshold :  data_out_intermedia ) ;
-assign data_out1_valid = data_out_fir_valid;
-
-
-FIR_filter filtro (
-
+prom_coherente_pipelined promC(
+	
+	// Entradas de control
 	.clk(clk),
+	.reset(reset_n),
+	.enable(enable_gral),
+	
+	// Parametros de configuracion
+	.ptos_x_ciclo(parameter_0_reg),
+	.frames_prom_coherente(parameter_2_reg),
+	
+	// Entrada avalon streaming
+	.data_in_valid(data_in_valid),
+	.data_in(data_in),
+	
+	// Salida avalon streaming 
+	.data_out_valid(data_out_promC_valid),
+	.data_out(data_out_promC)	
+	
+);
+
+
+reference_mixer mezclador(
+
+	// Entradas de control
+	.clock(clk),
 	.reset_n(reset_n),
 	.enable(enable_gral),
-	.bypass(bypass),
 	
-	.coef_0(parameter_0_reg),
-	.coef_1(parameter_1_reg),
-	.coef_2(parameter_2_reg),
-	.coef_3(parameter_3_reg),
-	.coef_4(parameter_4_reg),
-	.coef_5(parameter_5_reg),
-	.coef_6(parameter_6_reg),
-	.coef_7(parameter_7_reg),
-	.coef_8(parameter_8_reg),	
-	.coef_9(parameter_9_reg),
+	// Parametros de configuracion
+	.ptos_x_ciclo(parameter_0_reg),
 	
-	.coef_10(parameter_10_reg),
-	.coef_11(parameter_11_reg),
-	.coef_12(parameter_12_reg),
-	.coef_13(parameter_13_reg),
-	.coef_14(parameter_14_reg),
-	.coef_15(parameter_15_reg),
-	.coef_16(parameter_16_reg),
-	.coef_17(parameter_17_reg),	
-	.coef_18(parameter_18_reg),
-	.coef_19(parameter_19_reg),
-	
-	.coef_20(parameter_20_reg),
-	.coef_21(parameter_21_reg),
-	.coef_22(parameter_22_reg),
-	.coef_23(parameter_23_reg),
-	.coef_24(parameter_24_reg),
-	.coef_25(parameter_25_reg),
-	.coef_26(parameter_26_reg),	
-	.coef_27(parameter_27_reg),
-	.coef_28(parameter_28_reg),
-	.coef_29(parameter_29_reg),
-	
-	.coef_30(parameter_30_reg),
-	.coef_31(parameter_31_reg),
-	.coef_32(parameter_32_reg),
-
-
-	.data_in(data_in_fir),
-	.data_in_valid(data_in_fir_valid),
-	
-	.data_out(data_out_fir),
-	.data_out_valid(data_out_fir_valid),
-
+	// Entrada avalon streaming
+	.data(data_out_promC),	
+	.data_valid(data_out_promC_valid),	
+		
+	// Salidas avalon streaming 
+	.data_out_seno(data_sen_mixer),
+	.data_out_coseno(data_cos_mixer),
+	.data_valid_multiplicacion(data_out_mixer_valid)	
 
 );
+
+
+ filtro_promedio_movil filtro_fase(
+
+	// Entradas de control
+	.clock(clk),
+	.reset_n(reset_n),
+	.enable(enable_gral),
+	
+	// Parametros de configuracion
+	.ptos_x_ciclo(parameter_0_reg),
+	.frames_integracion(parameter_1_reg),
+	
+	// Entrada avalon streaming 
+	.data_valid(data_out_mixer_valid),
+	.data(data_sen_mixer),	
+		
+	// Salida avalon streaming
+	.data_out(data_out1),
+	.data_out_valid(data_out1_valid),
+	
+	// Salida auxiliar
+	.fifo_lleno(finished_fase),
+	.ready_to_calculate(ready_cuadratura)
+
+);
+
+filtro_promedio_movil filtro_cuadratura(
+
+	// Entradas de control
+	.clock(clk),
+	.reset_n(reset_n),
+	.enable(enable_gral),
+	
+	// Parametros de configuracion
+	.ptos_x_ciclo(parameter_0_reg),
+	.frames_integracion(parameter_1_reg),
+	
+	// Entrada avalon streaming 
+	.data_valid(data_out_mixer_valid),
+	.data(data_cos_mixer),	
+		
+	// Salida avalon streaming
+	.data_out(data_out2),
+	.data_out_valid(data_out2_valid),
+	
+	// Salida auxiliar
+	.fifo_lleno(finished_cuadratura),
+	.ready_to_calculate(ready_fase)
+
+);
+
 
 
 //////////////////////////////////////////////////
@@ -209,8 +237,8 @@ FIR_filter filtro (
 wire ready_fase,ready_cuadratura;
 wire finished_fase,finished_cuadratura;
 
-assign ready_to_calculate = 1; // (ready_fase && ready_cuadratura);
-assign processing_finished = 1; // (finished_fase && finished_cuadratura);
+assign ready_to_calculate =  (ready_fase && ready_cuadratura);
+assign processing_finished = (finished_fase && finished_cuadratura);
 
 assign parameter_out_0 = 0;
 assign parameter_out_1 = 0;

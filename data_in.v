@@ -189,7 +189,7 @@ adc_driver adc_HS(
 	data_adc_2308_valid sirve para sincronizar el procesamiento de 
 	etapas posteriores.
 
-*//*
+*/
 embedded_adc adc_2308(
 
 	// Entradas de control
@@ -213,6 +213,6 @@ embedded_adc adc_2308(
 	.data_stream_adc(data_adc_2308)
 
 );
-*/
+
 
 endmodule
