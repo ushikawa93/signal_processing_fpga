@@ -133,3 +133,6 @@ Puede hacerse fácil con un shell script:	./fpga_driver && mono FIR_GUI.exe
 La GUI permite visualizar señales, iniciar el procesamiento y setear los coeficientes del filtro, entre otras funcionalidades.
 
 Todas estas funcionalidades estan en "software/hps/FIR_GUI"
+
+### Licencia
+Este proyecto cuenta con licencia conforme a los términos de la licencia MIT
