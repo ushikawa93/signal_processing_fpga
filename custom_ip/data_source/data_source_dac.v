@@ -6,7 +6,6 @@ module data_source_dac(
 	input CE,
 	
 	input [15:0] ptos_x_ciclo,
-	input seleccion_dac,
 	
 	output zero_cross,
 	output reg data_valid,
@@ -67,7 +66,7 @@ begin
 			if(counter==delay)
 			begin
 				index <= (index == (M-1))? 0: index+1 ;	
-				data_out_reg <= (seleccion_dac)? nivel_dc : (buffer[index*interval]);
+				data_out_reg <= buffer[index*interval];
 				data_valid <= 1;
 				counter <= 0;
 			end			

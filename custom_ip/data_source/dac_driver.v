@@ -3,12 +3,12 @@ module dac_driver(
 
 	// Entradas de control
 	input 			 CLK_65,
-	input				 reset_n,
-	input				 enable,
+	input			 reset_n,
+	input			 enable,
 	
 	// Parametros de configuracion
 	input [15:0]	 ptos_x_ciclo,
-	input 			 seleccion_dac,		// 0 -> seno / 1 -> constante
+	input 			 seleccion_dac,		// 0 -> datos del digital_data_in  / 1 -> LU_table
 	
 	// Entrada digital (si no se usa una tabla de look up)...
 	input [13:0] 	 digital_data_in,
@@ -33,12 +33,11 @@ module dac_driver(
 
 );
 
-parameter LU_table = 0;
-
 //=======================================================
 // Origen de los datos para el dac (LU table) 
 //=======================================================
 
+// Si la seleccion_dac esta en 1 la señal que se genera en el DAC se saca de una tabla de Look up que se instancia en este modulo
 
 wire dato_dac_lu_table_valid;
 wire [13:0] dato_dac_lu_table;
@@ -52,7 +51,6 @@ data_source_dac data_s (
 	.CE(enable),
 	
 	.ptos_x_ciclo(ptos_x_ciclo),
-	.seleccion_dac(seleccion_dac),
 	
 	.zero_cross(zero_cross),
 	.data_valid(dato_dac_lu_table_valid),
@@ -64,6 +62,9 @@ data_source_dac data_s (
 //=======================================================
 // Acondicionamiento de señal externa
 //=======================================================
+
+// Si en cambio la señal seleccion_dac esta en 0 los datos que el DAC convierte a analogico son los que le entran
+// a través de Digital data in. Como el ADC y el DAC andan con una fuente un poco distinta aca uso un truco digital para acomodar los niveles.
 
 // Esto es para acomodar niveles de DAC y ADC
 parameter mult_factor = 1189;
@@ -84,17 +85,17 @@ begin
 end
 
 
-
-
 //=======================================================
 // Seleccion de datos para el dac
 //=======================================================
 
+// Aca selecciono cuales son efectivamente los datos que voy a mandar al DAC
+
 wire [13:0] dato_dac;
 wire data_dac_valid;
 
-assign dato_dac = (LU_table) ? dato_dac_lu_table : digital_data_in_reg;
-assign data_dac_valid = (LU_table) ? dato_dac_lu_table_valid : digital_data_in_valid_reg;
+assign dato_dac = (seleccion_dac) ? dato_dac_lu_table : digital_data_in_reg;
+assign data_dac_valid = (seleccion_dac) ? dato_dac_lu_table_valid : digital_data_in_valid_reg;
 
 reg [31:0] dato_dac_reg;
 	
@@ -115,7 +116,7 @@ reg [31:0] dato_dac_reg;
 //  DAC REG/WIRE declarations
 //=======================================================
 
-
+// Y este sería el Driver en si del DAC
 
 parameter nivel_idle = 8192;			// Cuando los DAC estan inactivos los pongo a este valor
 												// esto es para que cuando arranque la cosa no tenga que hacer un salto muy grande...
@@ -140,6 +141,9 @@ assign  DAC_DB = (data_dac_valid)? dato_dac : dato_dac_reg ;
 //=======================================================
 //  Circuiteria del data_valid
 //=======================================================
+
+// Esta señal sirve para sincronizar el ADC con el DAC si quisieramos hacer eso (la usa el módulo superior dsp)
+
 
 wire data_valid_adc;
 

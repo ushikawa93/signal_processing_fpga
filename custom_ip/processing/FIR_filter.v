@@ -148,7 +148,7 @@ begin
 end
 
 
-assign data_out = (bypass == 0) ?  y >>> 16: data_in;  //y >> 16 : data_in;
+assign data_out = (bypass == 0) ?  y >>> 16: data_in; 
 assign data_out_valid = (bypass == 0) ? data_valid_reg : data_in_valid;
 
 endmodule

@@ -79,15 +79,17 @@ int main()
 	int div = 1; // Si queremos f_muestreo menor a 1MHz
 	int imprimir = 1;
 
-	setClockDivider(f ,clk_divider_ptr);
-	configurar_pll(div,pll_ptr);
+	configurar_pll(f,pll_ptr);
+	setClockDivider(div ,clk_divider_ptr);
 
-	int * filtro_usado = Bypass_filter;
-	int indice_filtro = 1;
+	int * filtro_usado = PB_0_05;
+	int indice_filtro = 2;
 
 	float f_muestreo = f*1000000/div;
 
 	setCoeff(filtro_usado);
+	setParam(3,0,parameters_3_ptr);
+	setParam(4,1,parameters_3_ptr);
 
 	printf("Usted esta usando un filtro pasa-altos \n" );
 	printf("Frecuencia de corte actual: %f", 0.05 * indice_filtro * f_muestreo / 2 );

@@ -81,6 +81,11 @@ module data_in(
 // ================ Datos simulados ===============
 /////////////////////////////////////////////////
 
+// Este módulo genera una señal sinusoidal cuantizada en 14 bits, posiblemente contaminada con ruido uniforme de simulation_noise_bits bits
+// Para generar el ruido se usa un algoritmo LFSR o un generador congruencial lineal,
+// segun el parámetro metodo ruido ( 0 -> LFSR ; 1 -> GCL	)
+// pts_x_ciclo setea cuantos puntos hay en cada periodo de la sinusoide
+
 data_source data_sim(
 
 	// Entradas de control
@@ -99,10 +104,13 @@ data_source data_sim(
 	
 );
 
-
 /////////////////////////////////////////////////
 // ===================== DAC ===================
 /////////////////////////////////////////////////
+
+// DAC Highspeed, la señal seleccion_dac determina si los datos que se convierten a analogico son los de una LU table que tiene seteada
+// o los que le van entrando por digital_data_in
+
 wire data_dac_valid;
 
 dac_driver dac_HS(

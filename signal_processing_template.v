@@ -5,7 +5,7 @@ module signal_processing_template(
 	input clk,
 	
 	 ///////// SW /////////
-   input       [3:0]  SW,
+    input       [3:0]  SW,
 	
 	///////// KEYS ////////
 	input 		[1:0] KEY,
@@ -35,7 +35,7 @@ module signal_processing_template(
 	 		
 	//////// Highspeed ADC_DAC //////
 	 
-   output 		    ADC_CLK_A,
+    output 		    ADC_CLK_A,
 	input    [13:0] ADC_DA,
 	output			 ADC_OEB_A,
 	input				 ADC_OTR_A,
@@ -58,7 +58,7 @@ module signal_processing_template(
 	output			 POWER_ON,
 	output			 SMA_DAC4,
 	
-	// Entradas y salidas de ADC 2308	
+	////////  ADC 2308 (SPI) //////
 	output	adc_cs_n,
 	output	adc_sclk,
 	output	adc_din,
@@ -78,6 +78,8 @@ parameter procesada_2 = 4;
 parameter open = 5;
 
 // Fuentes de señal para cada etapa del proceso
+// Aca se configura fácil que señales van a cada etapa del proceso
+// Despues hay una logica combinacional que rutea cada señal adonde tiene que ir
 
 parameter fuente_procesamiento = adc_hs;
 parameter fuente_dac = procesada_1 ;
@@ -87,12 +89,45 @@ parameter fuente_fifo1_32bit = procesada_1;
 parameter fuente_fifo0_64bit = procesada_2;
 parameter fuente_fifo1_64bit = open;
 
-// Valores para el procesamiento:
+// Señales para el procesamiento:
 
-wire [31:0] data_in_procesamiento = (fuente_procesamiento == adc_2308)? data_adc_2308 : ((fuente_procesamiento == adc_hs)? data_canal_b : ((fuente_procesamiento == simulacion)? datos_simulados : 0)); 
-wire data_in_procesamiento_valid = (fuente_procesamiento == adc_2308)? data_adc_2308_valid : ((fuente_procesamiento == adc_hs)? data_adc_valid : ((fuente_procesamiento == simulacion)? datos_simulados_valid : 0)); 
+reg [31:0] data_in_procesamiento; 
+reg data_in_procesamiento_valid; 
 
-// Valores para el DAC:
+always @ (fuente_procesamiento)
+begin
+	
+	case (fuente_procesamiento)
+	
+		adc_2308:
+		begin
+			data_in_procesamiento = data_adc_2308;
+			data_in_procesamiento_valid = data_adc_2308_valid;
+		end
+		
+		adc_hs:
+		begin
+			data_in_procesamiento = data_canal_b;
+			data_in_procesamiento_valid = data_adc_valid;
+		end
+		
+		simulacion:
+		begin
+			data_in_procesamiento = datos_simulados;
+			data_in_procesamiento_valid = datos_simulados_valid;
+		end
+				
+		open:
+		begin
+			data_in_procesamiento = 0;
+			data_in_procesamiento_valid = 0;
+		end
+	endcase
+
+end
+
+
+// Señales para el DAC_HS:
 
 reg [31:0] data_in_dac;
 reg data_in_dac_valid;
@@ -142,10 +177,10 @@ begin
 end
 
 
-// Entrada de memorias FIFO
+// Señales para entradas de memorias FIFO
 
 reg [31:0] data_in_fifo0_32bit,				data_in_fifo1_32bit,				data_in_fifo0_64bit,				data_in_fifo1_64bit;
-reg 		  data_in_fifo0_32bit_valid,		data_in_fifo1_32bit_valid,		data_in_fifo0_64bit_valid,		data_in_fifo1_64bit_valid;
+reg 	   data_in_fifo0_32bit_valid,		data_in_fifo1_32bit_valid,			data_in_fifo0_64bit_valid,			data_in_fifo1_64bit_valid;
 
 always @ (fuente_fifo0_32bit)
 begin
@@ -327,16 +362,21 @@ end
 
 
 
-
-////////////////////////////////////////////////
+////////////////////////////////////////////////////
 // ============= Interfaz de control  =============
-////////////////////////////////////////////////
+////////////////////////////////////////////////////
+
+// La interfaz de control incluye el NIOS y el HPS. 
+// el reset puede hacerse desde una señal fisica tmb que correspondería a algun botón
+// El enable lo subordino tambien a que la etapa de procesamiento este lista para calcular
+// Despues estan los parametros configurables desde la etapa de control
+// en este ejemplo se usan para setear los coeficientes del filtro, prender un LED 
+// y hacerle un bypass al procesamiento si se quiere. Tambien hay un bypass fisico con un SW.
 
 wire enable;
 	assign enable = enable_from_control && ready_to_calculate;
 wire reset_n;
 	assign reset_n = !reset_from_control && reset_physical;
-
 	
 wire enable_from_control;
 wire clk_custom;
@@ -345,6 +385,9 @@ wire bypass_processing_from_control;
 wire led_test;
 
 wire reset_physical = KEY[0];
+wire bypass_physical = SW[0];
+
+wire bypass_processing = bypass_physical || bypass_processing_from_control;
 
 parameter N_filtro = 32;
 wire [31:0] filter_coeff [0:N_filtro];
@@ -437,6 +480,10 @@ control nios (
 // ====== Interfaz de datos de entrada  =========
 ////////////////////////////////////////////////
 
+// Este es el módulo de señales. Pueden ser digitales o analógicas, con dos ADCs distintos programados.
+// SI se quiere usar el ADC HS la frecuencia de muestreo queda dada por el clk_custom.
+// en cambio si se usa el ADC_2308 el parametro f_muestreo_2308 controla la tasa [en HZ]
+
 data_in data(
 
 	// Entradas de control
@@ -527,7 +574,10 @@ wire data_adc_2308_valid;
 // ====== Procesamiento de señal  =========
 ////////////////////////////////////////////////
 
-wire bypass_processing = SW[0] || bypass_processing_from_control;
+// Modulo de procesamiento. En este ejemplo realiza un filtro FIR de orden 32.
+// Se setean los parámetros a traves de la etapa de control y una vez que se le da enable arranca a filtrar.
+
+
 
 signal_processing signal_processing_inst(
 
@@ -613,7 +663,6 @@ assign LED[0] = ( count > (65000000 >> 1) );
 ////////////////////////////////////////////////
 
 assign LED[3] = led_test;
-	 
 	 
 endmodule
 	 

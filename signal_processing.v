@@ -70,6 +70,9 @@ module signal_processing(
 // ================ Registro parametros en reset ===============
 ////////////////////////////////////////////////////////////////
 
+// Esto capaz suena medio raro. Lo hago asi para que no se modifiquen en medio de la operacion
+// capaz sería mejor registrarlos con un enable mas que con un reset... igual es sincronico asique no creo que genere cosas raras.
+
 
 reg[31:0] parameter_0_reg,parameter_1_reg,parameter_2_reg,parameter_3_reg,parameter_4_reg,parameter_5_reg,parameter_6_reg,parameter_7_reg,parameter_8_reg,parameter_9_reg;
 reg[31:0] parameter_10_reg,parameter_11_reg,parameter_12_reg,parameter_13_reg,parameter_14_reg,parameter_15_reg,parameter_16_reg,parameter_17_reg,parameter_18_reg,parameter_19_reg;
@@ -125,6 +128,9 @@ end
 //////////////////////////////////////////////////
 // ================ Procesamiento ===============
 //////////////////////////////////////////////////
+
+// Los calculos se hacen con señales al rededor del 0 y el ADC y dac requieren señales positivas, por eso aca hago un poco de magia
+// digital para acomodar niveles de señal (resto offset sumo offset y me fijo que la cosa no sature )
 
 parameter offset_in = 8192;
 parameter offset_out = 8192;
@@ -206,31 +212,20 @@ FIR_filter filtro (
 // ================ Salidas auxiliares ===============
 //////////////////////////////////////////////////
 
+// Este procesamiento no hace nada raro asique siempre esta listo para calcular y siempre tiene los calculos listos.
+// estas señales servitrían si no fuera el caso
+
 wire ready_fase,ready_cuadratura;
 wire finished_fase,finished_cuadratura;
 
-assign ready_to_calculate = 1; // (ready_fase && ready_cuadratura);
-assign processing_finished = 1; // (finished_fase && finished_cuadratura);
+assign ready_to_calculate = 1; 
+assign processing_finished = 1; 
 
 assign parameter_out_0 = 0;
 assign parameter_out_1 = 0;
 assign parameter_out_2 = 0;
 assign parameter_out_3 = 0;
 assign parameter_out_4 = 0;
-
-
-//////////////////////////////////////////////////
-// ================ Sin procesamiento ===============
-//////////////////////////////////////////////////
-/*
-assign data_out1 = data_in;
-assign data_out1_valid = data_in_valid;
-
-assign data_out2 = data_in;
-assign data_out2_valid = data_in_valid;
-
-assign ready_to_calculate = 1;
-*/
 
 endmodule
 
