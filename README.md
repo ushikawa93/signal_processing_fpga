@@ -101,7 +101,7 @@ Todas estas funciones estan definidas en software/signal_processing
 **Para usar el HPS:**
 En este caso la HAL es a través de una clase *FPGA* escrita en c++. 
 El archivo "FPGA_MACROS.h" define las direcciones de memoria de las cosas de la FPGA (cumple la misma funcion de *system.h* arriba).
-La clase esta definida en "FPGA_de1soc.h", y se vale de un mapeo a la direccion de memoria /dev/mem que es donde el "lightweight axi bus" hace su magia. Este mapeo tiene lugar en una instancia de la clase "FPGA_IO_simple.h". que 
+La clase esta definida en "FPGA_de1soc.h", y se vale de un mapeo a la direccion de memoria /dev/mem que es donde el "lightweight axi bus" hace su magia. Este mapeo tiene lugar en una instancia de la clase "FPGA_IO_simple.h". 
 
 La interfaz pública de la clase se compone de las funciones. Las funciones son análogas a las generadas para el HAL del NIOS, se omiten las descripciones:
 
