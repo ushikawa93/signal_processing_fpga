@@ -1,4 +1,5 @@
 # Quartus build outputs
+.qsys_edit/
 db/
 incremental_db/
 simulation/
