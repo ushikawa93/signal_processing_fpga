@@ -1,4 +1,42 @@
 
+/* ==========================================================================
+ * ====================== Módulo de Procesamiento FIR ========================
+ *  Descripción general:
+ *    Este módulo realiza el procesamiento principal de la señal mediante un
+ *    filtro FIR de 32 orden. Ajusta los niveles de señal de entrada y salida
+ *    para adaptarse a los rangos requeridos por los ADCs y DACs.
+ *    Los coeficientes del filtro se registran al inicio para evitar cambios
+ *    durante la operación.
+ *
+ *  Señales principales:
+ *    - clk, reset_n, enable_gral: control de reloj, reset y habilitación general.
+ *    - bypass: permite omitir el filtrado FIR.
+ *    - data_in, data_in_valid: datos de entrada al módulo.
+ *    - data_out1, data_out1_valid, data_out2, data_out2_valid: salidas
+ *      procesadas.
+ *    - ready_to_calculate, processing_finished: indicadores de estado
+ *      (siempre activos en este ejemplo).
+ *     - parameter_in_0 .. parameter_in_32: coeficientes del filtro FIR de entrada.
+ *      - parameter_out_0 .. parameter_out_4: parámetros de salida (no usados
+ *      en este ejemplo, asignados a 0).
+ *
+ *  Funcionamiento:
+ *    1. Se registran los coeficientes del filtro al inicio mediante reset.
+ *    2. La entrada se ajusta restando un offset, se procesa en FIR y luego se
+ *       suma un offset de salida.
+ *    3. Los resultados se limitan a los valores mínimos y máximos definidos.
+ *    4. El módulo soporta bypass para pruebas o contingencias.
+ *
+ *  Observaciones:
+ *    - La señal de ready_to_calculate y processing_finished están fijadas en 1
+ *      ya que el procesamiento es continuo y no bloqueante.
+ *    - Los coeficientes se mantienen fijos durante la operación para garantizar
+ *      consistencia.
+ *	 - En este módulo podría reemplazarse el FIR por otro tipo de procesamiento
+ *	 - De esta manera se mantiene la interfaz general y se cambia el procesamiento
+ * ========================================================================== */ 
+
+
 module signal_processing(
 
 	input clk,
@@ -66,12 +104,13 @@ module signal_processing(
 
 );
 
-////////////////////////////////////////////////////////////////
-// ================ Registro parametros en reset ===============
-////////////////////////////////////////////////////////////////
-
-// Esto capaz suena medio raro. Lo hago asi para que no se modifiquen en medio de la operacion
-// capaz sería mejor registrarlos con un enable mas que con un reset... igual es sincronico asique no creo que genere cosas raras.
+/* ============================================================================
+ * ====================== Registro parametros en reset ========================
+ *  Lo hago asi para que no se modifiquen en medio de la operacion
+ *  capaz sería mejor registrarlos con un enable mas que con un reset... 
+ *  igual es sincronico asique no creo que genere cosas raras.
+ =============================================================================== 
+*/
 
 
 reg[31:0] parameter_0_reg,parameter_1_reg,parameter_2_reg,parameter_3_reg,parameter_4_reg,parameter_5_reg,parameter_6_reg,parameter_7_reg,parameter_8_reg,parameter_9_reg;
@@ -125,12 +164,14 @@ begin
 
 end
 
-//////////////////////////////////////////////////
-// ================ Procesamiento ===============
-//////////////////////////////////////////////////
 
-// Los calculos se hacen con señales al rededor del 0 y el ADC y dac requieren señales positivas, por eso aca hago un poco de magia
-// digital para acomodar niveles de señal (resto offset sumo offset y me fijo que la cosa no sature )
+/* ============================================================================
+ *  ================================= Procesamiento ============================
+ *  Los calculos se hacen con señales al ededor del 0 y el ADC y DAC requieren señales positivas, 
+ *  por eso aca hago un poco de magia digital para acomodar niveles de señal 
+ *  (resto offset sumo offset y me fijo que la cosa no sature )
+ =============================================================================== 
+*/
 
 parameter offset_in = 8192;
 parameter offset_out = 8192;
@@ -207,13 +248,11 @@ FIR_filter filtro (
 
 );
 
-
-//////////////////////////////////////////////////
-// ================ Salidas auxiliares ===============
-//////////////////////////////////////////////////
-
-// Este procesamiento no hace nada raro asique siempre esta listo para calcular y siempre tiene los calculos listos.
-// estas señales servitrían si no fuera el caso
+/* ==================================================================================
+ * ================================= Salidas auxiliares =============================
+ *  Este procesamiento no hace nada raro asique siempre esta listo para calcular 
+ *  y siempre tiene los calculos listos. Estas señales servitrían si no fuera el caso
+ =================================================================================== */
 
 wire ready_fase,ready_cuadratura;
 wire finished_fase,finished_cuadratura;

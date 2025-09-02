@@ -1,28 +1,62 @@
+/* ==========================================================================
+ * Proyecto : Signal Processing Template (FPGA + HPS)
+ * Autor    : Matías Oliva
+ * Empresa  : UNLP
+ * Descripción :
+ *   Módulo principal de un sistema reutilizable de procesamiento de señales
+ *   sobre FPGA Intel/Altera (Cyclone V SoC). Este template integra la lógica
+ *   de usuario en FPGA con los periféricos básicos y el subsistema HPS.
+ *
+ * Entradas/Salidas principales:
+ *   - Reloj principal de la FPGA (clk)
+ *   - Interruptores (SW)
+ *   - Botones de usuario (KEY)
+ *   - LEDs de usuario (LED)
+ *   - Interfaces DDR3, UART, Ethernet, SD, GPIO asociadas al HPS
+ *
+ * Notas :
+ *   - Este archivo define únicamente el módulo top-level (plantilla base).
+ *   - Los detalles de procesamiento se agregan en módulos internos.
+ *   - Los pines HPS y periféricos están definidos por Quartus/Platform Designer.
+ *
+ * Dependencias :
+ *   - Archivos .qsys y .qsf del proyecto Quartus
+ *   - Módulos HDL específicos de procesamiento (añadir según aplicación) 
+ *
+ *   - Jerarquía:
+			signal_processing template
+			|	control
+			|	|	NIOS 2
+			|	|	HPS
+			|	data_in
+			|	|	embedded_adc (adc23308)
+			|	|	data_source (data_simulada)
+			|	|	adc_driver (adc_hs)
+			|	|	dac_driver (dac_hs)
+			|	signal_processing
+			|	|	FIR_filter
 
-/*
-	Autor: Matías Oliva 
-	Empresa: UNLP
-	Módulo Principal de sistema reutilizable de procesamiento de Señales
-	
+ *			
+ * Fecha : 2025
+ * ========================================================================== */
 
-*/
 
 module signal_processing_template(
 
 	////////// CLK /////////
-	input clk,
+	input clk,	// Entrada de reloj principal de la FPGA
 	
 	 ///////// SW /////////
-    input       [3:0]  SW,
+    input       [3:0]  SW, // 4 SW de usuario de operacion manual
 	
 	///////// KEYS ////////
-	input 		[1:0] KEY,
+	input 		[1:0] KEY, // 2 botones de usuario activos en bajo
 	
-	///////// LED /////////
-	output		[3:0] LED,
+	///////// LED /////////	
+	output		[3:0] LED,	// 4 LEDS de salida
 	
 	
-	//////// HPS ////////////
+	//////// HPS ////////////  // Interfaz DDR3 para comunicacion con HPS (uP)
 	 output      [14:0] HPS_DDR3_ADDR,
     output      [2:0]  HPS_DDR3_BA,
     output             HPS_DDR3_CAS_N,
@@ -42,6 +76,7 @@ module signal_processing_template(
 	
 	 		
 	//////// Highspeed ADC_DAC //////
+	// Señales para la placa de expansión HS_ADC_DAC (provista por TERASIC)
 	 
     output 		    ADC_CLK_A,
 	input    [13:0] ADC_DA,
@@ -67,15 +102,62 @@ module signal_processing_template(
 	output			 SMA_DAC4,
 	
 	////////  ADC 2308 (SPI) //////
+	// Señales para el ADC LTC 2308, disponible en la placa DE1SoC
+
 	output	adc_cs_n,
 	output	adc_sclk,
 	output	adc_din,
 	input 	adc_dout
 );
 
-////////////////////////////////////////////////
-// ============= Ruteo de las señales  =============
-////////////////////////////////////////////////
+/* ==========================================================================
+ *  ======================== Ruteo de Señales =================================
+ *
+ * Descripción general:
+ *   Esta sección define cómo se rutean las señales dentro del sistema.
+ *   Permite seleccionar la fuente de datos para cada etapa:
+ *     - Etapa de procesamiento
+ *     - DAC de salida
+ *     - Entradas de memorias FIFO (32 y 64 bits)
+ *   Las señales pueden provenir de:
+ *     - ADC 2308
+ *     - ADC de alta velocidad (adc_hs)
+ *     - Datos simulados
+ *     - Señales procesadas internamente
+ *     - O ninguna (open)
+ *
+ * Señales principales y configuración:
+ *   - fuente_procesamiento: define qué señal se envía a la etapa de cálculo.
+ *    - fuente_dac: define qué señal se envía al DAC.
+ *     - fuente_fifo0_32bit, fuente_fifo1_32bit, fuente_fifo0_64bit, fuente_fifo1_64bit:
+ *       definen qué señales se almacenan en los FIFOs correspondientes.
+ *
+ * Funcionamiento:
+ *   1. Cada fuente seleccionada se rutea a la señal correspondiente mediante 
+ *      un bloque combinacional tipo 'case'.
+ *   2. Para cada señal se asigna tanto el valor de los datos como la señal de
+ *      validez (valid).
+ *   3. Los valores posibles para cada fuente son:
+ *       - adc_2308
+ *        - adc_hs
+ *         - simulacion
+ *       - procesada_1
+ *       - procesada_2
+ *       - open (ningún dato)
+ *    4. Las señales ruteadas pueden luego ser leídas por la etapa de procesamiento,
+ *      enviadas al DAC o almacenadas en los FIFOs para acceso del HPS o NIOS.
+ *
+ * Observaciones:
+ *   - Esta sección facilita cambiar la fuente de datos sin modificar la lógica
+ *     interna del procesamiento o los módulos de salida.
+ *   - Todos los bloques combinacionales actualizan tanto los datos como la señal
+ *     de validez.
+ *   - La consistencia entre fuentes y destinos asegura que el sistema funcione
+ *     de manera flexible y configurable.
+ *
+ * ==========================================================================
+*/
+
 
 // Posibilidades...
 parameter adc_2308 = 0;
@@ -368,18 +450,54 @@ begin
 
 end
 
+/* =================================================================================
+ * ======================== Interfaz de Control ===================================
+ *
+ * Descripción general:
+ *   Esta interfaz conecta la lógica de control basada en NIOS (soft-core) o en el
+ *   HPS (Hard Processor System) y la etapa de procesamiento de señales.
+ *   Se encarga de:
+ *     - Control de habilitación y reset del procesamiento.
+ *     - Configuración de parámetros reconfigurables (coeficientes de filtro,
+ *       bypass de procesamiento, señales de prueba como LEDs).
+ *     - Comunicación de resultados procesados hacia la memoria y otros módulos.
+ *
+ * Señales principales:
+ *   - enable: indica si la etapa de procesamiento puede iniciar cálculos.
+ *     Se activa cuando la lógica de control permite y la etapa está lista.
+ *   - reset_n: reset activo en bajo, se puede activar desde un botón físico o
+ *     desde la lógica de control.
+ *   - bypass_processing: permite omitir la etapa de procesamiento, puede
+ *     activarse tanto por un switch físico como por la lógica de control.
+ *   - filter_coeff[N_filtro]: coeficientes del filtro configurables desde la
+ *     interfaz de control.
+ *   - led_test: señal de prueba para encender un LED.
+ *
+ * Descripción de funcionamiento:
+ *   1. Habilitación y reset:
+ *       enable = enable_from_control && ready_to_calculate
+ *       reset_n = !reset_from_control && reset_physical
+ *   2. Bypass de procesamiento:
+ *       bypass_processing = bypass_physical || bypass_processing_from_control
+ *   3. Parámetros reconfigurables:
+ *       Se usan para configurar coeficientes del filtro, activar pruebas y
+ *       habilitar bypass.
+ *   4. Resultados de procesamiento:
+ *       Se comunican en formatos de 32 y 64 bits, cada uno con su señal
+ *       de validez.
+ *   5. Interfaz HPS-DDR3:
+ *       Conecta la memoria DDR3 del HPS para almacenar o leer datos
+ *       procesados según sea necesario.
+ *
+ * Observaciones:
+ *   - Se permite un reset físico mediante KEY[0].
+ *   - Se permite un bypass físico mediante SW[0].
+ *   - La interfaz NIOS entrega los parámetros de control, resultados y
+ *     flags de procesamiento.
+ *   - Todo se organiza para permitir control dinámico desde HPS o NIOS.
+ *
+ * ================================================================================= */
 
-
-////////////////////////////////////////////////////
-// ============= Interfaz de control  =============
-////////////////////////////////////////////////////
-
-// La interfaz de control incluye el NIOS y el HPS. 
-// el reset puede hacerse desde una señal fisica tmb que correspondería a algun botón
-// El enable lo subordino tambien a que la etapa de procesamiento este lista para calcular
-// Despues estan los parametros configurables desde la etapa de control
-// en este ejemplo se usan para setear los coeficientes del filtro, prender un LED 
-// y hacerle un bypass al procesamiento si se quiere. Tambien hay un bypass fisico con un SW.
 
 wire enable;
 	assign enable = enable_from_control && ready_to_calculate;
@@ -484,13 +602,49 @@ control nios (
 );
 
 
-////////////////////////////////////////////////
-// ====== Interfaz de datos de entrada  =========
-////////////////////////////////////////////////
+/* =================================================================================
+ * ===================== Interfaz de Datos de Entrada ==============================
+ *  Descripción general:
+ *    Este módulo encapsula todas las señales de entrada al sistema, incluyendo
+ *    ADCs analógicos de alta velocidad (HS) y ADC 2308, así como señales
+ *    digitales simuladas. Proporciona una interfaz unificada para la etapa de
+ *    procesamiento y para la salida hacia DACs o FIFOs.
+ *
+ *  Señales principales:
+ *    - reset_n, enable: controlan el inicio y habilitación del muestreo de datos.
+ *    - clk_sim, clk_dac, clk_adc, clk_adc_2308: relojes para sincronización de
+ *      simulación, DAC y ADCs.
+ *    - simulation_data, simulation_data_valid: datos y validez de la simulación
+ *      digital.
+ *    - data_canal_a, data_canal_b, data_adc_valid: datos y validez de ADC HS.
+ *    - data_adc_2308, data_adc_2308_valid: datos y validez de ADC 2308.
+ *    - digital_data_in, digital_data_in_valid: datos digitales que se envían
+ *      al DAC.
+ *    - ADC/DAC HS señales físicas: pines de reloj, datos y control para ADC y DAC
+ *      de alta velocidad.
+ *    - ADC 2308 señales físicas: pines de chip select, reloj y datos.
+ *
+ *  Funcionamiento:
+ *    1. Dependiendo del ADC seleccionado o de la simulación, el módulo entrega
+ *       datos en formato avalon streaming con su señal de validez.
+ *    2. La frecuencia de muestreo depende del ADC usado:
+ *         - ADC HS: definida por clk_custom.
+ *         - ADC 2308: definida por el parámetro f_muestreo_2308 (en Hz).
+ *    3. Los datos de entrada se enrutan hacia la etapa de procesamiento o DAC
+ *       según la configuración externa.
+ *    4. Se soporta sincronización opcional entre ADC y DAC, y selección de
+ *       canal para ADC 2308.
+ *
+ *  Observaciones:
+ *    - Los parámetros de configuración podrían ser dinámicos, controlados por
+ *      NIOS o HPS si se desea.
+ *    - Los datos de simulación permiten probar el sistema sin ADCs.
+ *    - Todas las señales críticas están acompañadas de su indicador de validez.
+ *    - Esta interfaz unifica señales analógicas, digitales y simuladas para
+ *      el procesamiento posterior.
+ *
+ * ========================================================================== */
 
-// Este es el módulo de señales. Pueden ser digitales o analógicas, con dos ADCs distintos programados.
-// SI se quiere usar el ADC HS la frecuencia de muestreo queda dada por el clk_custom.
-// en cambio si se usa el ADC_2308 el parametro f_muestreo_2308 controla la tasa [en HZ]
 
 data_in data(
 
@@ -578,13 +732,27 @@ wire [31:0] data_adc_2308;
 wire data_adc_2308_valid;
 
 
-////////////////////////////////////////////////
-// ====== Procesamiento de señal  =========
-////////////////////////////////////////////////
-
-// Modulo de procesamiento. En este ejemplo realiza un filtro FIR de orden 32.
-// Se setean los parámetros a traves de la etapa de control y una vez que se le da enable arranca a filtrar.
-
+/* ================================================================================
+ * ======================= Interfaz de Procesamiento de señal =====================
+ *  Descripción general:
+ *    Módulo de procesamiento de señales que realiza un filtro FIR de orden 32.
+ *    Los coeficientes y parámetros se configuran desde la etapa de control.
+ *    El procesamiento comienza al activarse la señal 'enable'.
+ *
+ *  Señales principales:
+ *    - clk, reset_n, enable_gral: control de reloj, reset y habilitación.
+ *    - bypass: permite omitir el procesamiento.
+ *    - data_in, data_in_valid: entrada de datos a procesar.
+ *    - data_out1, data_out1_valid, data_out2, data_out2_valid: salidas procesadas.
+ *	 - (en este ejemplo data_out2 esta sin conectar a nada)
+ *    - ready_to_calculate: indica que el módulo está listo para iniciar.
+ *    - processing_finished: indica que el cálculo finalizó.
+ *    - parameter_in_0 .. parameter_in_32: coeficientes del filtro FIR.
+ *
+ *  Observaciones:
+ *    - El módulo es configurable dinámicamente mediante los parámetros de control.
+ *    - Soporta bypass para pruebas o contingencias.
+ * ========================================================================== */
 
 
 signal_processing signal_processing_inst(
@@ -652,6 +820,14 @@ wire [63:0] data_procesada1,data_procesada2;
 wire data_procesada1_valid,data_procesada2_valid;
 wire ready_to_calculate;
 wire calculo_finalizado;
+
+
+/* ================================================================================
+ * ======================= Cosas adicionales =====================
+ *  Para ver si la placa esta andando y bien configurada se agrega un titileo de LED
+ *  También se puede rutear los LED a distintas señales para ver que hacen
+ ================================================================================ */
+
 
 ////////////////////////////////////////////////
 // ====== Contador para ver si clk anda  =========
