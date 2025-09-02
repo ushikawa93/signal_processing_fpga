@@ -1,3 +1,38 @@
+/* ==========================================================================
+ * ======================= FILTRO PROMEDIO MÓVIL ===========================
+ *  Descripción general:
+ *    Este módulo implementa un filtro promedio móvil sobre datos de entrada
+ *    en streaming. Mantiene un buffer circular de tamaño configurable y
+ *    calcula un promedio acumulado sobre M puntos por N frames de integración.
+ *    La salida representa el promedio actualizado en cada ciclo.
+ *
+ *  Entradas:
+ *    - clock: reloj del sistema.
+ *    - reset_n: reset activo en bajo.
+ *    - enable: habilita el procesamiento de datos.
+ *    - ptos_x_ciclo: número de puntos por ciclo de señal.
+ *    - frames_integracion: cantidad de frames a integrar.
+ *    - data_valid: indica que el dato de entrada es válido.
+ *    - data: dato de entrada (signed 64 bits).
+ *
+ *  Salidas:
+ *    - data_out: promedio calculado (signed 64 bits).
+ *    - data_out_valid: indica que la salida es válida.
+ *    - ready_to_calculate: indica que el filtro está listo para calcular.
+ *    - fifo_lleno: indica que el buffer circular está completo.
+ *
+ *  Funcionamiento:
+ *    1. Los datos entrantes se almacenan en un buffer circular.
+ *    2. Un acumulador mantiene la suma de los últimos M*N datos.
+ *    3. Para cada nuevo dato, se suma al acumulador y se resta el dato que
+ *       se sobrescribe en el buffer, generando el promedio móvil.
+ *    4. Se generan señales de validación para sincronizar con etapas posteriores.
+ *
+ *  Observaciones:
+ *    - El tamaño del buffer está parametrizado por buf_tam.
+ *    - Permite integración de señal periódica mediante frames y puntos por ciclo.
+ * ========================================================================== */
+
 
 module filtro_promedio_movil(
 

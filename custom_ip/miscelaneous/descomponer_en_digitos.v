@@ -1,3 +1,26 @@
+/* ==========================================================================
+ * ======================= DESCOMPONER_EN_DIGITOS ==========================
+ *  Descripción general:
+ *    Este módulo toma un número de 32 bits y lo descompone en sus dígitos
+ *    decimales individuales, útiles para mostrar en displays o para cálculos
+ *    BCD.
+ *
+ *  Entradas:
+ *    - numero: valor de 32 bits a descomponer.
+ *
+ *  Salidas:
+ *    - digit0 ... digit5: dígitos decimales correspondientes al número, donde
+ *      digit0 es el dígito menos significativo y digit5 el más significativo.
+ *
+ *  Funcionamiento:
+ *    1. Cada dígito se obtiene mediante división y módulo por 10.
+ *    2. Permite extraer hasta 6 dígitos de un número entero.
+ *
+ *  Observaciones:
+ *    - Los dígitos resultantes se pueden usar directamente para displays BCD
+ *      o para interfaces de usuario.
+ * ========================================================================== */
+
 
 module descomponer_en_digitos(
 	input [31:0] numero,

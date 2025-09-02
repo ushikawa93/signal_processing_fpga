@@ -1,3 +1,21 @@
+/* =================================================================================
+ * ==============================  adc_dac_driver ===============================
+ * Este módulo controla el ADC y el DAC de alta velocidad. 
+ *
+ * ====== ADC =======
+ * Toma la señal de reloj CLK_65 y señales de habilitación, 
+ * y genera las salidas del ADC con registro intermedio para sincronización. 
+ * También produce señales de salida Avalon streaming: data_canal_a, data_canal_b
+ * y data_valid para indicar datos válidos.
+ *
+ * ====== DAC =======
+ * Puede seleccionar la señal de salida entre datos digitales externos 
+ * o una tabla de look-up interna (LU table). 
+ * Realiza ajuste de niveles digitales para compatibilidad con el DAC/ADC. 
+ * Genera la señal de salida DAC_DA/DAC_DB, los clocks DAC_CLK_A/B y 
+ * la señal de validación data_valid_dac_export para sincronización con módulos posteriores.
+//================================================================================= */
+
 module adc_dac_driver(
 
 	// Entradas de control

@@ -1,3 +1,8 @@
+/* =================================================================================
+ * ======================== ruido_LU_table ==========================================
+ * Forma "tramposa" de generar una señal sinusoidal 
+ * La señal aleatoria la genere en matlab esta guardada en una look up table...
+ * ================================================================================= */
 
 module ruido_LU_table(
 	

@@ -1,5 +1,12 @@
+/* =================================================================================
+ * ==============================  adc_ltc2308 =====================================
+ * Este módulo controla el ADC LTC2308 disponible en la placa DE1SoC. 
+ * No debe instanciarse directamente sino a traves de embedded_adc.v
+//================================================================================= */
+
+
 module adc_ltc2308(
-	clk, // max 40mhz
+	clk, // max 40MHz
 	
 	// start measure
 	measure_start, // posedge triggle

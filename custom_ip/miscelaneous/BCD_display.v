@@ -1,3 +1,26 @@
+/* ==========================================================================
+ * ============================ BCD_DISPLAY ================================
+ *  Descripción general:
+ *    Este módulo convierte valores BCD (Binary-Coded Decimal) de 4 bits en
+ *    señales para displays de 7 segmentos. Cada BCD de entrada controla un
+ *    display independiente.
+ *
+ *  Entradas:
+ *    - bcd0 ... bcd5: valores BCD de 4 bits a mostrar en cada display.
+ *
+ *  Salidas:
+ *    - HEX0 ... HEX5: señales de 7 segmentos correspondientes a cada BCD.
+ *
+ *  Funcionamiento:
+ *    1. Cada BCD se pasa a un módulo `segment7` que genera las señales
+ *       adecuadas para encender los segmentos del display.
+ *    2. Los displays muestran los dígitos decimales según el valor BCD.
+ *
+ *  Observaciones:
+ *    - Cada `segment7` genera los segmentos a partir de un solo BCD.
+ *    - Permite mostrar hasta 6 dígitos en displays separados.
+ * ========================================================================== */
+
 
 module BCD_display(
 

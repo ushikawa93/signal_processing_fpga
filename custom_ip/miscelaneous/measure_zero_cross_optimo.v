@@ -1,3 +1,34 @@
+/* ==========================================================================
+ * ====================== MEASURE_ZERO_CROSS_OPTIMO =========================
+ *  Descripción general:
+ *    Este módulo detecta de manera óptima el punto de cruce por cero de una
+ *    señal digital cuantizada. Se basa en calcular el valor medio entre el
+ *    máximo y mínimo de un ciclo y localizar el dato que más se aproxima a
+ *    dicho valor en la pendiente positiva.
+ *
+ *  Entradas:
+ *    - clk: reloj del sistema.
+ *    - enable: habilita la medición.
+ *    - reset_n: reset asíncrono activo bajo.
+ *    - ptos_x_ciclo: cantidad de puntos por ciclo de la señal.
+ *    - data: valor de la señal de 14 bits a medir.
+ *
+ *  Salidas:
+ *    - zero_cross: señal que indica cuándo ocurre el cruce por cero.
+ *
+ *  Funcionamiento:
+ *    1. Se calculan max_data y min_data de la señal durante un ciclo completo.
+ *    2. Se obtiene middle_data como punto medio entre max y min.
+ *    3. Se identifica el dato entrante más cercano a middle_data con pendiente
+ *       positiva.
+ *    4. Se genera zero_cross cuando la posición coincide con la del dato
+ *       más cercano.
+ *
+ *  Observaciones:
+ *    - Ideal para señales periódicas con ruido mínimo.
+ *    - El módulo espera que enable esté activo durante todo el ciclo.
+ * ========================================================================== */
+
 
 module measure_zero_cross_optimo(
 

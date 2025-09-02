@@ -1,3 +1,10 @@
+/*=================================================================================
+ * ==============================  parameterControl ===============================
+ * Este módulo selecciona uno de varios bancos de parámetros de entrada y los 
+ * asigna a salidas específicas según el valor de coef_mux. Si coef_mux = 0,
+ * activa bypass_filter para ignorar los parámetros.
+//================================================================================= */
+
 
 module parameterControl(
 

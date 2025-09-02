@@ -1,3 +1,42 @@
+/* ==========================================================================
+ * ========================== SIGNAL_PROCESSING =============================
+ *  Descripción general:
+ *    Top-level de procesamiento de señales, que incluye:
+ *      - Promediador coherente (Lock-In) pipelined
+ *      - Mezclador con referencia seno/coseno
+ *      - Filtros de promedio móvil para fase y cuadratura
+ *    El bloque permite procesamiento en streaming con Avalon-ST, y
+ *    controla la sincronización usando señales de validez.
+ *
+ *  Entradas:
+ *    - clk, reset_n, enable_gral: control general
+ *    - bypass: opción para no procesar (actualmente comentada)
+ *    - data_in, data_in_valid: señal de entrada
+ *    - parameter_in_0 ... parameter_in_32: parámetros de configuración
+ *
+ *  Salidas:
+ *    - data_out1, data_out1_valid: señal filtrada fase
+ *    - data_out2, data_out2_valid: señal filtrada cuadratura
+ *    - ready_to_calculate: indica que ambos canales están listos
+ *    - processing_finished: indica que ambos canales finalizaron
+ *    - parameter_out_0 ... parameter_out_4: reservados (0 por ahora)
+ *
+ *  Flujo de datos:
+ *    1. Entrada -> prom_coherente_pipelined (promediador coherente)
+ *    2. Salida del promediador -> reference_mixer
+ *       -> multiplicación con referencias seno/coseno
+ *    3. Salida del mezclador -> filtro_promedio_movil fase y cuadratura
+ *    4. Salidas de filtros -> data_out1/data_out2
+ *
+ *  Comentarios de diseño:
+ *    - Todos los módulos usan Avalon-ST y señales *_valid
+ *    - Se registran los parámetros al inicio para que sean estables
+ *    - ready_to_calculate y processing_finished se generan combinando
+ *      las señales de los filtros fase y cuadratura
+ *    - Se puede habilitar bypass de procesamiento (código comentado)
+ * ========================================================================== */
+
+
 
 module signal_processing(
 
