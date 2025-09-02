@@ -1,4 +1,12 @@
 
+/*
+	Autor: Matías Oliva 
+	Empresa: UNLP
+	Módulo Principal de sistema reutilizable de procesamiento de Señales
+	
+
+*/
+
 module signal_processing_template(
 
 	////////// CLK /////////

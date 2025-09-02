@@ -43,3 +43,13 @@ greybox_tmp/
 Thumbs.db
 .vscode/
 *.swp
+
+# Archivo de pines (se genera en compilacion)
+c5_pin_model_dump.txt
+
+# Archivos generados por HPS SDRAM controller
+hps_sdram_p0_all_pins.txt
+hps_sdram_p0_summary.csv
+
+# Logs de archivado de Quartus
+*.qarlog
