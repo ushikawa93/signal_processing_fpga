@@ -1,0 +1,68 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst procesador.result0_64_bit_up -pg 1 -lvl 4 -y 1770
+preplace inst procesador.jtag_uart_0 -pg 1 -lvl 4 -y 300
+preplace inst procesador.finalizacion -pg 1 -lvl 5 -y 580
+preplace inst procesador.fifo1_64_bit_down -pg 1 -lvl 4 -y 1160
+preplace inst procesador.enable -pg 1 -lvl 5 -y 690
+preplace inst procesador.nios2_gen2_0.cpu -pg 1
+preplace inst procesador.fifo0_64_bit_down -pg 1 -lvl 4 -y 860
+preplace inst procesador.result1_64_bit_up -pg 1 -lvl 4 -y 2050
+preplace inst procesador.result1_64_bit_down -pg 1 -lvl 4 -y 2150
+preplace inst procesador.program_memory -pg 1 -lvl 3 -y 510
+preplace inst procesador.nios2_gen2_0 -pg 1 -lvl 3 -y 260
+preplace inst procesador.divisor_clock -pg 1 -lvl 4 -y 610
+preplace inst procesador.clock_bridge_0 -pg 1 -lvl 2 -y 1430
+preplace inst procesador.parameters -pg 1 -lvl 5 -y 1710
+preplace inst procesador.fifo0_32_bit -pg 1 -lvl 4 -y 760
+preplace inst procesador.result1_32_bit -pg 1 -lvl 4 -y 1870
+preplace inst procesador.pll_reconfigurar -pg 1 -lvl 5 -y 320
+preplace inst procesador.nios2_gen2_0.clock_bridge -pg 1
+preplace inst procesador.fifo1_64_bit_up -pg 1 -lvl 4 -y 1260
+preplace inst procesador.parameters_1 -pg 1 -lvl 3 -y 30
+preplace inst procesador.result0_64_bit_down -pg 1 -lvl 4 -y 1570
+preplace inst procesador.parameters_2 -pg 1 -lvl 3 -y 130
+preplace inst procesador.nios2_gen2_0.reset_bridge -pg 1
+preplace inst procesador.result0_32_bit -pg 1 -lvl 4 -y 1360
+preplace inst procesador.reset_bridge_0 -pg 1 -lvl 4 -y 1500
+preplace inst procesador.reset -pg 1 -lvl 5 -y 1530
+preplace inst procesador.pll -pg 1 -lvl 5 -y 220
+preplace inst procesador.parameters_3 -pg 1 -lvl 3 -y 400
+preplace inst procesador.fifo0_64_bit_up -pg 1 -lvl 4 -y 960
+preplace inst procesador -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst procesador.fifo1_32_bit -pg 1 -lvl 4 -y 1060
+preplace inst procesador.clk_0 -pg 1 -lvl 1 -y 720
+preplace netloc POINT_TO_POINT<net_container>procesador</net_container>(SLAVE)pll.reconfig_to_pll,(SLAVE)pll_reconfigurar.reconfig_to_pll) 1 4 1 1610
+preplace netloc FAN_OUT<net_container>procesador</net_container>(SLAVE)result1_32_bit.clk,(SLAVE)pll_reconfigurar.mgmt_clk,(SLAVE)pll.refclk,(SLAVE)result0_64_bit_down.clk,(MASTER)clk_0.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)divisor_clock.clk,(SLAVE)parameters.clock_reset,(SLAVE)parameters_3.clock_reset,(SLAVE)nios2_gen2_0.clk,(SLAVE)parameters_2.clock_reset,(SLAVE)enable.clk,(SLAVE)result1_64_bit_down.clk,(SLAVE)parameters_1.clock_reset,(SLAVE)result0_64_bit_up.clk,(SLAVE)result0_32_bit.clk,(SLAVE)result1_64_bit_up.clk,(SLAVE)finalizacion.clk,(SLAVE)program_memory.clk1) 1 1 4 410 560 700 620 1240 1700 1570
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.parameters_2_user_interface,(SLAVE)parameters_2.user_interface) 1 0 3 NJ 200 NJ 200 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.finalizacion,(SLAVE)finalizacion.external_connection) 1 0 5 NJ 600 NJ 600 NJ 600 NJ 600 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.fifo0_64_bit_up_in,(SLAVE)fifo0_64_bit_up.in) 1 0 4 NJ 990 NJ 990 NJ 990 NJ
+preplace netloc POINT_TO_POINT<net_container>procesador</net_container>(SLAVE)pll_reconfigurar.reconfig_from_pll,(SLAVE)pll.reconfig_from_pll) 1 4 1 1590
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.result1_64_bit_up_in,(SLAVE)result1_64_bit_up.external_connection) 1 0 4 NJ 2080 NJ 2080 NJ 2080 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.reset_fifos,(SLAVE)reset_bridge_0.in_reset) 1 0 4 NJ 1530 NJ 1530 NJ 1530 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.fifo1_64_bit_up_in,(SLAVE)fifo1_64_bit_up.in) 1 0 4 NJ 1290 NJ 1290 NJ 1290 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)result0_64_bit_down.external_connection,(SLAVE)procesador.result0_64_bit_down_in) 1 0 4 NJ 1600 NJ 1600 NJ 1600 NJ
+preplace netloc FAN_OUT<net_container>procesador</net_container>(SLAVE)reset.clk,(SLAVE)fifo0_64_bit_down.clk_in,(SLAVE)fifo1_64_bit_down.clk_in,(SLAVE)fifo1_32_bit.clk_in,(MASTER)clock_bridge_0.out_clk,(SLAVE)reset_bridge_0.clk,(SLAVE)fifo0_64_bit_up.clk_in,(SLAVE)fifo0_32_bit.clk_in,(SLAVE)fifo1_64_bit_up.clk_in) 1 2 3 NJ 1440 1200 1470 1550
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.result1_32_bit_in,(SLAVE)result1_32_bit.external_connection) 1 0 4 NJ 1900 NJ 1900 NJ 1900 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)fifo1_64_bit_down.in,(SLAVE)procesador.fifo1_64_bit_down_in) 1 0 4 NJ 1190 NJ 1190 NJ 1190 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)parameters.user_interface,(SLAVE)procesador.parameters_user_interface) 1 0 5 NJ 1760 NJ 1760 NJ 1760 NJ 1760 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)fifo1_32_bit.in,(SLAVE)procesador.fifo1_32_bit_in) 1 0 4 NJ 1090 NJ 1090 NJ 1090 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)fifo0_64_bit_down.in,(SLAVE)procesador.fifo0_64_bit_down_in) 1 0 4 NJ 890 NJ 890 NJ 890 NJ
+preplace netloc INTERCONNECT<net_container>procesador</net_container>(SLAVE)pll.reset,(MASTER)nios2_gen2_0.debug_reset_request,(MASTER)clk_0.clk_reset,(SLAVE)finalizacion.reset,(SLAVE)fifo1_64_bit_down.reset_in,(SLAVE)parameters.clock_reset_reset,(SLAVE)pll_reconfigurar.mgmt_reset,(SLAVE)result0_64_bit_down.reset,(SLAVE)parameters_2.clock_reset_reset,(SLAVE)result0_64_bit_up.reset,(SLAVE)program_memory.reset1,(SLAVE)reset.reset,(SLAVE)fifo1_64_bit_up.reset_in,(SLAVE)fifo0_32_bit.reset_in,(SLAVE)result0_32_bit.reset,(SLAVE)fifo0_64_bit_down.reset_in,(SLAVE)jtag_uart_0.reset,(SLAVE)fifo0_64_bit_up.reset_in,(MASTER)reset_bridge_0.out_reset,(SLAVE)parameters_1.clock_reset_reset,(SLAVE)parameters_3.clock_reset_reset,(SLAVE)result1_64_bit_up.reset,(SLAVE)result1_32_bit.reset,(SLAVE)fifo1_32_bit.reset_in,(SLAVE)nios2_gen2_0.reset,(SLAVE)enable.reset,(SLAVE)result1_64_bit_down.reset,(SLAVE)divisor_clock.reset) 1 1 4 450 580 720 660 1180 1720 1510
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)parameters_3.user_interface,(SLAVE)procesador.parameters_3_user_interface) 1 0 3 NJ 470 NJ 470 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)clock_bridge_0.in_clk,(SLAVE)procesador.clk_custom_in) 1 0 2 NJ 1440 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)result0_32_bit.external_connection,(SLAVE)procesador.result0_32_bit_in) 1 0 4 NJ 1390 NJ 1390 NJ 1390 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.enable,(SLAVE)enable.external_connection) 1 0 5 NJ 690 NJ 720 NJ 720 NJ 720 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.parameters_1_user_interface,(SLAVE)parameters_1.user_interface) 1 0 3 NJ 100 NJ 100 NJ
+preplace netloc POINT_TO_POINT<net_container>procesador</net_container>(MASTER)nios2_gen2_0.irq,(SLAVE)jtag_uart_0.irq) 1 3 1 N
+preplace netloc INTERCONNECT<net_container>procesador</net_container>(SLAVE)result1_64_bit_up.s1,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)finalizacion.s1,(SLAVE)parameters_1.s0,(SLAVE)parameters_2.s0,(SLAVE)result1_64_bit_down.s1,(SLAVE)result0_32_bit.s1,(SLAVE)fifo0_64_bit_down.out,(SLAVE)fifo1_64_bit_down.out,(SLAVE)result0_64_bit_up.s1,(SLAVE)parameters.s0,(SLAVE)program_memory.s1,(SLAVE)fifo0_32_bit.out,(SLAVE)reset.s1,(SLAVE)fifo1_32_bit.out,(SLAVE)enable.s1,(SLAVE)fifo1_64_bit_up.out,(SLAVE)result1_32_bit.s1,(SLAVE)fifo0_64_bit_up.out,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)result0_64_bit_down.s1,(SLAVE)pll_reconfigurar.mgmt_avalon_slave,(SLAVE)parameters_3.s0,(MASTER)nios2_gen2_0.data_master,(SLAVE)divisor_clock.s1) 1 2 3 740 810 1220 1740 1490
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)reset.external_connection,(SLAVE)procesador.reset_op) 1 0 5 NJ 1490 NJ 1490 NJ 1490 NJ 1490 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.divisor_clock,(SLAVE)divisor_clock.external_connection) 1 0 4 NJ 640 NJ 640 NJ 640 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)result0_64_bit_up.external_connection,(SLAVE)procesador.result0_64_bit_up_in) 1 0 4 NJ 1800 NJ 1800 NJ 1800 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)fifo0_32_bit.in,(SLAVE)procesador.fifo0_32_bit_in) 1 0 4 NJ 710 NJ 790 NJ 790 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)procesador.result1_64_bit_down_in,(SLAVE)result1_64_bit_down.external_connection) 1 0 4 NJ 2180 NJ 2180 NJ 2180 NJ
+preplace netloc EXPORT<net_container>procesador</net_container>(MASTER)procesador.clk_custom_out,(MASTER)pll.outclk0) 1 5 1 N
+preplace netloc EXPORT<net_container>procesador</net_container>(SLAVE)clk_0.clk_in,(SLAVE)procesador.clk) 1 0 1 NJ
+levelinfo -pg 1 0 180 1940
+levelinfo -hier procesador 190 220 570 940 1310 1640 1820
