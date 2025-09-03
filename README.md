@@ -1,5 +1,8 @@
 # signal_processing_fpga
-Modelo para procesamiento de señales en FPGAs de Intel/Altera2
+Modelo para procesamiento de señales en FPGAs de Intel/Altera
+
+El contenido de este repositorio fue presentado en el Souther Programmable Logic Conference 2023:
+> https://www.researchgate.net/publication/376132897_Open-source_SoC-FPGA_Platform_for_Signal_Processing
 
 El diseño esta pensado en tres etapas, cada una programada en sendos módulos de Verilog. 
 
