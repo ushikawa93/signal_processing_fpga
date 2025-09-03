@@ -11,10 +11,10 @@ El sistema completo incluye:
 
 ## Estructura del proyecto
 FIR_GUI/
-├─ Pipe_c++/ # Código fuente del driver en C++ que accede a la HAL
-│ └─ Makefile # Para compilar el driver en la plataforma de destino
-├─ software/hps/FIR_GUI/ # Código de la GUI en C#
-└─ filters/ # Clases de filtros, banco de filtros y gestión de coeficientes
+├─ Pipe_c++/ # Código fuente del driver en C++ que accede a la HAL  
+│ └─ Makefile # Para compilar el driver en la plataforma de destino  
+├─ software/hps/FIR_GUI/ # Código de la GUI en C#  
+└─ filters/ # Clases de filtros, banco de filtros y gestión de coeficientes  
 
 
 ## Comunicación GUI <-> FPGA
