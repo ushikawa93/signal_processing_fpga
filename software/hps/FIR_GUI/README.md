@@ -46,11 +46,15 @@ Se utiliza **interfaz por FIFOs**:
 ```bash
 cd FIR_GUI/Pipe_c++
 make
+```
 
 2.Ejecutar el driver y la GUI simultáneamente. Por ejemplo, con un script:
-./fpga_driver && mono FIR_GUI.exe
 
->Nota: El driver debe ejecutarse primero para que los FIFOs estén disponibles para la GUI.
+```bash
+./fpga_driver && mono FIR_GUI.exe
+```
+
+> Nota: El driver debe ejecutarse primero para que los FIFOs estén disponibles para la GUI.
 
 - Funcionalidades de la GUI
 
