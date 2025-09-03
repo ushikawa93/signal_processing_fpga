@@ -1,5 +1,5 @@
 # signal_processing_fpga
-Modelo para procesamiento de señales en FPGAs de Intel/Altera
+Modelo para procesamiento de señales en FPGAs de Intel/Altera2
 
 El diseño esta pensado en tres etapas, cada una programada en sendos módulos de Verilog. 
 
