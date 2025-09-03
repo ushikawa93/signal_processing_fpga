@@ -1,18 +1,41 @@
 /*
- * "Hello World" example.
- *
- * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
- * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example
- * designs. It runs with or without the MicroC/OS-II RTOS and requires a STDOUT
- * device in your system's hardware.
- * The memory footprint of this hosted application is ~69 kbytes by default
- * using the standard reference design.
- *
- * For a reduced footprint version of this template, and an explanation of how
- * to reduce the memory footprint for a given application, see the
- * "small_hello_world" template.
- *
- */
+================================================================================
+ Ejemplo principal de control y lectura de resultados
+ Archivo: main.c
+--------------------------------------------------------------------------------
+ Este archivo implementa un ejemplo de uso del sistema de procesamiento en 
+ FPGA con Nios II. Muestra cómo configurar el PLL, aplicar filtros digitales, 
+ habilitar y resetear el procesamiento, y leer los resultados desde FIFOs 
+ y registros instantáneos.
+
+ Funcionalidad principal:
+   - Configuración del PLL y del divisor de reloj.
+   - Selección y carga de coeficientes de filtros pasa-bajos y pasa-altos.
+   - Control de habilitación, reset y espera de finalización del procesamiento.
+   - Lectura de resultados de FIFOs de 32 y 64 bits.
+   - Impresión de resultados en la consola.
+
+ Punteros a memoria mapeada utilizados:
+   - PLL_RECONFIGURAR_BASE, DIVISOR_CLOCK_BASE
+   - PARAMETERS_BASE y variantes
+   - ENABLE_BASE, RESET_BASE, FINALIZACION_BASE
+   - FIFO*_32_BIT_BASE, RESULT*_32_BIT_BASE
+   - FIFO*_64_BIT_DOWN/UP_BASE, RESULT*_64_BIT_DOWN/UP_BASE
+
+ Funciones auxiliares definidas:
+   - imprimir_buffer_32bit, imprimir_buffer_64bit: muestran valores en consola.
+   - setCoeff: carga un filtro en los parámetros de configuración.
+
+ Uso típico:
+   - Configurar PLL con configurar_pll(f, pll_ptr);
+   - Ajustar divisor de reloj con setClockDivider(div, clk_divider_ptr);
+   - Seleccionar filtro y cargar coeficientes con setCoeff(filtro);
+   - Habilitar procesamiento con setEnable(enable_ptr) y esperar finalización.
+   - Leer resultados desde FIFO o registros para análisis posterior.
+
+================================================================================
+*/
+
 
 #include <stdio.h>
 #include "funciones_pll.h"
