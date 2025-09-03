@@ -124,7 +124,7 @@ Esta clase, junto con un main() que demuestra su uso, estan definidas en "softwa
 ## Graphical User Interface (GUI)
 
 Para esta demostración también se programó una GUI en C#, que se ejecuta en el procesador de la FPGA (que tiene un Ubuntu) a través de la implementacion mono de .Net
-Esta GUI usa named PIPES para interfacear con la HAL. Primero hay que compilar en la plataforma de destino el fpga_driver (hay un makefile).
+Esta GUI usa named PIPES para interfacear con la HAL. Primero hay que compilar en la plataforma de destino el fpga_driver (hay un makefile en FIR_GUI/Pipe_c++).
 
 Luego para que funcione correctamente debe ejecutarse al mismo tiempo el driver en c++ que usa la HAL y el .exe que genera la GUI.
 
